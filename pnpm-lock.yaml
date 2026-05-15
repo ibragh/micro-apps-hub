@@ -1424,6 +1424,9 @@ importers:
         specifier: ^18.3.0
         version: 18.3.1(react@18.3.1)
     devDependencies:
+      '@mofeed/mobile':
+        specifier: workspace:*
+        version: link:../../packages/mobile
       '@mofeed/testing':
         specifier: workspace:*
         version: link:../../packages/testing

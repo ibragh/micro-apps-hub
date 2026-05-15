@@ -63,13 +63,13 @@ pnpm build
 | national-memory | الذاكرة الوطنية | National Memory | quiz | 1 |
 | history-secrets | أسرار التاريخ | History Secrets | timeline | 1 |
 | odd-archive | أرشيف الغرائب | Odd Archive | timeline | 1 |
-| decision-council | مجلس القرار | Decision Council | decision | 2 |
-| in-his-place | لو كنت مكانه | In His Place | scenario | 2 |
-| logic-judge | قاضي المنطق | Logic Judge | quiz | 2 |
+| logic-judge | قاضي المنطق | Logic Judge | quiz | 1 |
+| predict-the-decision | توقع القرار | Predict the Decision | quiz | 1 |
+| decision-council | مجلس القرار | Decision Council | decision | 1 |
+| in-his-place | لو كنت مكانه | In His Place | scenario | 1 |
 | crossroads | مفترق الطرق | Crossroads | scenario | 2 |
 | who-is-wrong | مين المخطئ؟ | Who Is Wrong? | voting | 2 |
 | consultant-test | اختبار المستشار | Consultant Test | decision | 2 |
-| predict-the-decision | توقع القرار | Predict the Decision | quiz | 2 |
 | matchday-coach | مدرب الجولة | Matchday Coach | decision | 2 |
 | what-if | ماذا لو؟ | What If? | scenario | 2 |
 | thinking-compass | بوصلة التفكير | Thinking Compass | decision | 2 |
@@ -84,10 +84,16 @@ A landing **hub** lives at `apps/hub/` and lists every app with
 category filters; it deploys to the root domain and links each card to
 the per-slug subdomain.
 
-**Tier 1** apps (14) ship with hand-authored, sourced seed content and
-full test coverage. **Tier 2** apps (16) ship as functional skeletons
-with the same engine and shell — the content layer is structured to
-receive verified items from `docs/CONTENT_POLICY.md` accepted sources.
+**Mobile shells** are wired via `@mofeed/mobile` (Capacitor). The
+`seerah-quiz` app ships a working `capacitor.config.ts` as the
+proof-of-concept. See `docs/DEPLOYMENT.md` §7 for the per-app native
+build runbook.
+
+**Tier 1** apps (18) ship with hand-authored, sourced (or
+clearly-flagged simulation) content and full test coverage.
+**Tier 2** apps (12) ship as functional skeletons with the same
+engine and shell — the content layer is structured to receive
+verified items from `docs/CONTENT_POLICY.md` accepted sources.
 
 ## Repo layout
 

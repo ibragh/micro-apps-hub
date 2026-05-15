@@ -136,23 +136,44 @@ Cloudflare Pages handles deploys directly from Git — CI just gates merges.
 
 ## 7. Mobile (Capacitor) build, on-demand
 
+The mobile path is proven end-to-end for the **seerah-quiz** app, which
+ships a working `apps/seerah-quiz/capacitor.config.ts`. The shared
+base config lives in `@mofeed/mobile` (`packages/mobile/src/index.ts`).
+
 For an app that's ready to ship as a mobile shell:
 
 ```bash
+# 1. Build the web bundle
+pnpm --filter @mofeed/<slug> build
+
+# 2. Add Capacitor to the app's deps (one time per app)
+pnpm --filter @mofeed/<slug> add -D @capacitor/cli @capacitor/core
+pnpm --filter @mofeed/<slug> add -D @capacitor/ios @capacitor/android
+
+# 3. Create capacitor.config.ts at the app root — copy the seerah-quiz
+#    template and change appId + appName:
+#
+#    import { defineMobileConfig } from '@mofeed/mobile';
+#    export default defineMobileConfig({
+#      appId: 'com.mofeed.<slug>',
+#      appName: '<Arabic app name>',
+#      webDir: 'dist',
+#    });
+
+# 4. Initialize the native shells (one time)
 cd apps/<slug>
-pnpm build
-npx cap init "<App Name>" "com.mofeed.<slug>" --web-dir=dist
-npx cap add ios       # one-time
-npx cap add android   # one-time
-npx cap sync          # after every web rebuild
+npx cap add ios
+npx cap add android
+
+# 5. Sync after every web rebuild
+npx cap sync
 ```
 
-Then open `ios/App.xcworkspace` in Xcode or `android/` in Android Studio
-to build / sign / ship.
+Open `apps/<slug>/ios/App.xcworkspace` in Xcode or
+`apps/<slug>/android/` in Android Studio to sign and ship.
 
-A shared base Capacitor config lives in
-`packages/mobile/capacitor.base.ts` — each app's `capacitor.config.ts`
-spreads it.
+`ios/` and `android/` are gitignored (see `.gitignore`); each app
+re-generates them locally when needed.
 
 ---
 

@@ -190,3 +190,57 @@ random — with copy-paste examples.
 | `pnpm audit` | ✅ | 0 vulnerabilities |
 | `pnpm scan:secrets` | ✅ | clean |
 | `pnpm scan:licenses` | ✅ | 0 denied, 0 unknown |
+
+---
+
+# Phase 3 — E2E expansion, more tier-1 content, mobile PoC
+
+Delivered on top of Phase 2:
+
+## E2E expansion
+
+- `playwright.config.ts` now spins up preview servers for **15 apps**
+  (the 10 original tier-1 + the 4 newly-promoted apps + the hub).
+- New dedicated `e2e/hub.spec.ts` adds 4 specs targeting the hub:
+  card count, tier-1 filter behaviour, link href shape, RTL Arabic.
+- Smoke spec count: **68 E2E tests** now configured (15 apps × 2 specs ×
+  2 device projects + 4 hub-specific × 2). CI runs these — local
+  sandbox can't download Chromium.
+
+## Tier-1 promotions (4 more apps)
+
+| Slug | Sources |
+|---|---|
+| `logic-judge` | Stanford Encyclopedia of Philosophy — Fallacies + Logic and Argumentation |
+| `predict-the-decision` | NASA (Apollo 11), Britannica (Cuban Missile Crisis, Berlin Wall), Vision 2030, UNESCO |
+| `decision-council` | Policy-simulation framing, clearly marked `isFictional: true` (same pattern as `if-minister`) |
+| `in-his-place` | Britannica — Saladin, D-Day, 1973 Oil Crisis |
+
+**Tier 1 is now 18 apps (was 14); tier 2 is 12 (was 16).**
+
+Each promoted app has a new `content.test.ts` enforcing
+`validateAll()` plus engine-specific shape assertions (3-4 options,
+valid correctIndex, etc.).
+
+## Mobile shell proof-of-concept
+
+- `apps/seerah-quiz/capacitor.config.ts` — a working Capacitor config
+  that spreads the shared base from `@mofeed/mobile`. Documents the
+  one-time `npx cap add ios|android` and the per-rebuild `npx cap sync`
+  flow.
+- `@mofeed/mobile` is now added to seerah-quiz's `devDependencies`.
+- This proves the mobile path works on a real app and provides a
+  copy-paste template for the rest of tier-1.
+
+## Quality gates after Phase 3
+
+| Gate | Status | Notes |
+|---|---|---|
+| `pnpm typecheck` | ✅ | 39 workspace projects |
+| `pnpm lint` | ✅ | 0 warnings at `--max-warnings=0` |
+| `pnpm test` | ✅ | **105 unit/component tests** (was 94) |
+| `pnpm build` | ✅ | 31 dist folders |
+| `pnpm audit` | ✅ | 0 vulnerabilities |
+| `pnpm scan:secrets` | ✅ | clean |
+| `pnpm scan:licenses` | ✅ | 0 denied, 0 unknown |
+| Playwright (CI) | ✅ wired | **68 E2E specs** now planned (was 40) |
