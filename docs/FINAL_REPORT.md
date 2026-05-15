@@ -135,3 +135,58 @@ pnpm scan:all        # ✅ (semgrep + osv require their CLIs in PATH)
 pnpm test:e2e:install
 pnpm test:e2e        # ✅ on a host with Playwright browsers
 ```
+
+---
+
+# Phase 2 — Hub + tier expansion
+
+Delivered on top of Phase 1:
+
+## Hub landing page (`apps/hub/`)
+
+A 31st app under `apps/hub/` that:
+- Lists all 30 mini apps as a responsive card grid.
+- Filter chips by tier (جاهز / قيد التطوير) and by category.
+- Each card links to `https://<slug>.${VITE_SUBDOMAIN_BASE}/`, or to a
+  `#<slug>` local hash if `VITE_SUBDOMAIN_BASE` is unset (dev).
+- Generated from `scripts/apps.manifest.mjs` via
+  `scripts/build-hub-catalog.mjs` → `apps/hub/src/apps.generated.ts`.
+  Run that script after editing the manifest.
+- Same Arabic-first RTL shell, same strict CSP, same Plausible adapter
+  as the per-app builds.
+- 3 smoke tests pass; the build is ~51 KB gz JS + 2 KB gz CSS.
+
+## Tier-1 promotion
+
+Four previously-tier-2 apps now ship hand-authored, sourced content
+and are reclassified as tier 1:
+
+| Slug | Sources |
+|---|---|
+| `saudi-time-machine` | دارة الملك عبدالعزيز · Saudi Aramco · UNESCO (Diriyah + Al-Ahsa) · رؤية 2030 · Encyclopedia Britannica |
+| `national-memory` | UNESCO · هيئة الترفيه (اليوم الوطني / يوم التأسيس) · وزارة الثقافة |
+| `history-secrets` | British Museum (Rosetta Stone) · Encyclopedia Britannica (Antikythera, Abbasid) · هيئة المسجد الحرام |
+| `odd-archive` | Smithsonian · Encyclopedia Britannica · USGS · AMNH |
+
+**Tier 1 is now 14 apps; tier 2 is 16.**
+
+Each promoted app has a `content.test.ts` enforcing
+`@mofeed/content/validate` rules.
+
+## Engines documentation
+
+`packages/engines/README.md` now contains a quickstart for every
+engine — quiz, auction, decision, voting, timeline, scenario, clue,
+random — with copy-paste examples.
+
+## Quality gates after Phase 2
+
+| Gate | Status | Notes |
+|---|---|---|
+| `pnpm typecheck` | ✅ | 39 workspace projects |
+| `pnpm lint` | ✅ | 0 warnings at `--max-warnings=0` |
+| `pnpm test` | ✅ | 94 unit/component tests (was 86) |
+| `pnpm build` | ✅ | 31 dist folders (30 apps + hub) |
+| `pnpm audit` | ✅ | 0 vulnerabilities |
+| `pnpm scan:secrets` | ✅ | clean |
+| `pnpm scan:licenses` | ✅ | 0 denied, 0 unknown |

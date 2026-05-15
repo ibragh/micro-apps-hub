@@ -96,10 +96,25 @@ back to `index.html`. Each app ships `public/_redirects`:
 
 ---
 
-## 5. Hub landing page (optional, Phase 2)
+## 5. Hub landing page (`apps/hub/`)
 
-A root project at `mofeed-mini-apps.example` listing the 30 apps. To be
-implemented under `apps/hub/` later; not required for Phase 1.
+Implemented in Phase 2. The hub is a 31st Cloudflare Pages project:
+
+1. **Project name**: `mofeed-hub`
+2. **Build command**:
+   ```
+   corepack enable && pnpm install --frozen-lockfile && node scripts/build-hub-catalog.mjs && pnpm --filter @mofeed/hub build
+   ```
+   (Run `build-hub-catalog.mjs` first so the hub picks up any manifest
+   changes since the last build.)
+3. **Build output directory**: `apps/hub/dist`
+4. **Environment variables**:
+   - `VITE_SUBDOMAIN_BASE` = `mofeed-mini-apps.example` (the production
+     domain — hub cards link to `https://<slug>.${VITE_SUBDOMAIN_BASE}/`).
+   - `NODE_VERSION` = `20`
+5. **Custom domain**: `mofeed-mini-apps.example` (the root).
+6. The 30 per-app Pages projects each get their own subdomain
+   (`<slug>.mofeed-mini-apps.example`) as described in §2.
 
 ---
 
