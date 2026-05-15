@@ -1,22 +1,78 @@
 [
   {
-    "id": "saudi-mood-map-v1",
-    "title": "سؤال للتصويت",
+    "id": "smm-weather",
+    "title": "مزاج الطقس",
     "category": "poll",
-    "sourceName": "افتراضي",
-    "confidenceLevel": "low",
+    "sourceName": "استطلاع يومي محايد",
+    "confidenceLevel": "medium",
     "isVerified": false,
     "isFictional": true,
-    "question": "سؤال نموذج — ما رأيك؟",
+    "question": "كيف يؤثر الطقس اليوم على مزاجك؟",
     "options": [
-      {
-        "id": "yes",
-        "label": "نعم"
-      },
-      {
-        "id": "no",
-        "label": "لا"
-      }
+      { "id": "great", "label": "ممتاز" },
+      { "id": "ok", "label": "عادي" },
+      { "id": "meh", "label": "ضعيف" }
+    ]
+  },
+  {
+    "id": "smm-weekend",
+    "title": "مزاج نهاية الأسبوع",
+    "category": "poll",
+    "sourceName": "استطلاع يومي محايد",
+    "confidenceLevel": "medium",
+    "isVerified": false,
+    "isFictional": true,
+    "question": "كيف تستعد لنهاية الأسبوع؟",
+    "options": [
+      { "id": "rest", "label": "راحة في البيت" },
+      { "id": "outing", "label": "رحلة قصيرة" },
+      { "id": "family", "label": "زيارة عائلية" },
+      { "id": "study", "label": "تعلّم أو هواية" }
+    ]
+  },
+  {
+    "id": "smm-football",
+    "title": "مزاج الكرة هذا الأسبوع",
+    "category": "poll",
+    "sourceName": "استطلاع يومي محايد",
+    "confidenceLevel": "medium",
+    "isVerified": false,
+    "isFictional": true,
+    "question": "كيف تشعر تجاه نتيجة فريقك في الجولة الأخيرة؟",
+    "options": [
+      { "id": "happy", "label": "سعيد" },
+      { "id": "ok", "label": "محايد" },
+      { "id": "sad", "label": "محبط" }
+    ]
+  },
+  {
+    "id": "smm-study",
+    "title": "مزاج المذاكرة",
+    "category": "poll",
+    "sourceName": "استطلاع يومي محايد",
+    "confidenceLevel": "medium",
+    "isVerified": false,
+    "isFictional": true,
+    "question": "كيف تجد عبء المذاكرة هذا الأسبوع؟",
+    "options": [
+      { "id": "light", "label": "خفيف" },
+      { "id": "fair", "label": "معقول" },
+      { "id": "heavy", "label": "ثقيل" }
+    ]
+  },
+  {
+    "id": "smm-travel",
+    "title": "مزاج السفر",
+    "category": "poll",
+    "sourceName": "استطلاع يومي محايد",
+    "confidenceLevel": "medium",
+    "isVerified": false,
+    "isFictional": true,
+    "question": "هل لديك خطة سفر هذا الشهر؟",
+    "options": [
+      { "id": "yes", "label": "نعم" },
+      { "id": "maybe", "label": "ربما" },
+      { "id": "no", "label": "لا" }
     ]
   }
 ]

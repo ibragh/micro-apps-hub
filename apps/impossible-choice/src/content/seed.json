@@ -1,22 +1,44 @@
 [
   {
-    "id": "impossible-choice-v1",
-    "title": "سؤال للتصويت",
+    "id": "ic-1",
+    "title": "بين الحقيقة والصداقة",
     "category": "decision",
-    "sourceName": "افتراضي",
-    "confidenceLevel": "low",
+    "sourceName": "معضلة أخلاقية تعليمية",
+    "confidenceLevel": "medium",
     "isVerified": false,
     "isFictional": true,
-    "question": "سؤال نموذج — ما رأيك؟",
+    "question": "اكتشفت أن صديقك المقرّب يخفي معلومة قد تضرّ بعمله. هل تكشفها؟",
     "options": [
-      {
-        "id": "yes",
-        "label": "نعم"
-      },
-      {
-        "id": "no",
-        "label": "لا"
-      }
+      { "id": "tell", "label": "أكشفها — الحقيقة أولًا" },
+      { "id": "silent", "label": "ألتزم الصمت — الصداقة أولًا" }
+    ]
+  },
+  {
+    "id": "ic-2",
+    "title": "مستحق أم منتظر؟",
+    "category": "decision",
+    "sourceName": "معضلة أخلاقية تعليمية",
+    "confidenceLevel": "medium",
+    "isVerified": false,
+    "isFictional": true,
+    "question": "لديك مقعد واحد في تدريب نادر. يوجد متقدمان: أحدهما أكفأ، والثاني محتاج إنسانيًا. لمن تعطيه؟",
+    "options": [
+      { "id": "skilled", "label": "الأكفأ — الجدارة أولًا" },
+      { "id": "needy", "label": "المحتاج — الإنسانية أولًا" }
+    ]
+  },
+  {
+    "id": "ic-3",
+    "title": "وعد قديم أو فرصة جديدة",
+    "category": "decision",
+    "sourceName": "معضلة أخلاقية تعليمية",
+    "confidenceLevel": "medium",
+    "isVerified": false,
+    "isFictional": true,
+    "question": "وعدت أهلك بزيارة، ثم جاءتك فرصة عمل لا تُعوّض في الموعد نفسه. ماذا تختار؟",
+    "options": [
+      { "id": "visit", "label": "ألتزم بالوعد" },
+      { "id": "opportunity", "label": "أؤجّل الزيارة وأنتهز الفرصة" }
     ]
   }
 ]

@@ -12,6 +12,44 @@ export interface AppShellProps {
 }
 
 /**
+ * Read a public env flag, treating "true"/"1" as truthy and everything
+ * else as false. Used by the footer placeholders so apps can flip
+ * features on at build time without code changes.
+ */
+function envFlag(value: string | undefined): boolean {
+  return value === 'true' || value === '1';
+}
+
+function DefaultFooter() {
+  // Read at runtime so it works in jsdom tests where import.meta.env is undefined.
+  const meta = import.meta as unknown as { env?: Record<string, string | undefined> };
+  const env = meta.env ?? {};
+  const showSupport = envFlag(env.VITE_ENABLE_SUPPORT_LINK);
+  const showPro = envFlag(env.VITE_ENABLE_PRO_PLACEHOLDER);
+
+  return (
+    <>
+      <span>© مفيد — تطبيقات صغيرة</span>
+      <span className="mf-muted">المحتوى الواقعي مستند إلى مصادر موثقة.</span>
+      {(showSupport || showPro) && (
+        <span className="mf-footer-actions" data-testid="footer-actions">
+          {showSupport ? (
+            <a href="#support" className="mf-footer-link" data-testid="support-link">
+              ادعم المشروع
+            </a>
+          ) : null}
+          {showPro ? (
+            <a href="#pro" className="mf-footer-link" data-testid="pro-link">
+              النسخة المميّزة
+            </a>
+          ) : null}
+        </span>
+      )}
+    </>
+  );
+}
+
+/**
  * The shell every mini app renders inside. Provides:
  * - skip link
  * - sticky header with Arabic title
@@ -38,12 +76,7 @@ export function AppShell({ titleAr, titleEn, headerExtra, children, footer }: Ap
         {children}
       </main>
       <footer className="mf-app-footer" role="contentinfo">
-        {footer ?? (
-          <>
-            <span>© مفيد — تطبيقات صغيرة</span>
-            <span className="mf-muted">المحتوى الواقعي مستند إلى مصادر موثقة.</span>
-          </>
-        )}
+        {footer ?? <DefaultFooter />}
       </footer>
     </div>
   );

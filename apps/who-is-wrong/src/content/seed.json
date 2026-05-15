@@ -1,22 +1,48 @@
 [
   {
-    "id": "who-is-wrong-v1",
-    "title": "سؤال للتصويت",
+    "id": "ww-roommates",
+    "title": "خلاف بين شريكي سكن",
     "category": "decision",
-    "sourceName": "افتراضي",
-    "confidenceLevel": "low",
+    "sourceName": "سيناريو تعليمي",
+    "confidenceLevel": "medium",
     "isVerified": false,
     "isFictional": true,
-    "question": "سؤال نموذج — ما رأيك؟",
+    "question": "سكنا في شقة واحدة. أحمد يستذكر بصوتٍ عالٍ ليلًا، وفهد يطلب الهدوء لأنه يعمل صباحًا. من المخطئ؟",
     "options": [
-      {
-        "id": "yes",
-        "label": "نعم"
-      },
-      {
-        "id": "no",
-        "label": "لا"
-      }
+      { "id": "ahmad", "label": "أحمد — لا يحترم نمط حياة شريكه" },
+      { "id": "fahad", "label": "فهد — لم يطلب الترتيب من البداية" },
+      { "id": "both", "label": "كلاهما — غياب اتفاق مسبق" },
+      { "id": "context", "label": "لا أحد — يحتاجان لجدول مشترك" }
+    ]
+  },
+  {
+    "id": "ww-team-credit",
+    "title": "نسبة الفضل في مشروع جماعي",
+    "category": "decision",
+    "sourceName": "سيناريو تعليمي",
+    "confidenceLevel": "medium",
+    "isVerified": false,
+    "isFictional": true,
+    "question": "أنجز فريق مشروعًا. قدّم أحد الأعضاء العرض النهائي ونسب الإنجاز لنفسه. مَن المخطئ؟",
+    "options": [
+      { "id": "presenter", "label": "المقدّم — أهمل ذكر الفريق" },
+      { "id": "lead", "label": "قائد الفريق — لم يوزّع الأدوار في العرض" },
+      { "id": "both", "label": "كلاهما — تواصل غير واضح" }
+    ]
+  },
+  {
+    "id": "ww-family-event",
+    "title": "نسيان مناسبة عائلية",
+    "category": "decision",
+    "sourceName": "سيناريو تعليمي",
+    "confidenceLevel": "medium",
+    "isVerified": false,
+    "isFictional": true,
+    "question": "نسي ابن عمّك مناسبة مهمة في العائلة لأنه كان مشغولًا في عمله، فاعتذر لاحقًا. والده غضب وطلب منه عذرًا أمام الجميع. مَن المخطئ؟",
+    "options": [
+      { "id": "son", "label": "الابن — قصور في إدارة الأولويات" },
+      { "id": "father", "label": "الأب — مبالغ في رد الفعل العلني" },
+      { "id": "neither", "label": "لا أحد — الاعتذار يكفي" }
     ]
   }
 ]

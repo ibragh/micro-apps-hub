@@ -161,7 +161,7 @@ export const hubApps: HubApp[] = [
     "category": "story",
     "engine": "scenario",
     "accent": "#7a3aa1",
-    "tier": 2
+    "tier": 1
   },
   {
     "slug": "who-is-wrong",
@@ -171,7 +171,7 @@ export const hubApps: HubApp[] = [
     "category": "decision",
     "engine": "voting",
     "accent": "#a14a2a",
-    "tier": 2
+    "tier": 1
   },
   {
     "slug": "consultant-test",
@@ -181,7 +181,7 @@ export const hubApps: HubApp[] = [
     "category": "decision",
     "engine": "decision",
     "accent": "#3a3a8f",
-    "tier": 2
+    "tier": 1
   },
   {
     "slug": "history-secrets",
@@ -211,7 +211,7 @@ export const hubApps: HubApp[] = [
     "category": "football",
     "engine": "decision",
     "accent": "#0b7d5f",
-    "tier": 2
+    "tier": 1
   },
   {
     "slug": "what-if",
@@ -221,7 +221,7 @@ export const hubApps: HubApp[] = [
     "category": "speculative",
     "engine": "scenario",
     "accent": "#7a3aa1",
-    "tier": 2
+    "tier": 1
   },
   {
     "slug": "thinking-compass",
@@ -231,7 +231,7 @@ export const hubApps: HubApp[] = [
     "category": "personality",
     "engine": "decision",
     "accent": "#2a4d8f",
-    "tier": 2
+    "tier": 1
   },
   {
     "slug": "impossible-choice",
@@ -241,7 +241,7 @@ export const hubApps: HubApp[] = [
     "category": "decision",
     "engine": "voting",
     "accent": "#b3261e",
-    "tier": 2
+    "tier": 1
   },
   {
     "slug": "odd-archive",
@@ -261,7 +261,7 @@ export const hubApps: HubApp[] = [
     "category": "reasoning",
     "engine": "clue",
     "accent": "#3a3a8f",
-    "tier": 2
+    "tier": 1
   },
   {
     "slug": "unknown-suspect",
@@ -271,7 +271,7 @@ export const hubApps: HubApp[] = [
     "category": "detective",
     "engine": "clue",
     "accent": "#5a3a6f",
-    "tier": 2
+    "tier": 1
   },
   {
     "slug": "wisdom-index",
@@ -281,7 +281,7 @@ export const hubApps: HubApp[] = [
     "category": "personality",
     "engine": "decision",
     "accent": "#0a5a4a",
-    "tier": 2
+    "tier": 1
   },
   {
     "slug": "diplomat-test",
@@ -291,7 +291,7 @@ export const hubApps: HubApp[] = [
     "category": "decision",
     "engine": "decision",
     "accent": "#2a4d8f",
-    "tier": 2
+    "tier": 1
   },
   {
     "slug": "saudi-mood-map",
@@ -301,7 +301,7 @@ export const hubApps: HubApp[] = [
     "category": "poll",
     "engine": "voting",
     "accent": "#0a6f3a",
-    "tier": 2
+    "tier": 1
   },
   {
     "slug": "national-memory",

@@ -151,6 +151,17 @@ img { max-width: 100%; height: auto; }
   align-items: center;
 }
 
+.mf-footer-actions {
+  display: inline-flex;
+  gap: var(--mf-space-4);
+  flex-wrap: wrap;
+}
+
+.mf-footer-link {
+  color: var(--mf-color-accent-strong);
+  font-weight: 600;
+}
+
 .mf-card {
   background: var(--mf-color-surface);
   border: 1px solid var(--mf-color-border);

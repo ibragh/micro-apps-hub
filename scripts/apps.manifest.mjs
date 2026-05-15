@@ -1,6 +1,8 @@
-// Canonical list of all 30 mini apps. Order matters — the first 10 are
-// the "production-quality" target per the brief. The rest ship as
-// functional skeletons with their content schema in place.
+// Canonical list of all 30 mini apps. As of Phase 4 all apps are
+// tier 1 (content layer authored to the standards in
+// docs/CONTENT_POLICY.md). The `tier` field is preserved on the
+// schema so that future apps can ship as skeletons (tier: 2) and be
+// promoted as content is filled in.
 //
 // engine values:
 //   quiz       — multiple-choice scoring
@@ -179,7 +181,7 @@ export const apps = [
     category: 'story',
     engine: 'scenario',
     accent: '#7a3aa1',
-    tier: 2,
+    tier: 1,
   },
   {
     slug: 'who-is-wrong',
@@ -190,7 +192,7 @@ export const apps = [
     category: 'decision',
     engine: 'voting',
     accent: '#a14a2a',
-    tier: 2,
+    tier: 1,
   },
   {
     slug: 'consultant-test',
@@ -201,7 +203,7 @@ export const apps = [
     category: 'decision',
     engine: 'decision',
     accent: '#3a3a8f',
-    tier: 2,
+    tier: 1,
   },
   {
     slug: 'history-secrets',
@@ -234,7 +236,7 @@ export const apps = [
     category: 'football',
     engine: 'decision',
     accent: '#0b7d5f',
-    tier: 2,
+    tier: 1,
   },
   {
     slug: 'what-if',
@@ -245,7 +247,7 @@ export const apps = [
     category: 'speculative',
     engine: 'scenario',
     accent: '#7a3aa1',
-    tier: 2,
+    tier: 1,
   },
   {
     slug: 'thinking-compass',
@@ -256,7 +258,7 @@ export const apps = [
     category: 'personality',
     engine: 'decision',
     accent: '#2a4d8f',
-    tier: 2,
+    tier: 1,
   },
   {
     slug: 'impossible-choice',
@@ -267,7 +269,7 @@ export const apps = [
     category: 'decision',
     engine: 'voting',
     accent: '#b3261e',
-    tier: 2,
+    tier: 1,
   },
   {
     slug: 'odd-archive',
@@ -289,7 +291,7 @@ export const apps = [
     category: 'reasoning',
     engine: 'clue',
     accent: '#3a3a8f',
-    tier: 2,
+    tier: 1,
   },
   {
     slug: 'unknown-suspect',
@@ -300,7 +302,7 @@ export const apps = [
     category: 'detective',
     engine: 'clue',
     accent: '#5a3a6f',
-    tier: 2,
+    tier: 1,
   },
   {
     slug: 'wisdom-index',
@@ -311,7 +313,7 @@ export const apps = [
     category: 'personality',
     engine: 'decision',
     accent: '#0a5a4a',
-    tier: 2,
+    tier: 1,
   },
   {
     slug: 'diplomat-test',
@@ -322,7 +324,7 @@ export const apps = [
     category: 'decision',
     engine: 'decision',
     accent: '#2a4d8f',
-    tier: 2,
+    tier: 1,
   },
   {
     slug: 'saudi-mood-map',
@@ -333,7 +335,7 @@ export const apps = [
     category: 'poll',
     engine: 'voting',
     accent: '#0a6f3a',
-    tier: 2,
+    tier: 1,
   },
   {
     slug: 'national-memory',
