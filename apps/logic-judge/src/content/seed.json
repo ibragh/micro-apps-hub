@@ -1,20 +1,116 @@
 [
   {
-    "id": "logic-judge-q1",
-    "title": "سؤال نموذج",
+    "id": "lj-q1",
+    "title": "هجوم على الشخص (Ad hominem)",
     "category": "critical-thinking",
-    "sourceName": "يُكمل لاحقًا",
-    "confidenceLevel": "low",
-    "isVerified": false,
-    "isFictional": true,
-    "question": "سؤال نموذج — يُستبدل بمحتوى موثق.",
+    "sourceName": "Stanford Encyclopedia of Philosophy — Fallacies",
+    "sourceUrl": "https://plato.stanford.edu/entries/fallacies/",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "«لا يمكن الوثوق برأيه في الاقتصاد لأنه فاشل في حياته الشخصية». ما المغالطة المنطقية هنا؟",
     "options": [
-      "أ",
-      "ب",
-      "ج",
-      "د"
+      "هجوم على الشخص (Ad hominem)",
+      "استدلال سليم",
+      "استدلال عاطفي",
+      "تعميم متسرّع"
     ],
     "correctIndex": 0,
-    "explanation": "هذا محتوى أولي."
+    "explanation": "الحُجَّة تهاجم صاحب الرأي بدلًا من الرأي نفسه، وهذا هو نمط «هجوم على الشخص»."
+  },
+  {
+    "id": "lj-q2",
+    "title": "تعميم متسرّع (Hasty generalization)",
+    "category": "critical-thinking",
+    "sourceName": "Stanford Encyclopedia of Philosophy — Fallacies",
+    "sourceUrl": "https://plato.stanford.edu/entries/fallacies/",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "«قابلت ثلاثة من سكان هذه المدينة وكانوا غير لطفاء، لذا فجميع سكانها غير لطفاء». المغالطة؟",
+    "options": [
+      "هجوم على الشخص",
+      "تعميم متسرّع",
+      "مغالطة الفزّاعة",
+      "حُجَّة سليمة"
+    ],
+    "correctIndex": 1,
+    "explanation": "تعميم استنتاج عام من عيّنة صغيرة جدًا = تعميم متسرّع."
+  },
+  {
+    "id": "lj-q3",
+    "title": "مغالطة الفزّاعة (Straw man)",
+    "category": "critical-thinking",
+    "sourceName": "Stanford Encyclopedia of Philosophy — Fallacies",
+    "sourceUrl": "https://plato.stanford.edu/entries/fallacies/",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "«المعارض يقول: نحتاج إلى تنظيم أفضل للسوق». فيردّ خصمه: «إذًا هو يريد إلغاء السوق الحر بالكامل!». ما المغالطة؟",
+    "options": [
+      "مغالطة الفزّاعة",
+      "حُجَّة قوية",
+      "هجوم على الشخص",
+      "نداء للسلطة"
+    ],
+    "correctIndex": 0,
+    "explanation": "إعادة صياغة موقف الخصم بصورة مبالغة أو مشوّهة ليسهل دحضه = مغالطة الفزّاعة."
+  },
+  {
+    "id": "lj-q4",
+    "title": "نداء للسلطة (Appeal to authority)",
+    "category": "critical-thinking",
+    "sourceName": "Stanford Encyclopedia of Philosophy — Fallacies",
+    "sourceUrl": "https://plato.stanford.edu/entries/fallacies/",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "«هذا الدواء ممتاز لأن ممثلًا شهيرًا يوصي به في إعلان». ما المغالطة؟",
+    "options": [
+      "نداء غير مشروع للسلطة",
+      "استدلال صحيح",
+      "تعميم متسرّع",
+      "مغالطة المنحدر الزلق"
+    ],
+    "correctIndex": 0,
+    "explanation": "الاستناد إلى «خبرة» ليست في تخصصها = نداء غير مشروع للسلطة."
+  },
+  {
+    "id": "lj-q5",
+    "title": "مغالطة المنحدر الزلق (Slippery slope)",
+    "category": "critical-thinking",
+    "sourceName": "Stanford Encyclopedia of Philosophy — Fallacies",
+    "sourceUrl": "https://plato.stanford.edu/entries/fallacies/",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "«إن سمحنا للطلاب باستخدام الآلة الحاسبة في الامتحان، فسينتهي بنا الأمر إلى أن يكتب الذكاء الاصطناعي امتحاناتهم بدلًا منهم». ما المغالطة؟",
+    "options": [
+      "مغالطة المنحدر الزلق",
+      "حُجَّة سليمة",
+      "تعميم متسرّع",
+      "هجوم على الشخص"
+    ],
+    "correctIndex": 0,
+    "explanation": "افتراض أن خطوة بسيطة ستؤدي حتمًا إلى سلسلة كارثية دون دليل = منحدر زلق."
+  },
+  {
+    "id": "lj-q6",
+    "title": "استدلال سليم",
+    "category": "critical-thinking",
+    "sourceName": "Stanford Encyclopedia of Philosophy — Logic and Argument",
+    "sourceUrl": "https://plato.stanford.edu/entries/logic-argumentation/",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "«جميع الثدييات تتنفس. الإنسان من الثدييات. إذًا الإنسان يتنفس». هل في هذا الاستدلال مغالطة؟",
+    "options": [
+      "نعم، تعميم متسرّع",
+      "نعم، استدلال عاطفي",
+      "لا، استدلال قياسي سليم",
+      "نعم، نداء للسلطة"
+    ],
+    "correctIndex": 2,
+    "explanation": "قياس استنباطي صحيح: لو كانت المقدمات صحيحة فالنتيجة تلزم منهما."
   }
 ]

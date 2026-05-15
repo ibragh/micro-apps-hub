@@ -16,6 +16,11 @@ const tier1 = [
   { slug: 'last-minute-decision', port: 4208 },
   { slug: 'knowledge-auction', port: 4209 },
   { slug: 'time-traveler', port: 4210 },
+  { slug: 'saudi-time-machine', port: 4211 },
+  { slug: 'national-memory', port: 4212 },
+  { slug: 'history-secrets', port: 4213 },
+  { slug: 'odd-archive', port: 4214 },
+  { slug: 'hub', port: 4220 },
 ];
 
 export default defineConfig({

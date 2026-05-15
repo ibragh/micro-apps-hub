@@ -1,23 +1,94 @@
 [
   {
-    "id": "in-his-place-s1",
-    "title": "مشهد نموذج",
-    "category": "history",
-    "sourceName": "افتراضي",
-    "confidenceLevel": "low",
-    "isVerified": false,
-    "isFictional": true,
-    "prompt": "مشهد افتراضي للتجربة.",
+    "id": "ihp-saladin-jerusalem",
+    "title": "صلاح الدين بعد فتح بيت المقدس (1187م)",
+    "category": "world-history",
+    "sourceName": "Encyclopedia Britannica — Saladin",
+    "sourceUrl": "https://www.britannica.com/biography/Saladin",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "prompt": "أنت في موضع السلطان صلاح الدين الأيوبي بعد فتح بيت المقدس عام 1187م. أمامك آلاف الأسرى من سكان المدينة، وضغط من بعض القادة لمعاملتهم بقسوة، وضغط من علماء آخرين لمنحهم خيار الفداء. ماذا تختار؟",
     "choices": [
       {
-        "id": "a",
-        "label": "مضي قُدمًا",
-        "consequence": "تستمر القصة."
+        "id": "ransom",
+        "label": "إعطاء الأسرى خيار الفداء بسعر معتدل والإفراج عن العاجزين.",
+        "consequence": "ما حدث فعلًا: قبل صلاح الدين فداء المقتدرين وأعفى كثيرًا من العاجزين، فترك انطباعًا تاريخيًا واسعًا.",
+        "style": "diplomatic"
       },
       {
-        "id": "b",
-        "label": "تراجع",
-        "consequence": "تنتهي القصة هنا."
+        "id": "punish",
+        "label": "معاملة قاسية ردًا على ما جرى عند الفتح الصليبي عام 1099م.",
+        "consequence": "ربح سياسي محلي قصير، لكنه يخلّ بمبدأ سعى صلاح الدين لتثبيته في سيرته كحاكم.",
+        "style": "bold"
+      },
+      {
+        "id": "delay",
+        "label": "تأجيل القرار وعقد شورى موسّعة قبل البتّ.",
+        "consequence": "سلامة من القرار المتسرّع لكن قد يُضعف هيبة القرار في لحظة فارقة.",
+        "style": "cautious"
+      }
+    ]
+  },
+  {
+    "id": "ihp-eisenhower-d-day",
+    "title": "أيزنهاور وإنزال نورماندي (1944م)",
+    "category": "world-history",
+    "sourceName": "Encyclopedia Britannica — D-Day",
+    "sourceUrl": "https://www.britannica.com/event/Normandy-Invasion",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "prompt": "أنت الجنرال أيزنهاور في يونيو 1944م، تنتظر نافذة طقس مناسبة لإنزال نورماندي. تقرير الأرصاد يتوقع تحسنًا قصيرًا في 6 يونيو، تليه عاصفة. التأجيل يعني تأخير المهمة أسبوعين. ماذا تقرر؟",
+    "choices": [
+      {
+        "id": "go",
+        "label": "إصدار أمر الإنزال يوم 6 يونيو رغم الطقس المتقلب.",
+        "consequence": "ما حدث فعلًا: أصدر أيزنهاور الأمر، ونجح الإنزال رغم الخسائر، وفُتحت الجبهة الغربية.",
+        "style": "bold"
+      },
+      {
+        "id": "delay",
+        "label": "تأجيل أسبوعين انتظارًا لطقس أكثر استقرارًا.",
+        "consequence": "زيادة فرصة كشف الخطة وفقدان المفاجأة الاستراتيجية.",
+        "style": "cautious"
+      },
+      {
+        "id": "split",
+        "label": "إرسال قوة استطلاعية أولًا وتأجيل الإنزال الرئيسي.",
+        "consequence": "محاولة تقليل المخاطرة، لكنها قد تكشف نوايا الحلفاء.",
+        "style": "strategic"
+      }
+    ]
+  },
+  {
+    "id": "ihp-faisal-1973",
+    "title": "الملك فيصل وحظر النفط (1973م)",
+    "category": "saudi-history",
+    "sourceName": "Encyclopedia Britannica — 1973 Oil Crisis",
+    "sourceUrl": "https://www.britannica.com/event/1973-oil-crisis",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "prompt": "أنت في موضع الملك فيصل عام 1973م خلال حرب أكتوبر. تتساءل: هل تُفعّل سلاح النفط لدعم الموقف العربي، أم تتجنّب أزمة اقتصادية عالمية؟",
+    "choices": [
+      {
+        "id": "embargo",
+        "label": "تطبيق حظر نفطي على دول داعمة.",
+        "consequence": "ما حدث فعلًا: أعلنت المملكة وعدد من الدول العربية الحظر، فارتفعت أسعار النفط وغيّر ذلك ميزان الطاقة العالمي.",
+        "style": "bold"
+      },
+      {
+        "id": "diplomacy",
+        "label": "ضغط دبلوماسي مكثف دون حظر.",
+        "consequence": "أثر سياسي أقل وضوحًا، لكن يقلل من الاضطراب الاقتصادي العالمي.",
+        "style": "diplomatic"
+      },
+      {
+        "id": "neutral",
+        "label": "اتخاذ موقف محايد.",
+        "consequence": "تجنب المواجهة لكنه يُضعف موقع المملكة في القضية الإقليمية.",
+        "style": "cautious"
       }
     ]
   }

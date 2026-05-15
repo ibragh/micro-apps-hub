@@ -121,7 +121,7 @@ export const hubApps: HubApp[] = [
     "category": "decision",
     "engine": "decision",
     "accent": "#0e7c66",
-    "tier": 2
+    "tier": 1
   },
   {
     "slug": "in-his-place",
@@ -131,7 +131,7 @@ export const hubApps: HubApp[] = [
     "category": "history",
     "engine": "scenario",
     "accent": "#2a4d8f",
-    "tier": 2
+    "tier": 1
   },
   {
     "slug": "logic-judge",
@@ -141,7 +141,7 @@ export const hubApps: HubApp[] = [
     "category": "critical-thinking",
     "engine": "quiz",
     "accent": "#0a5a4a",
-    "tier": 2
+    "tier": 1
   },
   {
     "slug": "saudi-time-machine",
@@ -201,7 +201,7 @@ export const hubApps: HubApp[] = [
     "category": "history",
     "engine": "quiz",
     "accent": "#0a6f3a",
-    "tier": 2
+    "tier": 1
   },
   {
     "slug": "matchday-coach",

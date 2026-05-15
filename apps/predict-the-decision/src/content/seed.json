@@ -1,20 +1,97 @@
 [
   {
-    "id": "predict-the-decision-q1",
-    "title": "سؤال نموذج",
-    "category": "history",
-    "sourceName": "يُكمل لاحقًا",
-    "confidenceLevel": "low",
-    "isVerified": false,
-    "isFictional": true,
-    "question": "سؤال نموذج — يُستبدل بمحتوى موثق.",
+    "id": "ptd-1969",
+    "title": "قرار هبوط أبولو 11",
+    "category": "world-history",
+    "sourceName": "NASA — Apollo 11 Mission",
+    "sourceUrl": "https://www.nasa.gov/mission/apollo-11/",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "عام 1969، عندما اقتربت مركبة أبولو 11 من سطح القمر، انخفض الوقود وظهرت إنذارات حاسوبية متعددة. ماذا اختار قائد المهمة نيل أرمسترونغ فعلًا؟",
     "options": [
-      "أ",
-      "ب",
-      "ج",
-      "د"
+      "إلغاء الهبوط والعودة إلى مدار القمر",
+      "تجاوز نظام الهبوط الآلي والهبوط يدويًا",
+      "تأجيل الهبوط إلى المدار التالي",
+      "الاتصال بهيوستن لطلب قرار جديد"
+    ],
+    "correctIndex": 1,
+    "explanation": "تجاوز أرمسترونغ نظام الهبوط الآلي وهبط يدويًا فوق منطقة أكثر أمانًا، وكانت كمية الوقود المتبقية حوالي 25 ثانية فقط."
+  },
+  {
+    "id": "ptd-1962-cuba",
+    "title": "أزمة الصواريخ الكوبية",
+    "category": "world-history",
+    "sourceName": "Encyclopedia Britannica — Cuban Missile Crisis",
+    "sourceUrl": "https://www.britannica.com/event/Cuban-missile-crisis",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "في أزمة الصواريخ الكوبية عام 1962، اقترح بعض المستشارين على الرئيس الأمريكي ضربة جوية على كوبا. ما القرار الذي اتُخذ فعلًا؟",
+    "options": [
+      "ضربة جوية فورية",
+      "غزو بري لكوبا",
+      "حصار بحري على كوبا مع مفاوضات",
+      "إعلان حرب على الاتحاد السوفيتي"
+    ],
+    "correctIndex": 2,
+    "explanation": "اختار الرئيس كينيدي «الحجر/الحصار البحري» على كوبا، مع مفاوضات سرية، فانتهت الأزمة دون مواجهة عسكرية."
+  },
+  {
+    "id": "ptd-2016-vision",
+    "title": "إطلاق رؤية المملكة 2030",
+    "category": "saudi-history",
+    "sourceName": "رؤية المملكة 2030 — الموقع الرسمي",
+    "sourceUrl": "https://www.vision2030.gov.sa/",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "في 2016م، أعلنت المملكة العربية السعودية رؤية تنويع الاقتصاد. ما اسم الإطار الرسمي الذي صدر؟",
+    "options": [
+      "خطة 2025",
+      "رؤية 2030",
+      "أهداف 2040",
+      "برنامج التنمية الخامس"
+    ],
+    "correctIndex": 1,
+    "explanation": "أُعلنت «رؤية المملكة 2030» في 25 أبريل 2016م كإطار شامل لتنويع الاقتصاد."
+  },
+  {
+    "id": "ptd-2010-derbiya",
+    "title": "تسجيل الدرعية ضمن قائمة اليونسكو",
+    "category": "saudi-history",
+    "sourceName": "UNESCO World Heritage Centre",
+    "sourceUrl": "https://whc.unesco.org/en/list/1329/",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "في 2010م، رشحت المملكة موقعًا تاريخيًا للانضمام إلى قائمة التراث العالمي. ما الموقع الذي قُبل؟",
+    "options": [
+      "حي الطريف في الدرعية",
+      "حي البلد في جدة",
+      "موقع الحجر (مدائن صالح)",
+      "واحة الأحساء"
     ],
     "correctIndex": 0,
-    "explanation": "هذا محتوى أولي."
+    "explanation": "أُدرج حي الطريف في الدرعية ضمن قائمة اليونسكو عام 2010م. (موقع الحِجر سُجّل قبله في 2008، وجدة في 2014، والأحساء في 2018.)"
+  },
+  {
+    "id": "ptd-1989-berlin",
+    "title": "سقوط جدار برلين",
+    "category": "world-history",
+    "sourceName": "Encyclopedia Britannica — Berlin Wall",
+    "sourceUrl": "https://www.britannica.com/topic/Berlin-Wall",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "في نوفمبر 1989م، أعلنت ألمانيا الشرقية تخفيف قيود السفر. ما الذي حدث فعلًا في الساعات التالية للإعلان؟",
+    "options": [
+      "تأجيل الإجراء أسبوعًا",
+      "توافد الناس على الجدار وفتح المعابر",
+      "إعلان الأحكام العرفية",
+      "تدخل عسكري سوفيتي"
+    ],
+    "correctIndex": 1,
+    "explanation": "أعلنت السلطات في 9 نوفمبر 1989م حرية السفر، فتوافد الآلاف على الجدار وأُجبرت الحدود على الفتح، وهو ما رسم نهاية الجدار."
   }
 ]
