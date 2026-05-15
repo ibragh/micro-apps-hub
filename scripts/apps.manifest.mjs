@@ -168,7 +168,7 @@ export const apps = [
     category: 'saudi-history',
     engine: 'timeline',
     accent: '#0a6f3a',
-    tier: 2,
+    tier: 1,
   },
   {
     slug: 'crossroads',
@@ -212,7 +212,7 @@ export const apps = [
     category: 'history',
     engine: 'timeline',
     accent: '#5a3a6f',
-    tier: 2,
+    tier: 1,
   },
   {
     slug: 'predict-the-decision',
@@ -278,7 +278,7 @@ export const apps = [
     category: 'general-knowledge',
     engine: 'timeline',
     accent: '#8a6a14',
-    tier: 2,
+    tier: 1,
   },
   {
     slug: 'missing-clue',
@@ -344,7 +344,7 @@ export const apps = [
     category: 'saudi-history',
     engine: 'quiz',
     accent: '#0b7d5f',
-    tier: 2,
+    tier: 1,
   },
 ];
 

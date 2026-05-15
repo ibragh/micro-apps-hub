@@ -59,31 +59,35 @@ pnpm build
 | last-minute-decision | قرار الدقيقة الأخيرة | Last-Minute Decision | decision | 1 |
 | knowledge-auction | مزاد المعرفة | Knowledge Auction | auction | 1 |
 | time-traveler | المسافر عبر الزمن | Time Traveler | scenario | 1 |
+| saudi-time-machine | آلة الزمن السعودية | Saudi Time Machine | timeline | 1 |
+| national-memory | الذاكرة الوطنية | National Memory | quiz | 1 |
+| history-secrets | أسرار التاريخ | History Secrets | timeline | 1 |
+| odd-archive | أرشيف الغرائب | Odd Archive | timeline | 1 |
 | decision-council | مجلس القرار | Decision Council | decision | 2 |
 | in-his-place | لو كنت مكانه | In His Place | scenario | 2 |
 | logic-judge | قاضي المنطق | Logic Judge | quiz | 2 |
-| saudi-time-machine | آلة الزمن السعودية | Saudi Time Machine | timeline | 2 |
 | crossroads | مفترق الطرق | Crossroads | scenario | 2 |
 | who-is-wrong | مين المخطئ؟ | Who Is Wrong? | voting | 2 |
 | consultant-test | اختبار المستشار | Consultant Test | decision | 2 |
-| history-secrets | أسرار التاريخ | History Secrets | timeline | 2 |
 | predict-the-decision | توقع القرار | Predict the Decision | quiz | 2 |
 | matchday-coach | مدرب الجولة | Matchday Coach | decision | 2 |
 | what-if | ماذا لو؟ | What If? | scenario | 2 |
 | thinking-compass | بوصلة التفكير | Thinking Compass | decision | 2 |
 | impossible-choice | القرار المستحيل | Impossible Choice | voting | 2 |
-| odd-archive | أرشيف الغرائب | Odd Archive | timeline | 2 |
 | missing-clue | الدليل الناقص | Missing Clue | clue | 2 |
 | unknown-suspect | المتهم المجهول | Unknown Suspect | clue | 2 |
 | wisdom-index | مؤشر الحكمة | Wisdom Index | decision | 2 |
 | diplomat-test | اختبار الدبلوماسي | Diplomat Test | decision | 2 |
 | saudi-mood-map | خريطة المزاج السعودي | Saudi Mood Map | voting | 2 |
-| national-memory | الذاكرة الوطنية | National Memory | quiz | 2 |
 
-**Tier 1** apps ship with hand-authored, sourced seed content and full
-test coverage. **Tier 2** apps ship as functional skeletons with the
-same engine and shell — the content layer is structured to receive
-verified items from `docs/CONTENT_POLICY.md` accepted sources.
+A landing **hub** lives at `apps/hub/` and lists every app with
+category filters; it deploys to the root domain and links each card to
+the per-slug subdomain.
+
+**Tier 1** apps (14) ship with hand-authored, sourced seed content and
+full test coverage. **Tier 2** apps (16) ship as functional skeletons
+with the same engine and shell — the content layer is structured to
+receive verified items from `docs/CONTENT_POLICY.md` accepted sources.
 
 ## Repo layout
 

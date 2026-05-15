@@ -1,20 +1,93 @@
 [
   {
-    "id": "national-memory-q1",
-    "title": "سؤال نموذج",
+    "id": "nm-q1",
+    "title": "أكبر واحة طبيعية في العالم",
     "category": "saudi-history",
-    "sourceName": "يُكمل لاحقًا",
-    "confidenceLevel": "low",
-    "isVerified": false,
-    "isFictional": true,
-    "question": "سؤال نموذج — يُستبدل بمحتوى موثق.",
-    "options": [
-      "أ",
-      "ب",
-      "ج",
-      "د"
-    ],
+    "sourceName": "UNESCO World Heritage Centre — Al-Ahsa Oasis",
+    "sourceUrl": "https://whc.unesco.org/en/list/1563/",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "أي مدينة سعودية تحتضن أكبر واحة نخيل طبيعية في العالم، وأُدرجت ضمن قائمة التراث العالمي لليونسكو عام 2018م؟",
+    "options": ["الأحساء", "مكة المكرمة", "تبوك", "جازان"],
     "correctIndex": 0,
-    "explanation": "هذا محتوى أولي."
+    "explanation": "واحة الأحساء تضم ملايين أشجار النخيل وأُدرجت في قائمة اليونسكو عام 2018م."
+  },
+  {
+    "id": "nm-q2",
+    "title": "العَلَم الوطني السعودي",
+    "category": "saudi-history",
+    "sourceName": "هيئة الترفيه — اليوم الوطني السعودي",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "ماذا يحمل العَلَم الوطني السعودي مكتوبًا في وسطه؟",
+    "options": [
+      "آية قرآنية",
+      "الشهادتان وسيف",
+      "اسم الملك المؤسس",
+      "تاريخ التوحيد"
+    ],
+    "correctIndex": 1,
+    "explanation": "يحمل العَلَم السعودي شهادة التوحيد «لا إله إلا الله محمد رسول الله» تعلوها سيف."
+  },
+  {
+    "id": "nm-q3",
+    "title": "الشعار الرسمي للمملكة",
+    "category": "saudi-history",
+    "sourceName": "وزارة الثقافة السعودية",
+    "sourceUrl": "https://moc.gov.sa/",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "ما الذي يظهر في الشعار الرسمي للمملكة العربية السعودية؟",
+    "options": [
+      "صقران متقابلان",
+      "نخلة وسيفان",
+      "هلال وقمر",
+      "أسد ونسر"
+    ],
+    "correctIndex": 1,
+    "explanation": "شعار المملكة العربية السعودية يتكوّن من نخلة فوق سيفين متقاطعين."
+  },
+  {
+    "id": "nm-q4",
+    "title": "اليوم الوطني السعودي",
+    "category": "saudi-history",
+    "sourceName": "هيئة الترفيه",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "في أي تاريخ ميلادي يُحتفل باليوم الوطني السعودي؟",
+    "options": ["1 يناير", "23 سبتمبر", "1 يوليو", "9 رمضان"],
+    "correctIndex": 1,
+    "explanation": "يصادف اليوم الوطني 23 سبتمبر، ذكرى إعلان توحيد المملكة عام 1932م."
+  },
+  {
+    "id": "nm-q5",
+    "title": "موقع تراثي عالمي في المملكة",
+    "category": "saudi-history",
+    "sourceName": "UNESCO — Hegra Archaeological Site (al-Hijr / Madā ͐in Sālih)",
+    "sourceUrl": "https://whc.unesco.org/en/list/1293/",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "ما أول موقع سعودي يُسجَّل في قائمة التراث العالمي لليونسكو؟",
+    "options": ["الدرعية", "الحجر (مدائن صالح)", "جدة التاريخية", "حائل"],
+    "correctIndex": 1,
+    "explanation": "أُدرج موقع الحجر (مدائن صالح) في 2008م كأول موقع سعودي ضمن قائمة اليونسكو."
+  },
+  {
+    "id": "nm-q6",
+    "title": "يوم التأسيس",
+    "category": "saudi-history",
+    "sourceName": "ديوان رئاسة مجلس الوزراء — قرار يوم التأسيس",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "ما تاريخ يوم التأسيس السعودي الذي أُقرّ ليكون يومًا رسميًا للمملكة؟",
+    "options": ["1 يناير", "22 فبراير", "23 سبتمبر", "11 نوفمبر"],
+    "correctIndex": 1,
+    "explanation": "يوم التأسيس هو 22 فبراير من كل عام، وهو ذكرى تأسيس الدولة السعودية الأولى عام 1727م على يد الإمام محمد بن سعود."
   }
 ]
