@@ -65,4 +65,20 @@ describe('scoreAuction', () => {
     expect(r.bank).toBe(20);
     expect(r.total).toBe(2);
   });
+
+  it('can go negative when wrong bids exceed right bids', () => {
+    const r = scoreAuction([
+      { questionId: 'q0', selectedIndex: 1, correctIndex: 0, elapsedMs: 0, bid: 80 },
+      { questionId: 'q1', selectedIndex: 1, correctIndex: 0, elapsedMs: 0, bid: 50 },
+      { questionId: 'q2', selectedIndex: 0, correctIndex: 0, elapsedMs: 0, bid: 30 },
+    ]);
+    expect(r.bank).toBe(-100);
+    expect(r.total).toBe(3);
+  });
+
+  it('returns bank=0 and total=0 for empty attempts', () => {
+    const r = scoreAuction([]);
+    expect(r.bank).toBe(0);
+    expect(r.total).toBe(0);
+  });
 });

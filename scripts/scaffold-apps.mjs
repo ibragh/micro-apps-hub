@@ -53,16 +53,16 @@ function packageJson(app) {
         '@testing-library/react': '^16.0.0',
         '@types/react': '^18.3.0',
         '@types/react-dom': '^18.3.0',
-        '@vitejs/plugin-react': '^4.3.0',
+        '@vitejs/plugin-react': '^4.7.0',
         jsdom: '^25.0.0',
         typescript: '^5.5.0',
-        vite: '^5.4.0',
-        vitest: '^2.1.0',
+        vite: '^6.4.2',
+        vitest: '^3.2.4',
       },
     },
     null,
     2,
-  );
+  ) + '\n';
 }
 
 function indexHtml(app) {
@@ -112,7 +112,7 @@ function tsConfig() {
     },
     null,
     2,
-  );
+  ) + '\n';
 }
 
 function vitestConfig() {
@@ -171,8 +171,12 @@ ReactDOM.createRoot(rootEl).render(
 }
 
 function publicHeaders() {
+  // CSP includes Plausible (plausible.io) on both script-src and connect-src
+  // so that opting analytics in via VITE_PLAUSIBLE_DOMAIN at build time does
+  // not require touching the headers. Plausible is the only third-party
+  // script we ship; nothing else is allowed.
   return `/*
-  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' https://plausible.io; frame-ancestors 'none';
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' https://plausible.io; frame-ancestors 'none';
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin

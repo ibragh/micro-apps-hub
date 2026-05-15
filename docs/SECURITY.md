@@ -52,7 +52,7 @@ These are enforced by ESLint config (`eslint.config.js`) and reviewed in PR:
 Each app's `public/_headers` sets:
 
 ```
-Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' https://plausible.io; frame-ancestors 'none';
+Content-Security-Policy: default-src 'self'; script-src 'self' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' https://plausible.io; frame-ancestors 'none';
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
 Referrer-Policy: strict-origin-when-cross-origin
@@ -62,6 +62,11 @@ Permissions-Policy: camera=(), microphone=(), geolocation=()
 `'unsafe-inline'` for styles is the only relaxation, scoped to styles
 only (React injects style attributes at runtime for some animations).
 This is acceptable because we ship no inline scripts.
+
+`https://plausible.io` is allowed on `script-src` and `connect-src`
+because that is the only third-party script we ever inject — and only
+when `VITE_PLAUSIBLE_DOMAIN` is set at build time (see
+`packages/analytics`). Nothing else is permitted.
 
 ---
 
