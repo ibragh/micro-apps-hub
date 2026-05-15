@@ -1,24 +1,32 @@
 [
   {
-    "id": "what-if-s1",
-    "title": "مشهد نموذج",
+    "id": "wi-no-printing-press",
+    "title": "ماذا لو لم تُخترع المطبعة؟",
     "category": "speculative",
-    "sourceName": "افتراضي",
+    "sourceName": "تمرين تخيّلي تعليمي (محتوى افتراضي صريح)",
     "confidenceLevel": "low",
     "isVerified": false,
     "isFictional": true,
-    "prompt": "مشهد افتراضي للتجربة.",
+    "prompt": "تخيّل عالمًا لم يخترع فيه يوهان غوتنبرغ المطبعة عام 1440م. ماذا تتوقّع؟",
     "choices": [
-      {
-        "id": "a",
-        "label": "مضي قُدمًا",
-        "consequence": "تستمر القصة."
-      },
-      {
-        "id": "b",
-        "label": "تراجع",
-        "consequence": "تنتهي القصة هنا."
-      }
+      { "id": "slow", "label": "انتشار العلم سيتأخر قرونًا.", "consequence": "سيناريو محتمل لكنه يُهمل بدائل مثل النساخين والوقفيات.", "style": "analytical" },
+      { "id": "alt", "label": "ستظهر تقنية بديلة أبطأ في غضون قرنين.", "consequence": "احتمال أكاديمي معتاد في «تاريخ بديل».", "style": "strategic" },
+      { "id": "same", "label": "لا فرق كبير في النهاية — العلم ينتشر بطرق أخرى.", "consequence": "رأي أقلية، يخالف معظم المؤرخين.", "style": "bold" }
+    ]
+  },
+  {
+    "id": "wi-mobile-late",
+    "title": "ماذا لو تأخر انتشار الهاتف الذكي عشر سنوات؟",
+    "category": "speculative",
+    "sourceName": "تمرين تخيّلي تعليمي",
+    "confidenceLevel": "low",
+    "isVerified": false,
+    "isFictional": true,
+    "prompt": "تخيّل أن أول هاتف ذكي ناجح ظهر في 2017 بدلًا من 2007. كيف يبدو عالم 2026؟",
+    "choices": [
+      { "id": "less-social", "label": "شبكات اجتماعية أبطأ نموًا وحياة أكثر هدوءًا.", "consequence": "سيناريو شائع لكن يُهمل بدائل البيئة الرقمية.", "style": "emotional" },
+      { "id": "leap", "label": "قفزة تقنية أعنف عند ظهور الهواتف لاحقًا.", "consequence": "ممكن — التراكم التقني قد يضاعف الأثر.", "style": "strategic" },
+      { "id": "same", "label": "نفس العالم تقريبًا — الإنترنت كافٍ.", "consequence": "رأي يقلّل من أثر التفاعل اللحظي بالهاتف.", "style": "analytical" }
     ]
   }
 ]

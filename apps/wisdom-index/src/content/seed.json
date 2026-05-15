@@ -1,26 +1,47 @@
 [
   {
-    "id": "wisdom-index-s1",
-    "title": "سيناريو نموذج",
+    "id": "wi-rumor",
+    "title": "إشاعة عن صديق",
     "category": "personality",
-    "sourceName": "افتراضي",
-    "confidenceLevel": "low",
+    "sourceName": "اختبار حكمة تعليمي",
+    "confidenceLevel": "medium",
     "isVerified": false,
     "isFictional": true,
-    "prompt": "موقف افتراضي للتجربة فقط.",
+    "prompt": "وصلتك إشاعة سيئة عن صديق مقرّب. ماذا تفعل أولًا؟",
     "choices": [
-      {
-        "id": "a",
-        "label": "الاختيار الحذر",
-        "consequence": "نتيجة الحذر.",
-        "style": "cautious"
-      },
-      {
-        "id": "b",
-        "label": "الاختيار الجريء",
-        "consequence": "نتيجة الجرأة.",
-        "style": "bold"
-      }
+      { "id": "verify", "label": "أتحقّق من المصدر بهدوء.", "consequence": "صبر + إنصاف = حكمة عالية.", "style": "analytical" },
+      { "id": "ask", "label": "أسأل صديقي مباشرة.", "consequence": "شجاعة ودبلوماسية.", "style": "diplomatic" },
+      { "id": "share", "label": "أشارك الإشاعة لأعرف رأي الآخرين.", "consequence": "أسلوب متسرّع، يُضعف مؤشر الحكمة.", "style": "emotional" }
+    ]
+  },
+  {
+    "id": "wi-anger",
+    "title": "غضب في لحظة عمل",
+    "category": "personality",
+    "sourceName": "اختبار حكمة تعليمي",
+    "confidenceLevel": "medium",
+    "isVerified": false,
+    "isFictional": true,
+    "prompt": "في اجتماع، أحدهم انتقد عملك علنًا بطريقة جارحة.",
+    "choices": [
+      { "id": "respond", "label": "أتوقّف لحظة وأرد بهدوء بعد التفكير.", "consequence": "ضبط نفس + وعي طويل المدى.", "style": "strategic" },
+      { "id": "wait", "label": "أرد لاحقًا في خصوصية.", "consequence": "حلم وحكمة.", "style": "diplomatic" },
+      { "id": "snap", "label": "أرد فورًا بنفس الحدّة.", "consequence": "ربح لحظي وخسارة طويلة الأمد.", "style": "bold" }
+    ]
+  },
+  {
+    "id": "wi-money",
+    "title": "مال إضافي",
+    "category": "personality",
+    "sourceName": "اختبار حكمة تعليمي",
+    "confidenceLevel": "medium",
+    "isVerified": false,
+    "isFictional": true,
+    "prompt": "حصلت على مبلغ غير متوقع. ماذا تختار؟",
+    "choices": [
+      { "id": "save", "label": "ادّخار 70% واستثمار البقية.", "consequence": "حكمة طويلة المدى.", "style": "strategic" },
+      { "id": "spend", "label": "تجربة استمتاع لمرة واحدة.", "consequence": "متعة آنية على حساب التراكم.", "style": "emotional" },
+      { "id": "give", "label": "تبرّع جزء منه.", "consequence": "نضج اجتماعي.", "style": "diplomatic" }
     ]
   }
 ]

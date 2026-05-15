@@ -1,26 +1,47 @@
 [
   {
-    "id": "diplomat-test-s1",
-    "title": "سيناريو نموذج",
-    "category": "decision",
-    "sourceName": "افتراضي",
-    "confidenceLevel": "low",
+    "id": "dt-public-statement",
+    "title": "تصريح حسّاس في الإعلام",
+    "category": "policy",
+    "sourceName": "محاكاة دبلوماسية تعليمية",
+    "confidenceLevel": "medium",
     "isVerified": false,
     "isFictional": true,
-    "prompt": "موقف افتراضي للتجربة فقط.",
+    "prompt": "في مقابلة، طُرح عليك سؤال يضع جهتك في موقف محرج. أمامك ثوانٍ للرد.",
     "choices": [
-      {
-        "id": "a",
-        "label": "الاختيار الحذر",
-        "consequence": "نتيجة الحذر.",
-        "style": "cautious"
-      },
-      {
-        "id": "b",
-        "label": "الاختيار الجريء",
-        "consequence": "نتيجة الجرأة.",
-        "style": "bold"
-      }
+      { "id": "reframe", "label": "أعيد صياغة السؤال نحو نقطة بنّاءة.", "consequence": "احتراف دبلوماسي.", "style": "diplomatic" },
+      { "id": "honest", "label": "أعترف بالموقف وأذكر خطوات معالجة.", "consequence": "شجاعة وصدق — قد يحظى بتقدير.", "style": "bold" },
+      { "id": "deflect", "label": "أتفادى الرد وأنتقل لموضوع آخر.", "consequence": "خيار شائع لكنه يفقد الثقة سريعًا.", "style": "cautious" }
+    ]
+  },
+  {
+    "id": "dt-team-tension",
+    "title": "توتر بين قائدَي قسم",
+    "category": "policy",
+    "sourceName": "محاكاة دبلوماسية تعليمية",
+    "confidenceLevel": "medium",
+    "isVerified": false,
+    "isFictional": true,
+    "prompt": "قائدا قسمين متعاونين على مشروع مشترك يختلفان علنًا. الإدارة تنتظر تدخّلك.",
+    "choices": [
+      { "id": "private", "label": "لقاء ثلاثي خاص قبل أي اتصال علني.", "consequence": "حفظ ماء الوجه واحتمال نجاح أعلى.", "style": "diplomatic" },
+      { "id": "memo", "label": "مذكّرة رسمية للطرفين بمبادئ التعاون.", "consequence": "وضوح إجرائي لكنه قد يبدو باردًا.", "style": "analytical" },
+      { "id": "replace", "label": "إعادة توزيع المهام بحيث لا يتقاطعان.", "consequence": "حلٌّ جذري قد يُربك المشروع.", "style": "bold" }
+    ]
+  },
+  {
+    "id": "dt-apology",
+    "title": "اعتذار رسمي",
+    "category": "policy",
+    "sourceName": "محاكاة دبلوماسية تعليمية",
+    "confidenceLevel": "medium",
+    "isVerified": false,
+    "isFictional": true,
+    "prompt": "وقع خطأ من جهتك وأثّر على شريك. شكل الاعتذار الأنسب؟",
+    "choices": [
+      { "id": "full", "label": "اعتذار صريح بتوضيح الخطأ وخطوات الإصلاح.", "consequence": "أعلى دبلوماسية وأكثر فاعلية.", "style": "diplomatic" },
+      { "id": "general", "label": "بيان عام يأسف للسوء فهم.", "consequence": "قد يُقرأ كتهرّب.", "style": "cautious" },
+      { "id": "silent", "label": "الانتظار حتى يبرد الموقف.", "consequence": "خسارة محتملة للعلاقة.", "style": "cautious" }
     ]
   }
 ]

@@ -1,26 +1,49 @@
 [
   {
-    "id": "thinking-compass-s1",
-    "title": "سيناريو نموذج",
+    "id": "tc-time-pressure",
+    "title": "قرار سريع تحت ضغط",
     "category": "personality",
-    "sourceName": "افتراضي",
-    "confidenceLevel": "low",
+    "sourceName": "اختبار شخصية تعليمي",
+    "confidenceLevel": "medium",
     "isVerified": false,
     "isFictional": true,
-    "prompt": "موقف افتراضي للتجربة فقط.",
+    "prompt": "لديك دقيقة لاتخاذ قرار غير قابل للتراجع. ماذا يقرّبك من أسلوبك الطبيعي؟",
     "choices": [
-      {
-        "id": "a",
-        "label": "الاختيار الحذر",
-        "consequence": "نتيجة الحذر.",
-        "style": "cautious"
-      },
-      {
-        "id": "b",
-        "label": "الاختيار الجريء",
-        "consequence": "نتيجة الجرأة.",
-        "style": "bold"
-      }
+      { "id": "data", "label": "أطلب أرقامًا سريعة قبل أي خطوة.", "consequence": "أسلوب تحليلي.", "style": "analytical" },
+      { "id": "gut", "label": "أعتمد على حدسي وأمضي.", "consequence": "أسلوب جريء.", "style": "bold" },
+      { "id": "ask", "label": "أتصل بشخص أثق برأيه.", "consequence": "أسلوب تشاوري دبلوماسي.", "style": "diplomatic" },
+      { "id": "delay", "label": "أبحث عن طريقة لتأخير القرار قليلًا.", "consequence": "أسلوب حذر.", "style": "cautious" }
+    ]
+  },
+  {
+    "id": "tc-team-disagreement",
+    "title": "خلاف في الفريق",
+    "category": "personality",
+    "sourceName": "اختبار شخصية تعليمي",
+    "confidenceLevel": "medium",
+    "isVerified": false,
+    "isFictional": true,
+    "prompt": "اجتماع وفريقك منقسم بحدة. كيف تتدخّل؟",
+    "choices": [
+      { "id": "mediate", "label": "أعيد صياغة آراء الطرفين بحياد.", "consequence": "أسلوب دبلوماسي.", "style": "diplomatic" },
+      { "id": "pick", "label": "أنحاز للأقوى منطقًا بسرعة.", "consequence": "أسلوب عملي.", "style": "practical" },
+      { "id": "vote", "label": "أطرحه للتصويت.", "consequence": "أسلوب تحليلي إجرائي.", "style": "analytical" },
+      { "id": "longview", "label": "أسأل: ما الأثر بعد سنة؟", "consequence": "أسلوب استراتيجي.", "style": "strategic" }
+    ]
+  },
+  {
+    "id": "tc-bad-news",
+    "title": "خبر سيئ",
+    "category": "personality",
+    "sourceName": "اختبار شخصية تعليمي",
+    "confidenceLevel": "medium",
+    "isVerified": false,
+    "isFictional": true,
+    "prompt": "وصلك خبر سيئ يخص مشروعًا تعمل عليه منذ شهور.",
+    "choices": [
+      { "id": "process", "label": "أحتاج وقتًا لاستيعابه قبل أي رد.", "consequence": "أسلوب عاطفي مدروس.", "style": "emotional" },
+      { "id": "fix", "label": "أبدأ فورًا بخطة لتقليل الضرر.", "consequence": "أسلوب عملي.", "style": "practical" },
+      { "id": "review", "label": "أعيد قراءة كل شيء بدقة قبل أي قرار.", "consequence": "أسلوب تحليلي.", "style": "analytical" }
     ]
   }
 ]

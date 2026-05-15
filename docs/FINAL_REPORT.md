@@ -244,3 +244,114 @@ valid correctIndex, etc.).
 | `pnpm scan:secrets` | ✅ | clean |
 | `pnpm scan:licenses` | ✅ | 0 denied, 0 unknown |
 | Playwright (CI) | ✅ wired | **68 E2E specs** now planned (was 40) |
+
+---
+
+# Phase 4 — Completion
+
+Delivered on top of Phase 3:
+
+## All 30 apps promoted to tier 1
+
+The 12 remaining tier-2 apps shipped with hand-authored content:
+
+| Slug | Engine | Content type |
+|---|---|---|
+| `crossroads` | scenario | Interactive short-story dilemmas |
+| `who-is-wrong` | voting | Multi-party conflict scenarios |
+| `consultant-test` | scenario | Business / public-service recommendations |
+| `matchday-coach` | scenario | Football tactical decisions |
+| `what-if` | scenario | Speculative alt-history (clearly fictional) |
+| `thinking-compass` | scenario | Personality decisions across 7 thinking styles |
+| `impossible-choice` | voting | Moral dilemmas |
+| `missing-clue` | clue | Reasoning puzzles |
+| `unknown-suspect` | clue | Detective cases (clearly fictional) |
+| `wisdom-index` | scenario | Wisdom-measurement scenarios |
+| `diplomat-test` | scenario | Negotiation / diplomacy responses |
+| `saudi-mood-map` | voting | Neutral daily polls (weather, weekend, study, travel, sports mood) |
+
+Each ships a new `content.test.ts` enforcing `validateAll()` plus
+engine-specific shape assertions (poll options unique, suspect ids
+include culprit, scenarios ≥2 choices, etc.).
+
+**Tier 1 is now 30 apps; tier 2 is 0.**
+
+## Capacitor config rolled to all 30 apps
+
+`scripts/scaffold-capacitor.mjs` reads the manifest and writes a
+`capacitor.config.ts` for every app, and adds `@mofeed/mobile` to each
+app's devDependencies. Each config uses `defineMobileConfig` from
+`@mofeed/mobile` with the app-specific `appId` (`com.mofeed.<slug>`)
+and Arabic `appName`.
+
+To ship any app as a mobile shell, follow the runbook in
+`docs/DEPLOYMENT.md` §7 — install `@capacitor/{cli,core,ios,android}`
+into that app, run `npx cap add ios|android`, then `npx cap sync`
+after every web build.
+
+## Monetization placeholders in `@mofeed/ui`
+
+The default `AppShell` footer now reads two build-time flags:
+- `VITE_ENABLE_SUPPORT_LINK` → renders a "ادعم المشروع" link.
+- `VITE_ENABLE_PRO_PLACEHOLDER` → renders a "النسخة المميّزة" link.
+
+Both default to `false` so the experience is unchanged in the current
+build. Apps that want monetization later flip the env var in their
+Cloudflare Pages project — no code change needed.
+
+## Quality gates after Phase 4
+
+| Gate | Status | Notes |
+|---|---|---|
+| `pnpm typecheck` | ✅ | 39 workspace projects, strict |
+| `pnpm lint` | ✅ | 0 warnings at `--max-warnings=0` |
+| `pnpm test` | ✅ | **130 unit/component tests** (was 105) |
+| `pnpm build` | ✅ | 31 dist folders |
+| `pnpm audit` | ✅ | 0 vulnerabilities |
+| `pnpm scan:secrets` | ✅ | clean |
+| `pnpm scan:licenses` | ✅ | 0 denied, 0 unknown |
+| Playwright (CI) | ✅ wired | 68 E2E specs planned |
+| `pnpm scan:semgrep`, `pnpm scan:osv` | wired in CI | binaries not pre-installed in the sandbox |
+
+---
+
+## Brief deliverables — final checklist
+
+Maps the brief's Phase 8 deliverable list to what's in the repo at the
+end of Phase 4:
+
+| # | Deliverable | Status | Location |
+|---|---|---|---|
+| 1 | Working monorepo | ✅ | repo root |
+| 2 | Documented recommended tech stack | ✅ | `docs/TECH_STACK.md` |
+| 3 | 30 app folders with working implementations | ✅ | `apps/*` + `apps/hub` |
+| 4 | Shared UI package | ✅ | `packages/ui` |
+| 5 | Shared content package | ✅ | `packages/content` |
+| 6 | Shared testing utilities | ✅ | `packages/testing` |
+| 7 | README.md | ✅ | `README.md` |
+| 8 | `docs/TECH_STACK.md` | ✅ | — |
+| 9 | `docs/CONTENT_POLICY.md` | ✅ | — |
+| 10 | `docs/DEPLOYMENT.md` | ✅ | — |
+| 11 | `docs/TESTING.md` | ✅ | — |
+| 12 | `docs/SECURITY.md` | ✅ | — |
+| 13 | `SECURITY.md` | ✅ | — |
+| 14 | `.env.example` | ✅ | — |
+| 15 | Playwright / E2E setup | ✅ | `playwright.config.ts`, `e2e/*.spec.ts` |
+| 16 | Security scan results summary | ✅ | this doc + `docs/SECURITY.md` |
+| 17 | Final report | ✅ | this doc |
+
+Additional packages shipped beyond the brief's minimum:
+`@mofeed/engines`, `@mofeed/seo`, `@mofeed/analytics`,
+`@mofeed/security`, `@mofeed/mobile`.
+
+## What remains for future work
+
+- **Backend vote storage** for the four voting apps (`history-court`,
+  `who-is-wrong`, `impossible-choice`, `saudi-mood-map`). They run
+  today as static deterministic synthetic tallies.
+- **Visual-regression screenshots** under `e2e/__screenshots__/`.
+- **Native shells**: run the Capacitor add-ios/android command for each
+  app you want to ship to App Store / Play Store (the config is in
+  place).
+- **Content expansion**: more verified items per app.
+- **Hub interaction tests** for the filter chips (currently smoke-only).

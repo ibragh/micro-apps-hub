@@ -67,18 +67,18 @@ pnpm build
 | predict-the-decision | توقع القرار | Predict the Decision | quiz | 1 |
 | decision-council | مجلس القرار | Decision Council | decision | 1 |
 | in-his-place | لو كنت مكانه | In His Place | scenario | 1 |
-| crossroads | مفترق الطرق | Crossroads | scenario | 2 |
-| who-is-wrong | مين المخطئ؟ | Who Is Wrong? | voting | 2 |
-| consultant-test | اختبار المستشار | Consultant Test | decision | 2 |
-| matchday-coach | مدرب الجولة | Matchday Coach | decision | 2 |
-| what-if | ماذا لو؟ | What If? | scenario | 2 |
-| thinking-compass | بوصلة التفكير | Thinking Compass | decision | 2 |
-| impossible-choice | القرار المستحيل | Impossible Choice | voting | 2 |
-| missing-clue | الدليل الناقص | Missing Clue | clue | 2 |
-| unknown-suspect | المتهم المجهول | Unknown Suspect | clue | 2 |
-| wisdom-index | مؤشر الحكمة | Wisdom Index | decision | 2 |
-| diplomat-test | اختبار الدبلوماسي | Diplomat Test | decision | 2 |
-| saudi-mood-map | خريطة المزاج السعودي | Saudi Mood Map | voting | 2 |
+| crossroads | مفترق الطرق | Crossroads | scenario | 1 |
+| who-is-wrong | مين المخطئ؟ | Who Is Wrong? | voting | 1 |
+| consultant-test | اختبار المستشار | Consultant Test | decision | 1 |
+| matchday-coach | مدرب الجولة | Matchday Coach | decision | 1 |
+| what-if | ماذا لو؟ | What If? | scenario | 1 |
+| thinking-compass | بوصلة التفكير | Thinking Compass | decision | 1 |
+| impossible-choice | القرار المستحيل | Impossible Choice | voting | 1 |
+| missing-clue | الدليل الناقص | Missing Clue | clue | 1 |
+| unknown-suspect | المتهم المجهول | Unknown Suspect | clue | 1 |
+| wisdom-index | مؤشر الحكمة | Wisdom Index | decision | 1 |
+| diplomat-test | اختبار الدبلوماسي | Diplomat Test | decision | 1 |
+| saudi-mood-map | خريطة المزاج السعودي | Saudi Mood Map | voting | 1 |
 
 A landing **hub** lives at `apps/hub/` and lists every app with
 category filters; it deploys to the root domain and links each card to
@@ -89,11 +89,19 @@ the per-slug subdomain.
 proof-of-concept. See `docs/DEPLOYMENT.md` §7 for the per-app native
 build runbook.
 
-**Tier 1** apps (18) ship with hand-authored, sourced (or
-clearly-flagged simulation) content and full test coverage.
-**Tier 2** apps (12) ship as functional skeletons with the same
-engine and shell — the content layer is structured to receive
-verified items from `docs/CONTENT_POLICY.md` accepted sources.
+**All 30 apps are tier 1** as of Phase 4: each ships with
+hand-authored content, a content-validation test, a generated
+Capacitor config, and full smoke-test coverage. The `tier` field is
+preserved on the manifest schema so future apps can ship as `tier: 2`
+skeletons and be promoted later.
+
+Factual quizzes (`seerah-quiz`, `today-history`, `saudi-history-quiz`,
+`knowledge-auction`, `predict-the-decision`, `national-memory`,
+`history-secrets`, `odd-archive`, `logic-judge`, `saudi-time-machine`)
+ship sourced, non-fictional content per `docs/CONTENT_POLICY.md`.
+Scenario / decision / clue / poll apps ship `isFictional: true`
+simulations clearly marked in the UI via the shared `SourceLine`
+component.
 
 ## Repo layout
 

@@ -1,24 +1,47 @@
 [
   {
-    "id": "crossroads-s1",
-    "title": "مشهد نموذج",
+    "id": "cr-job-offer",
+    "title": "عرض عمل في مدينة جديدة",
     "category": "story",
-    "sourceName": "افتراضي",
-    "confidenceLevel": "low",
+    "sourceName": "قصة تفاعلية أصلية لأغراض تعليمية",
+    "confidenceLevel": "medium",
     "isVerified": false,
     "isFictional": true,
-    "prompt": "مشهد افتراضي للتجربة.",
+    "prompt": "وصلك عرض عمل جذّاب براتب أعلى في مدينة بعيدة عن عائلتك. لديك بضع ساعات للرد. ماذا تختار؟",
     "choices": [
-      {
-        "id": "a",
-        "label": "مضي قُدمًا",
-        "consequence": "تستمر القصة."
-      },
-      {
-        "id": "b",
-        "label": "تراجع",
-        "consequence": "تنتهي القصة هنا."
-      }
+      { "id": "accept", "label": "أقبل العرض وأنتقل.", "consequence": "نمو مهني سريع، لكنك تواجه عزلة في الأشهر الأولى.", "style": "bold" },
+      { "id": "decline", "label": "أرفض وأبقى قريبًا من العائلة.", "consequence": "استقرار نفسي عالٍ، لكن قد تفوّت فرصة نادرة.", "style": "cautious" },
+      { "id": "negotiate", "label": "أطلب مهلة وأتفاوض على عمل عن بُعد.", "consequence": "حلٌّ خلّاق، لكنه يتوقف على مرونة جهة العمل.", "style": "strategic" }
+    ]
+  },
+  {
+    "id": "cr-friend-secret",
+    "title": "سرّ صديق",
+    "category": "story",
+    "sourceName": "قصة تفاعلية أصلية",
+    "confidenceLevel": "medium",
+    "isVerified": false,
+    "isFictional": true,
+    "prompt": "صديقك المقرّب أفشى لك سرًّا يضرّ بشخص ثالث تعرفه. ماذا تفعل؟",
+    "choices": [
+      { "id": "tell", "label": "أُحذّر الطرف الثالث.", "consequence": "تحمي شخصًا لكنك قد تخسر ثقة صديقك.", "style": "bold" },
+      { "id": "advise", "label": "أنصح صديقي بأن يصلح الأمر بنفسه.", "consequence": "قرار وسط؛ يتطلب متابعة.", "style": "diplomatic" },
+      { "id": "silent", "label": "ألتزم الصمت احترامًا للأمانة.", "consequence": "تحفظ السرّ، لكن المسؤولية الأخلاقية تظل ثقيلة.", "style": "cautious" }
+    ]
+  },
+  {
+    "id": "cr-study-night",
+    "title": "ليلة الامتحان",
+    "category": "story",
+    "sourceName": "قصة تفاعلية أصلية",
+    "confidenceLevel": "medium",
+    "isVerified": false,
+    "isFictional": true,
+    "prompt": "أمامك امتحان غدًا، صديقك يدعوك لمناسبة عائلية مهمة في الوقت نفسه. ماذا تختار؟",
+    "choices": [
+      { "id": "study", "label": "أعتذر وأكمل المذاكرة.", "consequence": "نتيجة أفضل لكن إحراج اجتماعي.", "style": "analytical" },
+      { "id": "go", "label": "أحضر المناسبة وأذاكر قليلًا بعدها.", "consequence": "علاقة محفوظة، لكن مخاطرة على الامتحان.", "style": "emotional" },
+      { "id": "split", "label": "أحضر ساعة واحدة وأعتذر باكرًا.", "consequence": "حل وسط يبقى محل تقدير الطرفين.", "style": "diplomatic" }
     ]
   }
 ]

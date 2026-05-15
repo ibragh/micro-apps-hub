@@ -17,6 +17,15 @@ describe('AppShell', () => {
     expect(screen.getByText('محتوى')).toBeInTheDocument();
     expect(screen.getByText('تجاوز إلى المحتوى')).toBeInTheDocument();
   });
+
+  it('hides monetization placeholders by default', () => {
+    render(
+      <AppShell titleAr="عنوان">
+        <p>محتوى</p>
+      </AppShell>,
+    );
+    expect(screen.queryByTestId('footer-actions')).not.toBeInTheDocument();
+  });
 });
 
 describe('Button', () => {

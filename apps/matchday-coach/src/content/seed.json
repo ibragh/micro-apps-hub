@@ -1,26 +1,47 @@
 [
   {
-    "id": "matchday-coach-s1",
-    "title": "سيناريو نموذج",
+    "id": "mc-defender-injury",
+    "title": "إصابة مدافع مبكرة",
     "category": "football",
-    "sourceName": "افتراضي",
-    "confidenceLevel": "low",
+    "sourceName": "محاكاة كرة قدم تعليمية",
+    "confidenceLevel": "medium",
     "isVerified": false,
     "isFictional": true,
-    "prompt": "موقف افتراضي للتجربة فقط.",
+    "prompt": "الدقيقة 12، مدافعك الرئيسي يطلب التبديل بإصابة. لديك ثلاثة تبديلات متاحة.",
     "choices": [
-      {
-        "id": "a",
-        "label": "الاختيار الحذر",
-        "consequence": "نتيجة الحذر.",
-        "style": "cautious"
-      },
-      {
-        "id": "b",
-        "label": "الاختيار الجريء",
-        "consequence": "نتيجة الجرأة.",
-        "style": "bold"
-      }
+      { "id": "like-for-like", "label": "تبديل بمدافع مماثل من الدكة.", "consequence": "حلٌّ آمن وحفاظ على البنية التكتيكية.", "style": "practical" },
+      { "id": "tactical", "label": "تغيير النظام إلى 3 مدافعين.", "consequence": "ادخار تبديل لاحقًا، لكن إرباك تكتيكي مبكر.", "style": "bold" },
+      { "id": "wait", "label": "إكماله بضع دقائق لمراقبة الإصابة.", "consequence": "مخاطرة بإصابة أعمق.", "style": "cautious" }
+    ]
+  },
+  {
+    "id": "mc-down-by-one",
+    "title": "متأخر بهدف الدقيقة 75",
+    "category": "football",
+    "sourceName": "محاكاة كرة قدم تعليمية",
+    "confidenceLevel": "medium",
+    "isVerified": false,
+    "isFictional": true,
+    "prompt": "متأخر 0-1 في الدقيقة 75. أمامك تبديلان.",
+    "choices": [
+      { "id": "striker", "label": "إدخال مهاجم ثانٍ وتغيير الخطة هجوميًا.", "consequence": "زيادة الضغط لكن الخلف مكشوف للهجمات المرتدة.", "style": "bold" },
+      { "id": "midfield", "label": "تعزيز الوسط ببديل مبدع.", "consequence": "سيطرة أكبر على الكرة دون مخاطرة دفاعية حادّة.", "style": "strategic" },
+      { "id": "winger", "label": "إدخال جناح سريع.", "consequence": "خيار متوازن لخلق فرص من الأطراف.", "style": "practical" }
+    ]
+  },
+  {
+    "id": "mc-red-card",
+    "title": "بطاقة حمراء في وقت مبكر",
+    "category": "football",
+    "sourceName": "محاكاة كرة قدم تعليمية",
+    "confidenceLevel": "medium",
+    "isVerified": false,
+    "isFictional": true,
+    "prompt": "الدقيقة 20، طُرد لاعبك ولا يزال الفريق 0-0.",
+    "choices": [
+      { "id": "defensive", "label": "تحوّل لخطة دفاعية وانتظار الفرص المرتدة.", "consequence": "تقليل الخسائر؛ خيار شائع وعقلاني.", "style": "cautious" },
+      { "id": "balanced", "label": "الإبقاء على الخطة الحالية مع تعديلات بسيطة.", "consequence": "مخاطرة محسوبة قد تنجح ضد فريق غير مستعد.", "style": "analytical" },
+      { "id": "aggressive", "label": "هجوم مبكر للاستفادة من المفاجأة قبل أن يتأقلم الخصم.", "consequence": "نجاح نادر لكنه ممكن بفرق بدنيًا جاهزة.", "style": "bold" }
     ]
   }
 ]

@@ -47,6 +47,10 @@ For each app (one-time per slug):
      - `NODE_VERSION` = `20`
      - `VITE_SITE_ORIGIN` = `https://<slug>.mofeed-mini-apps.example`
      - Optional: `VITE_PLAUSIBLE_DOMAIN` per app
+     - Optional: `VITE_ENABLE_SUPPORT_LINK=true` to surface a "ادعم
+       المشروع" footer link (Phase 4 placeholder).
+     - Optional: `VITE_ENABLE_PRO_PLACEHOLDER=true` to surface a
+       "النسخة المميّزة" footer link.
 5. Save and deploy.
 
 ### Custom domains
