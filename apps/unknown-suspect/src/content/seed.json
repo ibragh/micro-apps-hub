@@ -1,0 +1,35 @@
+[
+  {
+    "id": "unknown-suspect-c1",
+    "title": "قضية افتراضية",
+    "category": "detective",
+    "sourceName": "افتراضي",
+    "confidenceLevel": "low",
+    "isVerified": false,
+    "isFictional": true,
+    "scenario": "قضية افتراضية لأغراض العرض فقط.",
+    "suspects": [
+      {
+        "id": "s1",
+        "name": "المشتبه الأول",
+        "profile": "وصف موجز."
+      },
+      {
+        "id": "s2",
+        "name": "المشتبه الثاني",
+        "profile": "وصف موجز."
+      },
+      {
+        "id": "s3",
+        "name": "المشتبه الثالث",
+        "profile": "وصف موجز."
+      }
+    ],
+    "clues": [
+      "دليل مبدئي.",
+      "دليل ثانٍ.",
+      "دليل ثالث."
+    ],
+    "culpritId": "s2"
+  }
+]

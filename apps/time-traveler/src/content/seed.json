@@ -1,0 +1,34 @@
+[
+  {
+    "id": "tt-1",
+    "title": "تاجر في بغداد العباسية",
+    "category": "world-history",
+    "sourceName": "Encyclopedia Britannica — Abbasid Caliphate",
+    "sourceUrl": "https://www.britannica.com/topic/Abbasid-dynasty",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "prompt": "أنت تاجر في بغداد القرن التاسع الميلادي خلال أوج الدولة العباسية. وصلت قافلتك بثلاث بضائع: كتب مخطوطة، توابل، أقمشة حريرية. أي منها تركز عليه؟",
+    "choices": [
+      { "id": "a", "label": "الكتب — بيت الحكمة في أوجه والطلب على المخطوطات قياسي.", "consequence": "مع ازدهار حركة الترجمة والعلوم، الكتب سلعة عالية القيمة وقتها.", "style": "analytical" },
+      { "id": "b", "label": "التوابل — طريق التجارة الشرقية يدر أرباحًا ثابتة.", "consequence": "سوق راسخ وأرباح موثوقة، لكنه مزدحم بالمنافسين.", "style": "practical" },
+      { "id": "c", "label": "الحرير — مادة فاخرة لطبقة معينة.", "consequence": "هامش ربح عالٍ لكنه يعتمد على عملاء محددين.", "style": "bold" }
+    ]
+  },
+  {
+    "id": "tt-2",
+    "title": "حرفي في الأندلس",
+    "category": "world-history",
+    "sourceName": "Encyclopedia Britannica — Umayyad Caliphate of Córdoba",
+    "sourceUrl": "https://www.britannica.com/place/Spain/Muslim-Spain",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "prompt": "أنت حرفي في قرطبة في القرن العاشر، عاصمة الخلافة الأموية الأندلسية. أمامك ثلاث ورشات للعمل. أيها تختار؟",
+    "choices": [
+      { "id": "a", "label": "ورشة الجلديات لصناعة الكتب والأغلفة.", "consequence": "قرطبة مركز كتب كبير، طلب مستقر.", "style": "practical" },
+      { "id": "b", "label": "ورشة الفخار للأسواق الفاخرة.", "consequence": "ربح عالٍ، لكن يعتمد على ذائقة طبقة معينة.", "style": "bold" },
+      { "id": "c", "label": "ورشة المعادن والأسلحة.", "consequence": "متعة الحرفة، لكن قد يتقلب الطلب مع الأحداث السياسية.", "style": "strategic" }
+    ]
+  }
+]

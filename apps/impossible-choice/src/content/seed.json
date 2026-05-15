@@ -1,0 +1,22 @@
+[
+  {
+    "id": "impossible-choice-v1",
+    "title": "سؤال للتصويت",
+    "category": "decision",
+    "sourceName": "افتراضي",
+    "confidenceLevel": "low",
+    "isVerified": false,
+    "isFictional": true,
+    "question": "سؤال نموذج — ما رأيك؟",
+    "options": [
+      {
+        "id": "yes",
+        "label": "نعم"
+      },
+      {
+        "id": "no",
+        "label": "لا"
+      }
+    ]
+  }
+]

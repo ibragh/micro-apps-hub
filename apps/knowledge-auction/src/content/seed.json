@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ka-1",
+    "title": "أكبر صحراء في العالم",
+    "category": "general-knowledge",
+    "sourceName": "Encyclopedia Britannica — Antarctic Desert",
+    "sourceUrl": "https://www.britannica.com/place/Antarctica",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "ما أكبر صحراء في العالم من حيث المساحة؟",
+    "options": ["الصحراء الكبرى", "صحراء أنتاركتيكا", "صحراء غوبي", "الربع الخالي"],
+    "correctIndex": 1,
+    "explanation": "أنتاركتيكا تُعدّ صحراء قطبية وهي الأكبر مساحةً."
+  },
+  {
+    "id": "ka-2",
+    "title": "أعلى قمة في العالم",
+    "category": "general-knowledge",
+    "sourceName": "Encyclopedia Britannica — Mount Everest",
+    "sourceUrl": "https://www.britannica.com/place/Mount-Everest",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "ما أعلى قمة جبلية على سطح الأرض فوق مستوى البحر؟",
+    "options": ["كلمنجارو", "إيفرست", "كي 2", "أكونكاغوا"],
+    "correctIndex": 1,
+    "explanation": "قمة إيفرست (8848م) هي الأعلى."
+  },
+  {
+    "id": "ka-3",
+    "title": "كاتب الإلياذة",
+    "category": "general-knowledge",
+    "sourceName": "Stanford Encyclopedia of Philosophy",
+    "sourceUrl": "https://plato.stanford.edu/entries/homer/",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "من يُنسب إليه تأليف ملحمتي «الإلياذة» و«الأوديسة»؟",
+    "options": ["أرسطو", "هوميروس", "أفلاطون", "هيرودوت"],
+    "correctIndex": 1,
+    "explanation": "تُنسب الملحمتان تقليديًا إلى هوميروس."
+  }
+]

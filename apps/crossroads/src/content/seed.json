@@ -1,0 +1,24 @@
+[
+  {
+    "id": "crossroads-s1",
+    "title": "مشهد نموذج",
+    "category": "story",
+    "sourceName": "افتراضي",
+    "confidenceLevel": "low",
+    "isVerified": false,
+    "isFictional": true,
+    "prompt": "مشهد افتراضي للتجربة.",
+    "choices": [
+      {
+        "id": "a",
+        "label": "مضي قُدمًا",
+        "consequence": "تستمر القصة."
+      },
+      {
+        "id": "b",
+        "label": "تراجع",
+        "consequence": "تنتهي القصة هنا."
+      }
+    ]
+  }
+]

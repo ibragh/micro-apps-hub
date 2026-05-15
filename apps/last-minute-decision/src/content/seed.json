@@ -1,0 +1,34 @@
+[
+  {
+    "id": "lmd-1",
+    "title": "اجتماع طارئ",
+    "category": "work-life",
+    "sourceName": "محاكاة قرار تعليمية",
+    "confidenceLevel": "medium",
+    "isVerified": false,
+    "isFictional": true,
+    "prompt": "بعد دقيقتين من اجتماع مهم، وصلتك رسالة عاجلة من فريق آخر يحتاج قرارًا فوريًا. ماذا تفعل؟",
+    "choices": [
+      { "id": "a", "label": "أنهي الاجتماع باختصار ثم أُعالج العاجل.", "consequence": "حل وسط، لكنه قد يبدو متعجلًا.", "style": "practical" },
+      { "id": "b", "label": "أرسل ردًّا سريعًا أثناء الاجتماع.", "consequence": "كفاءة عالية، لكن مخاطرة بانخفاض جودة الردّ.", "style": "bold" },
+      { "id": "c", "label": "أؤجل العاجل بضع دقائق وأكمل الاجتماع.", "consequence": "احترام للالتزام الحالي، مع تأخير محتمل للأزمة.", "style": "cautious" },
+      { "id": "d", "label": "أُفوّض قرارًا مؤقتًا للفريق.", "consequence": "ثقة في الفريق، لكنه قد لا يكون مستعدًا.", "style": "strategic" }
+    ]
+  },
+  {
+    "id": "lmd-2",
+    "title": "إصابة لاعب قبل المباراة",
+    "category": "sports",
+    "sourceName": "محاكاة قرار تعليمية",
+    "confidenceLevel": "medium",
+    "isVerified": false,
+    "isFictional": true,
+    "prompt": "قبل عشر دقائق من انطلاق المباراة، شعر اللاعب الأساسي بإصابة طفيفة. الطبيب يقول: «يلعب على مسؤوليتك».",
+    "choices": [
+      { "id": "a", "label": "تثق به وتلعبه أساسيًا.", "consequence": "قد يتفوق، أو تخسر مبكرًا بإصابة أعمق.", "style": "bold" },
+      { "id": "b", "label": "يبدأ احتياطيًا، تستخدمه لاحقًا إن لزم.", "consequence": "حل متوازن.", "style": "strategic" },
+      { "id": "c", "label": "لا يشارك إطلاقًا.", "consequence": "حماية للاعب، لكن قد يخسر الفريق.", "style": "cautious" },
+      { "id": "d", "label": "تشاوره وتترك له القرار النهائي.", "consequence": "احترام لاستقلاليته.", "style": "diplomatic" }
+    ]
+  }
+]

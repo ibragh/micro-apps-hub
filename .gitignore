@@ -1,0 +1,36 @@
+# deps
+node_modules/
+.pnpm-store/
+
+# build
+dist/
+build/
+.cache/
+.vite/
+.turbo/
+
+# tests
+coverage/
+playwright-report/
+test-results/
+.playwright/
+
+# env
+.env
+.env.local
+.env.*.local
+
+# editor / OS
+.DS_Store
+*.log
+.idea/
+.vscode/*
+!.vscode/settings.example.json
+
+# capacitor native shells (generated on demand)
+ios/
+android/
+
+# scan outputs
+.scan-output/
+security-report.json

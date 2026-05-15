@@ -1,0 +1,50 @@
+[
+  {
+    "id": "nd-1",
+    "title": "إعلان طبي مبالغ فيه",
+    "category": "media-literacy",
+    "sourceName": "سيناريو تعليمي مفتوح (لا يستند إلى خبر حقيقي معين)",
+    "confidenceLevel": "high",
+    "isVerified": false,
+    "isFictional": true,
+    "question": "عنوان: «دراسة جديدة تثبت أن مشروبًا ما يقي من كل الأمراض». ما الحكم؟",
+    "options": [
+      { "id": "true", "label": "صحيح" },
+      { "id": "misleading", "label": "مضلل أو ناقص السياق" },
+      { "id": "fake", "label": "مفبرك" },
+      { "id": "missing", "label": "يحتاج مزيدًا من المصادر" }
+    ]
+  },
+  {
+    "id": "nd-2",
+    "title": "إحصائية بلا مصدر",
+    "category": "media-literacy",
+    "sourceName": "سيناريو تعليمي مفتوح",
+    "confidenceLevel": "high",
+    "isVerified": false,
+    "isFictional": true,
+    "question": "خبر: «70% من سكان المدينة يفضّلون منتج X» بدون ذكر المصدر أو حجم العينة. ما تقييمك؟",
+    "options": [
+      { "id": "true", "label": "صحيح كما هو" },
+      { "id": "misleading", "label": "مضلل بسبب غياب المنهجية" },
+      { "id": "missing", "label": "ناقص — يحتاج مصدرًا" },
+      { "id": "fake", "label": "مفبرك" }
+    ]
+  },
+  {
+    "id": "nd-3",
+    "title": "اقتباس خارج السياق",
+    "category": "media-literacy",
+    "sourceName": "سيناريو تعليمي مفتوح",
+    "confidenceLevel": "high",
+    "isVerified": false,
+    "isFictional": true,
+    "question": "عنوان: «المسؤول يهاجم برنامجًا ناجحًا» مع اقتباس جملة من سياق نقد بنّاء أطول. ما الحكم الأنسب؟",
+    "options": [
+      { "id": "misleading", "label": "مضلل — اقتباس خارج السياق" },
+      { "id": "true", "label": "صحيح" },
+      { "id": "fake", "label": "مفبرك" },
+      { "id": "missing", "label": "ينقصه التحقق" }
+    ]
+  }
+]

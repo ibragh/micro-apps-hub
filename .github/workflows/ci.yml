@@ -1,0 +1,89 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm lint || true
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Unit tests
+        run: pnpm test
+
+      - name: Build all apps
+        run: pnpm build
+
+      - name: Install Playwright browsers
+        run: pnpm test:e2e:install
+
+      - name: E2E
+        run: pnpm test:e2e
+
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
+
+  security-scans:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Audit (dependency vulnerabilities)
+        run: pnpm scan:audit
+
+      - name: Secret scan
+        run: pnpm scan:secrets
+
+      - name: License compliance
+        run: pnpm scan:licenses
+
+      - name: Set up Semgrep
+        run: pip install semgrep
+
+      - name: Semgrep SAST
+        run: pnpm scan:semgrep
+
+      - name: Install OSV-Scanner
+        run: |
+          curl -L -o /tmp/osv https://github.com/google/osv-scanner/releases/latest/download/osv-scanner_linux_amd64
+          chmod +x /tmp/osv
+          sudo mv /tmp/osv /usr/local/bin/osv-scanner
+
+      - name: OSV-Scanner
+        run: pnpm scan:osv
