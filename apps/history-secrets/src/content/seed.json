@@ -1,0 +1,14 @@
+[
+  {
+    "id": "history-secrets-e1",
+    "title": "حدث افتراضي",
+    "category": "history",
+    "sourceName": "يُستبدل بمصدر موثق",
+    "confidenceLevel": "low",
+    "isVerified": false,
+    "isFictional": true,
+    "month": 1,
+    "day": 1,
+    "year": 2000
+  }
+]

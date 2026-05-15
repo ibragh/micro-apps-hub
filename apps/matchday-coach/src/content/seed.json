@@ -1,0 +1,26 @@
+[
+  {
+    "id": "matchday-coach-s1",
+    "title": "سيناريو نموذج",
+    "category": "football",
+    "sourceName": "افتراضي",
+    "confidenceLevel": "low",
+    "isVerified": false,
+    "isFictional": true,
+    "prompt": "موقف افتراضي للتجربة فقط.",
+    "choices": [
+      {
+        "id": "a",
+        "label": "الاختيار الحذر",
+        "consequence": "نتيجة الحذر.",
+        "style": "cautious"
+      },
+      {
+        "id": "b",
+        "label": "الاختيار الجريء",
+        "consequence": "نتيجة الجرأة.",
+        "style": "bold"
+      }
+    ]
+  }
+]

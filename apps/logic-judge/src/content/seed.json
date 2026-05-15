@@ -1,0 +1,20 @@
+[
+  {
+    "id": "logic-judge-q1",
+    "title": "سؤال نموذج",
+    "category": "critical-thinking",
+    "sourceName": "يُكمل لاحقًا",
+    "confidenceLevel": "low",
+    "isVerified": false,
+    "isFictional": true,
+    "question": "سؤال نموذج — يُستبدل بمحتوى موثق.",
+    "options": [
+      "أ",
+      "ب",
+      "ج",
+      "د"
+    ],
+    "correctIndex": 0,
+    "explanation": "هذا محتوى أولي."
+  }
+]

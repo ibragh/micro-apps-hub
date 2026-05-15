@@ -1,0 +1,35 @@
+[
+  {
+    "id": "hc-1",
+    "title": "قرار التراجع — معركة هاستينغز",
+    "category": "world-history",
+    "sourceName": "Encyclopedia Britannica — Battle of Hastings",
+    "sourceUrl": "https://www.britannica.com/event/Battle-of-Hastings",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "في معركة هاستينغز عام 1066م، انخدع جزء من جيش الملك هارولد بتراجع وهمي للنورمان فطاردوهم، فانكسرت صفوفهم. هل قرار المطاردة كان: مذنب، بريء، مبرر، أم مثير للجدل بحسب الوقائع الموثقة؟",
+    "options": [
+      { "id": "guilty", "label": "مذنب — خطأ تكتيكي واضح" },
+      { "id": "innocent", "label": "بريء — كانت قراءة طبيعية للموقف" },
+      { "id": "justified", "label": "مبرر بظروف الميدان" },
+      { "id": "controversial", "label": "مثير للجدل — يتنازعه الفقهاء العسكريون" }
+    ]
+  },
+  {
+    "id": "hc-2",
+    "title": "تأجيل اتفاقية تجارية",
+    "category": "world-history",
+    "sourceName": "Library of Congress — Hawley–Smoot Tariff",
+    "sourceUrl": "https://www.loc.gov/",
+    "confidenceLevel": "high",
+    "isVerified": true,
+    "isFictional": false,
+    "question": "تشريع هاولي–سموت الجمركي عام 1930م رفع الرسوم على آلاف السلع رغم تحذيرات ألف اقتصادي وقَّعوا عريضة ضده. هل القرار:",
+    "options": [
+      { "id": "guilty", "label": "مذنب — تجاهل أدلة اقتصادية واضحة" },
+      { "id": "justified", "label": "مبرر — حماية الصناعة المحلية" },
+      { "id": "controversial", "label": "جدلي — لا يزال محل نقاش بين المؤرخين" }
+    ]
+  }
+]
