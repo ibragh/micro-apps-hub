@@ -11,8 +11,8 @@ body[data-theme='if-minister'] {
   --t-border:       #c8c2a0;
   --t-shadow:       0 6px 20px rgba(10, 24, 68, 0.10);
 
-  --t-font-display: 'Saudi', 'Cairo', 'Noto Naskh Arabic', sans-serif;
-  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-display: 'Saudi', 'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
+  --t-font-body:    'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
 
   --t-radius-card:   10px;
   --t-radius-choice: 10px;

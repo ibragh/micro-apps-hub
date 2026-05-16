@@ -10,8 +10,8 @@ body[data-theme='crossroads'] {
   --t-accent-soft:  #d6e2ec;
   --t-border:       #c0cdda;
   --t-shadow:       0 6px 18px rgba(10, 30, 60, 0.08);
-  --t-font-display: 'El Messiri', 'Cairo', serif;
-  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-display: 'El Messiri', 'Thmanyah Sans', serif;
+  --t-font-body:    'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
   --t-radius-card:  14px;
   --t-radius-choice:14px;
   --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%235f7d96' stroke-width='0.6' opacity='0.45'%3E%3Cpath d='M40 70 L40 40 M40 40 L20 20 M40 40 L60 20'/%3E%3C/g%3E%3C/svg%3E");

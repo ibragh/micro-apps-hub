@@ -10,8 +10,8 @@ body[data-theme='odd-archive'] {
   --t-accent-soft:  #efe1bd;
   --t-border:       #c9b482;
   --t-shadow:       0 6px 20px rgba(60, 40, 0, 0.08);
-  --t-font-display: 'El Messiri', 'Cairo', serif;
-  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-display: 'Thmanyah Serif', 'Thmanyah Sans', serif;
+  --t-font-body:    'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
   --t-radius-card:  8px;
   --t-radius-choice:8px;
   --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%236b4f1f' stroke-width='0.5' opacity='0.45'%3E%3Crect x='8' y='8' width='44' height='44'/%3E%3Cline x1='8' y1='22' x2='52' y2='22'/%3E%3Cline x1='8' y1='36' x2='52' y2='36'/%3E%3Cline x1='30' y1='8' x2='30' y2='52'/%3E%3C/g%3E%3C/svg%3E");

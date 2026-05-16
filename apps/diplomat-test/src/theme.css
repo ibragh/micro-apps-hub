@@ -11,8 +11,8 @@ body[data-theme='diplomat-test'] {
   --t-border:       #d3cdb8;
   --t-shadow:       0 6px 18px rgba(20, 20, 20, 0.07);
 
-  --t-font-display: 'Saudi', 'Cairo', 'Noto Naskh Arabic', sans-serif;
-  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-display: 'Saudi', 'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
+  --t-font-body:    'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
 
   --t-radius-card:   12px;
   --t-radius-choice: 10px;

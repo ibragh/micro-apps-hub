@@ -11,8 +11,8 @@ body[data-theme='saudi-history-quiz'] {
   --t-border:       #d6c895;
   --t-shadow:       0 8px 24px rgba(10, 50, 30, 0.08);
 
-  --t-font-display: 'Saudi', 'Cairo', 'Noto Naskh Arabic', sans-serif;
-  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-display: 'Saudi', 'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
+  --t-font-body:    'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
 
   --t-radius-card:   16px;
   --t-radius-choice: 14px;

@@ -11,7 +11,7 @@ body[data-theme='in-his-place'] {
   --t-border:       #d5be7a;
   --t-shadow:       0 6px 20px rgba(80, 50, 10, 0.10);
   --t-font-display: 'Amiri', 'Noto Naskh Arabic', serif;
-  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-body:    'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
   --t-radius-card:  12px;
   --t-radius-choice:10px;
   --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%23b86b1e' stroke-width='0.5' opacity='0.45'%3E%3Cpath d='M10 15 L50 15 L50 45 L10 45 Z'/%3E%3Cline x1='15' y1='22' x2='45' y2='22'/%3E%3Cline x1='15' y1='30' x2='45' y2='30'/%3E%3Cline x1='15' y1='38' x2='38' y2='38'/%3E%3C/g%3E%3C/svg%3E");

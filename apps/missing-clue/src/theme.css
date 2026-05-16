@@ -10,8 +10,8 @@ body[data-theme='missing-clue'] {
   --t-accent-soft:  #3a1c1c;
   --t-border:       #2c2d31;
   --t-shadow:       0 10px 30px rgba(0, 0, 0, 0.5);
-  --t-font-display: 'IBM Plex Sans Arabic', 'Cairo', sans-serif;
-  --t-font-body:    'IBM Plex Sans Arabic', 'Cairo', sans-serif;
+  --t-font-display: 'IBM Plex Sans Arabic', 'Thmanyah Sans', sans-serif;
+  --t-font-body:    'IBM Plex Sans Arabic', 'Thmanyah Sans', sans-serif;
   --t-radius-card:  6px;
   --t-radius-choice:6px;
   --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23ef4444' stroke-width='0.6' opacity='0.45'%3E%3Ccircle cx='32' cy='32' r='14'/%3E%3Cline x1='44' y1='44' x2='60' y2='60'/%3E%3C/g%3E%3C/svg%3E");

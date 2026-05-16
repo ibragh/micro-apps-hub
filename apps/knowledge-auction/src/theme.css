@@ -11,8 +11,8 @@ body[data-theme='knowledge-auction'] {
   --t-border:       #3a2a1f;
   --t-shadow:       0 12px 36px rgba(0, 0, 0, 0.45);
 
-  --t-font-display: 'Reem Kufi', 'Cairo', 'Noto Naskh Arabic', sans-serif;
-  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-display: 'Reem Kufi', 'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
+  --t-font-body:    'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
 
   --t-radius-card:   10px;
   --t-radius-choice: 10px;
@@ -52,7 +52,7 @@ body[data-theme='knowledge-auction'] .mf-choice {
   background: rgba(255, 246, 220, 0.04);
   border-color: var(--t-border);
   color: var(--t-text);
-  font-family: 'Cairo', sans-serif;
+  font-family: 'Thmanyah Sans', sans-serif;
 }
 body[data-theme='knowledge-auction'] .mf-choice:hover {
   border-color: var(--t-accent);
