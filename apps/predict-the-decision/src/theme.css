@@ -1,0 +1,28 @@
+/* predict-the-decision — emerald / sand, Saudi palm */
+body[data-theme='predict-the-decision'] {
+  --t-bg:           #f1f5e8;
+  --t-bg-soft:      #dbe4c3;
+  --t-surface:      #fdfdf2;
+  --t-text:         #1c2e10;
+  --t-text-muted:   #4c5a3a;
+  --t-accent:       #2f7a2a;
+  --t-accent-strong:#1d521b;
+  --t-accent-soft:  #d6e8d0;
+  --t-border:       #c4d4a2;
+  --t-shadow:       0 6px 20px rgba(20, 70, 20, 0.07);
+
+  --t-font-display: 'Saudi', 'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+
+  --t-radius-card:   16px;
+  --t-radius-choice: 12px;
+
+  --t-motif-url:      url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%232f7a2a' stroke-width='0.6' opacity='0.55'%3E%3Cpath d='M50 90 L50 60 M50 60 Q44 50 35 48 M50 60 Q56 50 65 48 M50 60 Q42 45 30 40 M50 60 Q58 45 70 40 M50 60 Q44 38 32 32 M50 60 Q56 38 68 32'/%3E%3C/g%3E%3C/svg%3E");
+  --t-motif-opacity:  0.20;
+  --t-motif-size:     120px;
+}
+
+body[data-theme='predict-the-decision'] .mf-hero {
+  background: linear-gradient(135deg, #dbe4c3 0%, #f1f5e8 70%);
+  border-color: #b8c898;
+}

@@ -1,0 +1,21 @@
+/* guess-saudi-player — pitch green / gold, football silhouette */
+body[data-theme='guess-saudi-player'] {
+  --t-bg:           #f4f8f1;
+  --t-bg-soft:      #d8e8c8;
+  --t-surface:      #ffffff;
+  --t-text:         #122a1a;
+  --t-text-muted:   #4d6450;
+  --t-accent:       #1b7a3b;
+  --t-accent-strong:#0e5524;
+  --t-accent-soft:  #d4ecd9;
+  --t-border:       #bcd9b0;
+  --t-shadow:       0 6px 22px rgba(10, 50, 20, 0.10);
+  --t-font-display: 'Tajawal', 'Cairo', sans-serif;
+  --t-font-body:    'Tajawal', 'Cairo', sans-serif;
+  --t-radius-card:  14px;
+  --t-radius-choice:12px;
+  --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%231b7a3b' stroke-width='0.5' opacity='0.4'%3E%3Cline x1='10' y1='50' x2='90' y2='50'/%3E%3Ccircle cx='50' cy='50' r='10'/%3E%3Crect x='10' y='30' width='20' height='40'/%3E%3Crect x='70' y='30' width='20' height='40'/%3E%3C/g%3E%3C/svg%3E");
+  --t-motif-opacity:0.18;
+  --t-motif-size:   200px;
+}
+body[data-theme='guess-saudi-player'] .mf-hero { background: linear-gradient(135deg, #d8e8c8 0%, #f4f8f1 70%); border-color: #a3c490; }

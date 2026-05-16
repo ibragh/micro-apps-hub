@@ -1,0 +1,28 @@
+/* diplomat-test — grey / gold, handshake */
+body[data-theme='diplomat-test'] {
+  --t-bg:           #f4f3ee;
+  --t-bg-soft:      #e0ddcc;
+  --t-surface:      #ffffff;
+  --t-text:         #1a1a1a;
+  --t-text-muted:   #595959;
+  --t-accent:       #9b7c2c;
+  --t-accent-strong:#6e5618;
+  --t-accent-soft:  #efe5c4;
+  --t-border:       #d3cdb8;
+  --t-shadow:       0 6px 18px rgba(20, 20, 20, 0.07);
+
+  --t-font-display: 'Saudi', 'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+
+  --t-radius-card:   12px;
+  --t-radius-choice: 10px;
+
+  --t-motif-url:      url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%239b7c2c' stroke-width='0.5' opacity='0.4'%3E%3Cpath d='M20 40 Q30 30 40 40 Q50 50 60 40'/%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3Ccircle cx='50' cy='50' r='3'/%3E%3C/g%3E%3C/svg%3E");
+  --t-motif-opacity:  0.10;
+  --t-motif-size:     80px;
+}
+
+body[data-theme='diplomat-test'] .mf-hero {
+  background: linear-gradient(135deg, #e0ddcc 0%, #f4f3ee 70%);
+  border-color: #b8a87a;
+}

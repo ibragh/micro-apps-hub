@@ -1,0 +1,21 @@
+/* crossroads — road grey / sky, fork motif */
+body[data-theme='crossroads'] {
+  --t-bg:           #ecf0f3;
+  --t-bg-soft:      #cfd8de;
+  --t-surface:      #ffffff;
+  --t-text:         #1c2a36;
+  --t-text-muted:   #546574;
+  --t-accent:       #5f7d96;
+  --t-accent-strong:#3b566e;
+  --t-accent-soft:  #d6e2ec;
+  --t-border:       #c0cdda;
+  --t-shadow:       0 6px 18px rgba(10, 30, 60, 0.08);
+  --t-font-display: 'El Messiri', 'Cairo', serif;
+  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-radius-card:  14px;
+  --t-radius-choice:14px;
+  --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%235f7d96' stroke-width='0.6' opacity='0.45'%3E%3Cpath d='M40 70 L40 40 M40 40 L20 20 M40 40 L60 20'/%3E%3C/g%3E%3C/svg%3E");
+  --t-motif-opacity:0.15;
+  --t-motif-size:   100px;
+}
+body[data-theme='crossroads'] .mf-hero { background: linear-gradient(135deg, #cfd8de 0%, #ecf0f3 70%); border-color: #9aabb8; }

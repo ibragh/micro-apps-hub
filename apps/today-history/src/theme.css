@@ -1,0 +1,46 @@
+/* today-history — parchment / sepia, vertical timeline rail */
+body[data-theme='today-history'] {
+  --t-bg:           #f5ede0;
+  --t-bg-soft:      #e9dcc0;
+  --t-surface:      #fdf6e6;
+  --t-text:         #2c1f10;
+  --t-text-muted:   #6b5840;
+  --t-accent:       #8a4a1f;
+  --t-accent-strong:#5e3010;
+  --t-accent-soft:  #f3deb8;
+  --t-border:       #d9c69a;
+  --t-shadow:       0 6px 18px rgba(60, 30, 0, 0.08);
+
+  --t-font-display: 'El Messiri', 'Noto Naskh Arabic', serif;
+  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+
+  --t-radius-card:   12px;
+  --t-radius-choice: 12px;
+
+  --t-motif-url:      url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='6' cy='6' r='1.4' fill='%238a4a1f' opacity='0.5'/%3E%3Ccircle cx='6' cy='20' r='1.4' fill='%238a4a1f' opacity='0.5'/%3E%3Ccircle cx='6' cy='34' r='1.4' fill='%238a4a1f' opacity='0.5'/%3E%3Cline x1='6' y1='6' x2='6' y2='34' stroke='%238a4a1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+  --t-motif-opacity:  0.20;
+  --t-motif-size:     40px;
+  --t-motif-position: right top;
+}
+
+body[data-theme='today-history'] .mf-hero {
+  background:
+    linear-gradient(180deg, #fdf6e6 0%, #f0e4c8 100%);
+  border-color: #c9b27a;
+}
+
+body[data-theme='today-history'] .mf-card {
+  background: var(--t-surface);
+  border-color: var(--t-border);
+  position: relative;
+}
+body[data-theme='today-history'] .mf-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  inset-inline-start: 24px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, transparent 0%, var(--t-accent) 20%, var(--t-accent) 80%, transparent 100%);
+  opacity: 0.3;
+}

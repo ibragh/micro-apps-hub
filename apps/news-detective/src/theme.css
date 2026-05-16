@@ -1,0 +1,74 @@
+/* news-detective — ink black / red, newsprint typewriter */
+body[data-theme='news-detective'] {
+  --t-bg:           #f3efe7;
+  --t-bg-soft:      #e8e2d0;
+  --t-surface:      #ffffff;
+  --t-text:         #161616;
+  --t-text-muted:   #595959;
+  --t-accent:       #b3261e;
+  --t-accent-strong:#7a1a14;
+  --t-accent-soft:  #f4dad6;
+  --t-border:       #d6cfbe;
+  --t-shadow:       0 4px 14px rgba(0, 0, 0, 0.08);
+
+  --t-font-display: 'IBM Plex Sans Arabic', 'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-body:    'IBM Plex Sans Arabic', 'Cairo', 'Noto Naskh Arabic', sans-serif;
+
+  --t-radius-card:   6px;
+  --t-radius-choice: 6px;
+
+  --t-motif-url:      url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='2' y='10' width='3' height='1.4' fill='%23161616' opacity='0.7'/%3E%3Crect x='7' y='10' width='3' height='1.4' fill='%23161616' opacity='0.7'/%3E%3Crect x='12' y='10' width='3' height='1.4' fill='%23161616' opacity='0.7'/%3E%3Crect x='17' y='10' width='3' height='1.4' fill='%23161616' opacity='0.7'/%3E%3C/svg%3E");
+  --t-motif-opacity:  0.10;
+  --t-motif-size:     24px;
+}
+
+body[data-theme='news-detective'] .mf-hero {
+  background: #ffffff;
+  border: 3px double #161616;
+  border-radius: 4px;
+  padding: 24px;
+}
+body[data-theme='news-detective'] .mf-hero h1 {
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  border-top: 4px solid var(--t-text);
+  border-bottom: 1px solid var(--t-text);
+  padding: 12px 0 8px;
+  margin: 0 0 8px;
+  text-transform: none;
+}
+body[data-theme='news-detective'] .mf-hero p {
+  font-style: italic;
+  color: #404040;
+  border-inline-start: 3px solid var(--t-accent);
+  padding-inline-start: 12px;
+}
+
+body[data-theme='news-detective'] .mf-app-header {
+  background: var(--t-text);
+  border-bottom: 4px solid var(--t-accent);
+  color: #fff;
+}
+body[data-theme='news-detective'] .mf-app-header__title { color: #fff; letter-spacing: 0.02em; }
+body[data-theme='news-detective'] .mf-app-header__title small { color: rgba(255,255,255,0.7); }
+body[data-theme='news-detective'] [aria-live='polite'] { color: #fff; font-family: 'IBM Plex Sans Arabic', monospace; }
+
+body[data-theme='news-detective'] .mf-card {
+  border: 1px solid var(--t-text);
+  border-radius: 4px;
+  background: #fff;
+}
+body[data-theme='news-detective'] .mf-card h2 {
+  border-bottom: 1px dashed var(--t-text);
+  padding-bottom: 8px;
+}
+
+body[data-theme='news-detective'] .mf-choice {
+  border: 1px solid var(--t-text);
+  border-radius: 4px;
+  background: #fff;
+}
+body[data-theme='news-detective'] .mf-choice:hover {
+  background: #f0f0f0;
+  border-color: var(--t-accent);
+}

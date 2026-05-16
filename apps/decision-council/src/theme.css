@@ -1,0 +1,32 @@
+/* decision-council — senate blue / gold, columns */
+body[data-theme='decision-council'] {
+  --t-bg:           #eef1f6;
+  --t-bg-soft:      #d6dceb;
+  --t-surface:      #ffffff;
+  --t-text:         #142447;
+  --t-text-muted:   #4a5876;
+  --t-accent:       #1a3b6e;
+  --t-accent-strong:#0e2547;
+  --t-accent-soft:  #d6dceb;
+  --t-border:       #c4cde1;
+  --t-shadow:       0 8px 24px rgba(20, 36, 71, 0.08);
+
+  --t-font-display: 'Saudi', 'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+
+  --t-radius-card:   8px;
+  --t-radius-choice: 8px;
+
+  --t-motif-url:      url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cg fill='%231a3b6e' opacity='0.35'%3E%3Crect x='10' y='10' width='4' height='40'/%3E%3Crect x='28' y='10' width='4' height='40'/%3E%3Crect x='46' y='10' width='4' height='40'/%3E%3Crect x='6' y='8' width='48' height='3'/%3E%3Crect x='6' y='51' width='48' height='3'/%3E%3C/g%3E%3C/svg%3E");
+  --t-motif-opacity:  0.10;
+  --t-motif-size:     60px;
+}
+
+body[data-theme='decision-council'] .mf-hero {
+  background: linear-gradient(135deg, #d6dceb 0%, #eef1f6 70%);
+  border-color: #8b9bb8;
+  border-block-start-width: 3px;
+  border-block-start-color: var(--t-accent);
+}
+
+body[data-theme='decision-council'] .mf-hero h1 { color: var(--t-accent-strong); }

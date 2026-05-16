@@ -1,0 +1,21 @@
+/* last-minute-decision — warning amber / dark, clock */
+body[data-theme='last-minute-decision'] {
+  --t-bg:           #fff7e6;
+  --t-bg-soft:      #ffdf95;
+  --t-surface:      #ffffff;
+  --t-text:         #3a1a05;
+  --t-text-muted:   #7a4920;
+  --t-accent:       #d97706;
+  --t-accent-strong:#a04a02;
+  --t-accent-soft:  #ffe6c2;
+  --t-border:       #f0c873;
+  --t-shadow:       0 6px 22px rgba(180, 80, 0, 0.10);
+  --t-font-display: 'El Messiri', 'Noto Naskh Arabic', serif;
+  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-radius-card:  10px;
+  --t-radius-choice:10px;
+  --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23d97706' stroke-width='0.7' opacity='0.45'%3E%3Ccircle cx='40' cy='40' r='28'/%3E%3Cline x1='40' y1='40' x2='40' y2='20'/%3E%3Cline x1='40' y1='40' x2='56' y2='40'/%3E%3C/g%3E%3C/svg%3E");
+  --t-motif-opacity:0.18;
+  --t-motif-size:   140px;
+}
+body[data-theme='last-minute-decision'] .mf-hero { background: linear-gradient(135deg, #ffdf95 0%, #fff7e6 70%); border-color: #ddb45a; }

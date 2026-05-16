@@ -2,9 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { applyHeadMeta } from '@mofeed/seo';
 import { initAnalytics } from '@mofeed/analytics';
+import { applyTheme } from '@mofeed/ui';
 import '@mofeed/ui/styles.css';
 import './hub.css';
+import './theme.css';
 import App from './App';
+
+applyTheme('hub', 'static');
 
 applyHeadMeta({
   slug: 'hub',

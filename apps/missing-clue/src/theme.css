@@ -1,0 +1,28 @@
+/* missing-clue — noir black / red, magnifier */
+body[data-theme='missing-clue'] {
+  --t-bg:           #15171a;
+  --t-bg-soft:      #1f2126;
+  --t-surface:      #1c1e22;
+  --t-text:         #f1ebd6;
+  --t-text-muted:   #aea893;
+  --t-accent:       #ef4444;
+  --t-accent-strong:#dc2626;
+  --t-accent-soft:  #3a1c1c;
+  --t-border:       #2c2d31;
+  --t-shadow:       0 10px 30px rgba(0, 0, 0, 0.5);
+  --t-font-display: 'IBM Plex Sans Arabic', 'Cairo', sans-serif;
+  --t-font-body:    'IBM Plex Sans Arabic', 'Cairo', sans-serif;
+  --t-radius-card:  6px;
+  --t-radius-choice:6px;
+  --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23ef4444' stroke-width='0.6' opacity='0.45'%3E%3Ccircle cx='32' cy='32' r='14'/%3E%3Cline x1='44' y1='44' x2='60' y2='60'/%3E%3C/g%3E%3C/svg%3E");
+  --t-motif-opacity:0.45;
+  --t-motif-size:   100px;
+}
+body[data-theme='missing-clue'] .mf-hero { background: radial-gradient(circle at 15% 0%, rgba(239,68,68,0.12) 0%, transparent 60%), linear-gradient(135deg, #1f2126 0%, #0e0f11 100%); border-color: #3c3e44; color: var(--t-text); }
+body[data-theme='missing-clue'] .mf-hero h1 { color: var(--t-accent); }
+body[data-theme='missing-clue'] .mf-app-header { background: #0e0f11; border-bottom-color: var(--t-accent); border-bottom-width: 2px; color: var(--t-text); }
+body[data-theme='missing-clue'] .mf-app-header__title { color: var(--t-text); }
+body[data-theme='missing-clue'] .mf-card { background: var(--t-surface); border-color: var(--t-border); color: var(--t-text); }
+body[data-theme='missing-clue'] .mf-choice { background: #1f2126; border-color: var(--t-border); color: var(--t-text); }
+body[data-theme='missing-clue'] .mf-choice:hover { border-color: var(--t-accent); background: #2b1d1f; }
+body[data-theme='missing-clue'] .mf-app-footer { background: #0e0f11; border-top-color: var(--t-border); color: var(--t-text-muted); }

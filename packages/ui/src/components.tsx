@@ -126,6 +126,25 @@ export function Stack({ children, className, ...rest }: HTMLAttributes<HTMLDivEl
   );
 }
 
-export function Hero({ children }: { children: ReactNode }) {
-  return <div className="mf-hero">{children}</div>;
+export interface HeroProps {
+  children: ReactNode;
+  /** Slug of the app. Used as className suffix so per-app theme.css can target it. */
+  variant?: string;
+  /** Optional small label rendered before the heading (e.g. "حلقة", "قضية", "موسم"). */
+  eyebrow?: string;
+  /** Optional inline SVG/Node rendered to the side of the hero text. */
+  motif?: ReactNode;
+}
+
+export function Hero({ children, variant, eyebrow, motif }: HeroProps) {
+  const cls = ['mf-hero', variant ? `mf-hero--${variant}` : ''].filter(Boolean).join(' ');
+  return (
+    <div className={cls} data-hero={variant ?? ''}>
+      {motif ? <div className="mf-hero__motif" aria-hidden="true">{motif}</div> : null}
+      <div className="mf-hero__body">
+        {eyebrow ? <div className="mf-hero__eyebrow">{eyebrow}</div> : null}
+        {children}
+      </div>
+    </div>
+  );
 }

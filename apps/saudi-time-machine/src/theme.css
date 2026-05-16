@@ -1,0 +1,29 @@
+/* saudi-time-machine — turquoise / sand, dial motif */
+body[data-theme='saudi-time-machine'] {
+  --t-bg:           #ecf6f3;
+  --t-bg-soft:      #d4ebe2;
+  --t-surface:      #ffffff;
+  --t-text:         #0c2e2a;
+  --t-text-muted:   #4a6660;
+  --t-accent:       #007a78;
+  --t-accent-strong:#004f4d;
+  --t-accent-soft:  #c8e8e3;
+  --t-border:       #b3d6cc;
+  --t-shadow:       0 6px 22px rgba(0, 80, 70, 0.08);
+
+  --t-font-display: 'Saudi', 'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-body:    'Saudi', 'Cairo', 'Noto Naskh Arabic', sans-serif;
+
+  --t-radius-card:   16px;
+  --t-radius-choice: 14px;
+
+  --t-motif-url:      url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23007a78' stroke-width='0.5' opacity='0.4'%3E%3Ccircle cx='60' cy='60' r='40'/%3E%3Ccircle cx='60' cy='60' r='28'/%3E%3Cline x1='60' y1='20' x2='60' y2='28'/%3E%3Cline x1='60' y1='92' x2='60' y2='100'/%3E%3Cline x1='20' y1='60' x2='28' y2='60'/%3E%3Cline x1='92' y1='60' x2='100' y2='60'/%3E%3C/g%3E%3C/svg%3E");
+  --t-motif-opacity:  0.18;
+  --t-motif-size:     200px;
+  --t-motif-position: top right;
+}
+
+body[data-theme='saudi-time-machine'] .mf-hero {
+  background: linear-gradient(135deg, #d4ebe2 0%, #ecf6f3 60%);
+  border-color: #b3d6cc;
+}

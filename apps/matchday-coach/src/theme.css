@@ -1,0 +1,28 @@
+/* matchday-coach — pitch green / white, tactics board */
+body[data-theme='matchday-coach'] {
+  --t-bg:           #144a25;
+  --t-bg-soft:      #1e6033;
+  --t-surface:      #ffffff;
+  --t-text:         #ffffff;
+  --t-text-muted:   #b3d3bd;
+  --t-accent:       #ffffff;
+  --t-accent-strong:#f1f5e8;
+  --t-accent-soft:  #1e6033;
+  --t-border:       #2a7340;
+  --t-shadow:       0 8px 26px rgba(0, 0, 0, 0.3);
+  --t-font-display: 'Tajawal', 'Cairo', sans-serif;
+  --t-font-body:    'Tajawal', 'Cairo', sans-serif;
+  --t-radius-card:  10px;
+  --t-radius-choice:10px;
+  --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='0.6' opacity='0.18'%3E%3Cline x1='0' y1='100' x2='200' y2='100'/%3E%3Ccircle cx='100' cy='100' r='20'/%3E%3Crect x='0' y='70' width='30' height='60'/%3E%3Crect x='170' y='70' width='30' height='60'/%3E%3C/g%3E%3C/svg%3E");
+  --t-motif-opacity:1;
+  --t-motif-size:   400px;
+}
+body[data-theme='matchday-coach'] .mf-hero { background: rgba(255,255,255,0.05); border-color: var(--t-border); color: var(--t-text); }
+body[data-theme='matchday-coach'] .mf-hero h1 { color: var(--t-text); }
+body[data-theme='matchday-coach'] .mf-app-header { background: #0e3a1c; border-bottom-color: var(--t-border); color: var(--t-text); }
+body[data-theme='matchday-coach'] .mf-app-header__title { color: var(--t-text); }
+body[data-theme='matchday-coach'] .mf-card { background: rgba(255,255,255,0.06); border-color: var(--t-border); color: var(--t-text); }
+body[data-theme='matchday-coach'] .mf-choice { background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.25); color: var(--t-text); font-weight: 500; }
+body[data-theme='matchday-coach'] .mf-choice:hover { background: rgba(255,255,255,0.20); border-color: rgba(255,255,255,0.5); }
+body[data-theme='matchday-coach'] .mf-app-footer { background: #0e3a1c; border-top-color: var(--t-border); color: var(--t-text-muted); }

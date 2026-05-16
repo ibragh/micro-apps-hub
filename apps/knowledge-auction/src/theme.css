@@ -1,0 +1,74 @@
+/* knowledge-auction — gold / wine, auction-house display */
+body[data-theme='knowledge-auction'] {
+  --t-bg:           #1a0f14;
+  --t-bg-soft:      #2a1820;
+  --t-surface:      #25151c;
+  --t-text:         #f6eedb;
+  --t-text-muted:   #c8b08a;
+  --t-accent:       #d4a032;
+  --t-accent-strong:#f0c155;
+  --t-accent-soft:  #3a2618;
+  --t-border:       #3a2a1f;
+  --t-shadow:       0 12px 36px rgba(0, 0, 0, 0.45);
+
+  --t-font-display: 'Reem Kufi', 'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+
+  --t-radius-card:   10px;
+  --t-radius-choice: 10px;
+
+  --t-motif-url:      url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cg fill='%23d4a032' opacity='0.45'%3E%3Ccircle cx='30' cy='30' r='0.8'/%3E%3Ccircle cx='10' cy='10' r='0.5'/%3E%3Ccircle cx='50' cy='10' r='0.5'/%3E%3Ccircle cx='10' cy='50' r='0.5'/%3E%3Ccircle cx='50' cy='50' r='0.5'/%3E%3C/g%3E%3C/svg%3E");
+  --t-motif-opacity:  0.6;
+  --t-motif-size:     60px;
+}
+
+body[data-theme='knowledge-auction'] .mf-hero {
+  background:
+    radial-gradient(circle at 15% 0%, rgba(212,160,50,0.18) 0%, transparent 50%),
+    linear-gradient(135deg, #2a1820 0%, #15080c 100%);
+  border-color: #5a3f1c;
+  color: var(--t-text);
+}
+body[data-theme='knowledge-auction'] .mf-hero h1 {
+  color: var(--t-accent-strong);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.4);
+}
+
+body[data-theme='knowledge-auction'] .mf-app-header {
+  background: #15080c;
+  border-bottom-color: #5a3f1c;
+  color: var(--t-text);
+}
+body[data-theme='knowledge-auction'] .mf-app-header__title { color: var(--t-accent); }
+body[data-theme='knowledge-auction'] .mf-app-header__title small { color: var(--t-text-muted); }
+
+body[data-theme='knowledge-auction'] .mf-card {
+  background: var(--t-surface);
+  border-color: var(--t-border);
+  color: var(--t-text);
+}
+
+body[data-theme='knowledge-auction'] .mf-choice {
+  background: rgba(255, 246, 220, 0.04);
+  border-color: var(--t-border);
+  color: var(--t-text);
+  font-family: 'Cairo', sans-serif;
+}
+body[data-theme='knowledge-auction'] .mf-choice:hover {
+  border-color: var(--t-accent);
+  background: rgba(212, 160, 50, 0.1);
+}
+
+body[data-theme='knowledge-auction'] .mf-btn {
+  background: linear-gradient(180deg, #d4a032 0%, #a87a18 100%);
+  color: #1a0f14;
+  font-weight: 700;
+  border-color: #a87a18;
+}
+body[data-theme='knowledge-auction'] .mf-btn:hover { background: linear-gradient(180deg, #f0c155 0%, #d4a032 100%); }
+
+body[data-theme='knowledge-auction'] .mf-app-footer {
+  background: #15080c;
+  border-top-color: #5a3f1c;
+  color: var(--t-text-muted);
+}

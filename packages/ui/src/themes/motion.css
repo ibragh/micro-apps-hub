@@ -1,0 +1,94 @@
+/*
+ * Engine-grouped motion. Apps opt in via <body data-engine="<engine>">.
+ * All motion is wrapped in prefers-reduced-motion to respect user OS prefs.
+ */
+
+@media (prefers-reduced-motion: no-preference) {
+
+  /* Shared page-enter for all themed apps */
+  body[data-theme] .mf-app-main > * {
+    animation: mf-rise 320ms var(--t-motion-ease, ease-out) both;
+  }
+
+  @keyframes mf-rise {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== quiz: counter flip + choice press ===== */
+  body[data-engine='quiz'] [aria-live='polite'] {
+    display: inline-block;
+    transition: transform var(--t-motion-duration) var(--t-motion-ease);
+  }
+  body[data-engine='quiz'] .mf-choice:active {
+    transform: scale(0.97);
+  }
+
+  /* ===== decision: scenario fade-up ===== */
+  body[data-engine='decision'] .mf-card,
+  body[data-engine='scenario'] .mf-card {
+    animation: mf-card-fade 360ms var(--t-motion-ease) both;
+  }
+  @keyframes mf-card-fade {
+    from { opacity: 0; transform: translateY(10px) scale(0.98); }
+    to   { opacity: 1; transform: translateY(0)    scale(1); }
+  }
+
+  /* ===== voting: vote bar fill from start (RTL aware) ===== */
+  body[data-engine='voting'] .mf-progress__bar {
+    transform-origin: inline-end;
+    animation: mf-bar-fill 480ms var(--t-motion-ease) both;
+  }
+  @keyframes mf-bar-fill {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+
+  /* ===== timeline: dot march ===== */
+  body[data-engine='timeline'] .mf-timeline-dot {
+    animation: mf-march 1200ms ease-in-out infinite alternate;
+  }
+  @keyframes mf-march {
+    from { transform: translateY(0); }
+    to   { transform: translateY(4px); }
+  }
+
+  /* ===== scenario: page-turn between scenes ===== */
+  body[data-engine='scenario'] .mf-card {
+    transform-style: preserve-3d;
+    animation: mf-page 420ms var(--t-motion-ease) both;
+  }
+  @keyframes mf-page {
+    from { opacity: 0; transform: rotateY(-3deg) translateZ(0); }
+    to   { opacity: 1; transform: rotateY(0)     translateZ(0); }
+  }
+
+  /* ===== clue: typewriter reveal ===== */
+  body[data-engine='clue'] .mf-clue-line {
+    overflow: hidden;
+    white-space: nowrap;
+    border-inline-end: 0.12em solid var(--t-accent);
+    animation:
+      mf-type 1400ms steps(40, end) both,
+      mf-blink 720ms step-end infinite alternate;
+  }
+  @keyframes mf-type  { from { width: 0; } to { width: 100%; } }
+  @keyframes mf-blink { 50% { border-color: transparent; } }
+
+  /* ===== auction: rolling odometer (used on bid numbers) ===== */
+  body[data-engine='auction'] .mf-auction-bid {
+    transition: transform var(--t-motion-duration) var(--t-motion-ease);
+  }
+  body[data-engine='auction'] .mf-auction-bid.is-bumped {
+    transform: translateY(-2px);
+  }
+}
+
+/* ===== reduced motion: belt and braces ===== */
+@media (prefers-reduced-motion: reduce) {
+  body[data-theme] *,
+  body[data-engine] * {
+    animation-duration: 0s !important;
+    transition-duration: 0s !important;
+  }
+}

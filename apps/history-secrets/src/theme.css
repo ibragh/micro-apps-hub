@@ -1,0 +1,29 @@
+/* history-secrets — deep purple / gold, keyhole motif */
+body[data-theme='history-secrets'] {
+  --t-bg:           #1d152e;
+  --t-bg-soft:      #2c2042;
+  --t-surface:      #261c39;
+  --t-text:         #ece5d5;
+  --t-text-muted:   #b3a890;
+  --t-accent:       #cda23a;
+  --t-accent-strong:#e8c25e;
+  --t-accent-soft:  #3a2d52;
+  --t-border:       #3b2f50;
+  --t-shadow:       0 12px 36px rgba(0, 0, 0, 0.4);
+  --t-font-display: 'Amiri', 'Noto Naskh Arabic', serif;
+  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-radius-card:  14px;
+  --t-radius-choice:12px;
+  --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%23cda23a' stroke-width='0.5' opacity='0.45'%3E%3Ccircle cx='30' cy='22' r='6'/%3E%3Cpath d='M27 28 L24 42 L36 42 L33 28'/%3E%3C/g%3E%3C/svg%3E");
+  --t-motif-opacity:0.40;
+  --t-motif-size:   70px;
+}
+body[data-theme='history-secrets'] .mf-hero { background: radial-gradient(circle at 25% 0%, rgba(205,162,58,0.18) 0%, transparent 55%), linear-gradient(135deg, #2c2042 0%, #15102a 100%); border-color: #5d4e83; color: var(--t-text); }
+body[data-theme='history-secrets'] .mf-hero h1 { color: var(--t-accent-strong); }
+body[data-theme='history-secrets'] .mf-app-header { background: #15102a; border-bottom-color: #5d4e83; color: var(--t-text); }
+body[data-theme='history-secrets'] .mf-app-header__title { color: var(--t-accent); }
+body[data-theme='history-secrets'] .mf-app-header__title small { color: var(--t-text-muted); }
+body[data-theme='history-secrets'] .mf-card { background: var(--t-surface); border-color: var(--t-border); color: var(--t-text); }
+body[data-theme='history-secrets'] .mf-choice { background: rgba(255,255,255,0.04); border-color: var(--t-border); color: var(--t-text); }
+body[data-theme='history-secrets'] .mf-choice:hover { border-color: var(--t-accent); background: rgba(205,162,58,0.1); }
+body[data-theme='history-secrets'] .mf-app-footer { background: #15102a; border-top-color: #5d4e83; color: var(--t-text-muted); }
