@@ -1,0 +1,31 @@
+/* saudi-mood-map — warm sun / sky, radial sunburst */
+body[data-theme='saudi-mood-map'] {
+  --t-bg:           #fef4e2;
+  --t-bg-soft:      #fbe2b3;
+  --t-surface:      #fffaf0;
+  --t-text:         #3a1d05;
+  --t-text-muted:   #7b5a30;
+  --t-accent:       #e88800;
+  --t-accent-strong:#b45e00;
+  --t-accent-soft:  #ffe6c2;
+  --t-border:       #f0d29e;
+  --t-shadow:       0 6px 20px rgba(180, 100, 0, 0.08);
+
+  --t-font-display: 'Saudi', 'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-body:    'Saudi', 'Cairo', 'Noto Naskh Arabic', sans-serif;
+
+  --t-radius-card:   18px;
+  --t-radius-choice: 18px;
+
+  --t-motif-url:      url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23e88800' stroke-width='0.7' opacity='0.4'%3E%3Ccircle cx='100' cy='100' r='30'/%3E%3Cg stroke-width='0.5'%3E%3Cline x1='100' y1='40' x2='100' y2='60'/%3E%3Cline x1='100' y1='140' x2='100' y2='160'/%3E%3Cline x1='40' y1='100' x2='60' y2='100'/%3E%3Cline x1='140' y1='100' x2='160' y2='100'/%3E%3Cline x1='58' y1='58' x2='72' y2='72'/%3E%3Cline x1='128' y1='128' x2='142' y2='142'/%3E%3Cline x1='142' y1='58' x2='128' y2='72'/%3E%3Cline x1='72' y1='128' x2='58' y2='142'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  --t-motif-opacity:  0.22;
+  --t-motif-size:     320px;
+  --t-motif-position: top right;
+}
+
+body[data-theme='saudi-mood-map'] .mf-hero {
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255, 220, 130, 0.5) 0%, transparent 60%),
+    linear-gradient(135deg, #fef4e2 0%, #ffe6c2 100%);
+  border-color: #f0d29e;
+}

@@ -1,0 +1,30 @@
+/* national-memory — patriot green / gold, shield motif */
+body[data-theme='national-memory'] {
+  --t-bg:           #f1ebd6;
+  --t-bg-soft:      #e0d5a8;
+  --t-surface:      #ffffff;
+  --t-text:         #163b1f;
+  --t-text-muted:   #4a5c3d;
+  --t-accent:       #1b5e20;
+  --t-accent-strong:#0f3a13;
+  --t-accent-soft:  #d3e3c8;
+  --t-border:       #c9bb84;
+  --t-shadow:       0 8px 26px rgba(20, 60, 30, 0.08);
+
+  --t-font-display: 'Saudi', 'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-body:    'Saudi', 'Cairo', 'Noto Naskh Arabic', sans-serif;
+
+  --t-radius-card:   18px;
+  --t-radius-choice: 14px;
+
+  --t-motif-url:      url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%231b5e20' stroke-width='0.7' opacity='0.5'%3E%3Cpath d='M40 14 L60 22 L60 44 Q60 58 40 66 Q20 58 20 44 L20 22 Z'/%3E%3C/g%3E%3C/svg%3E");
+  --t-motif-opacity:  0.10;
+  --t-motif-size:     80px;
+}
+
+body[data-theme='national-memory'] .mf-hero {
+  background: linear-gradient(135deg, #e0d5a8 0%, #f1ebd6 70%);
+  border-color: #b9a86d;
+}
+
+body[data-theme='national-memory'] .mf-hero h1 { color: var(--t-accent-strong); }
