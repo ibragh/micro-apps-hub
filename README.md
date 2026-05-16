@@ -162,6 +162,9 @@ layout and reasoning.
   pnpm build`.
 - Security disclosures: see [`SECURITY.md`](SECURITY.md).
 
+**Picking up the project on your own machine?** Read
+[`docs/HANDOFF.md`](docs/HANDOFF.md) — local-setup + next-task playbook.
+
 ## License
 
 Currently treated as all-rights-reserved during private development. A
