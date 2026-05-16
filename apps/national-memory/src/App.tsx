@@ -84,7 +84,7 @@ export default function App() {
     <AppShell
       titleAr={META.titleAr}
       titleEn={META.titleEn}
-      headerExtra={<span aria-live="polite">{index + 1} / {total}</span>}
+      headerExtra={<span aria-live="polite" dir="ltr">{index + 1} / {total}</span>}
     >
       <Stack>
         <ProgressBar value={index} max={total} label="تقدم الاختبار" />

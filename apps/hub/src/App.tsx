@@ -28,10 +28,22 @@ const CATEGORY_LABELS: Record<string, string> = {
 };
 
 function buildSubdomainUrl(slug: string): string {
-  // Reads VITE_SUBDOMAIN_BASE for prod (e.g. "mofeed-mini-apps.example").
-  // Falls back to a hash-style local link so dev works without env config.
+  // Production: VITE_SUBDOMAIN_BASE → https://<slug>.<base>/
+  // Local dev: VITE_LOCAL_PORT_MAP is a JSON `{slug: port}` so the hub links
+  // click through to live preview servers. Falls back to a hash anchor when
+  // neither is set, which is what the smoke tests assert against.
   const base = import.meta.env.VITE_SUBDOMAIN_BASE;
   if (base) return `https://${slug}.${base}/`;
+  const localMapRaw = import.meta.env.VITE_LOCAL_PORT_MAP;
+  if (localMapRaw) {
+    try {
+      const map = JSON.parse(localMapRaw) as Record<string, number>;
+      const port = map[slug];
+      if (typeof port === 'number') return `http://127.0.0.1:${port}/`;
+    } catch {
+      // ignore malformed env, fall through to anchor
+    }
+  }
   return `#${slug}`;
 }
 

@@ -19,8 +19,9 @@ describe('hub smoke', () => {
     for (const card of screen.getAllByTestId('hub-card')) {
       const href = card.getAttribute('href');
       expect(href).toBeTruthy();
-      // either an http(s) URL or a #slug local link
-      expect(href).toMatch(/^(https:\/\/|#)/);
+      // production subdomain (https://…), local-dev port (http://127.0.0.1:…),
+      // or hash anchor when neither env is set.
+      expect(href).toMatch(/^(https:\/\/|http:\/\/127\.0\.0\.1:\d+\/|#)/);
     }
   });
 });

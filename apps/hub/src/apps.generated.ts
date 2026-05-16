@@ -98,7 +98,7 @@ export const hubApps: HubApp[] = [
     "nameAr": "مزاد المعرفة",
     "nameEn": "Knowledge Auction",
     "descAr": "لديك رصيد افتراضي تراهن منه على ثقتك في إجابة كل سؤال. ثقة أعلى → ربح أعلى وخطر أعلى.",
-    "category": "knowledge",
+    "category": "general-knowledge",
     "engine": "auction",
     "accent": "#8a6a14",
     "tier": 1
