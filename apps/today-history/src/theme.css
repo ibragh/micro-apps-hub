@@ -11,8 +11,8 @@ body[data-theme='today-history'] {
   --t-border:       #d9c69a;
   --t-shadow:       0 6px 18px rgba(60, 30, 0, 0.08);
 
-  --t-font-display: 'El Messiri', 'Noto Naskh Arabic', serif;
-  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-display: 'Thmanyah Serif', 'Noto Naskh Arabic', serif;
+  --t-font-body:    'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
 
   --t-radius-card:   12px;
   --t-radius-choice: 12px;

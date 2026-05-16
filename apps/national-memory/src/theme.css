@@ -11,8 +11,8 @@ body[data-theme='national-memory'] {
   --t-border:       #c9bb84;
   --t-shadow:       0 8px 26px rgba(20, 60, 30, 0.08);
 
-  --t-font-display: 'Saudi', 'Cairo', 'Noto Naskh Arabic', sans-serif;
-  --t-font-body:    'Saudi', 'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-display: 'Saudi', 'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
+  --t-font-body:    'Saudi', 'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
 
   --t-radius-card:   18px;
   --t-radius-choice: 14px;

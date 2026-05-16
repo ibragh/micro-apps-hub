@@ -17,8 +17,8 @@ body[data-theme='hub'] {
   --t-border:       #e7e0cf;
   --t-shadow:       0 6px 24px rgba(20, 18, 14, 0.06);
 
-  --t-font-display: 'Cairo', 'Noto Naskh Arabic', 'Segoe UI', system-ui, sans-serif;
-  --t-font-body:    'Cairo', 'Noto Naskh Arabic', 'Segoe UI', system-ui, sans-serif;
+  --t-font-display: 'Thmanyah Serif', 'Noto Naskh Arabic', 'Segoe UI', system-ui, sans-serif;
+  --t-font-body:    'Thmanyah Sans', 'Noto Naskh Arabic', 'Segoe UI', system-ui, sans-serif;
 
   --t-radius-card:   18px;
   --t-radius-choice: 14px;

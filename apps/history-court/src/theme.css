@@ -10,8 +10,8 @@ body[data-theme='history-court'] {
   --t-accent-soft:  #f0e0a8;
   --t-border:       #cab47a;
   --t-shadow:       0 6px 22px rgba(60, 40, 0, 0.10);
-  --t-font-display: 'El Messiri', 'Noto Naskh Arabic', serif;
-  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-display: 'Thmanyah Serif', 'Noto Naskh Arabic', serif;
+  --t-font-body:    'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
   --t-radius-card:  10px;
   --t-radius-choice:10px;
   --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%238a6b1c' stroke-width='0.6' opacity='0.5'%3E%3Cline x1='50' y1='15' x2='50' y2='65'/%3E%3Cline x1='20' y1='40' x2='80' y2='40'/%3E%3Cpath d='M20 40 Q20 55 8 55 Q20 55 32 55 Q20 55 20 40'/%3E%3Cpath d='M80 40 Q80 55 68 55 Q80 55 92 55 Q80 55 80 40'/%3E%3C/g%3E%3C/svg%3E");

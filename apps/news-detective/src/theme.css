@@ -11,8 +11,8 @@ body[data-theme='news-detective'] {
   --t-border:       #d6cfbe;
   --t-shadow:       0 4px 14px rgba(0, 0, 0, 0.08);
 
-  --t-font-display: 'IBM Plex Sans Arabic', 'Cairo', 'Noto Naskh Arabic', sans-serif;
-  --t-font-body:    'IBM Plex Sans Arabic', 'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-display: 'IBM Plex Sans Arabic', 'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
+  --t-font-body:    'IBM Plex Sans Arabic', 'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
 
   --t-radius-card:   6px;
   --t-radius-choice: 6px;

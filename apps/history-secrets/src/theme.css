@@ -11,7 +11,7 @@ body[data-theme='history-secrets'] {
   --t-border:       #3b2f50;
   --t-shadow:       0 12px 36px rgba(0, 0, 0, 0.4);
   --t-font-display: 'Amiri', 'Noto Naskh Arabic', serif;
-  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-body:    'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
   --t-radius-card:  14px;
   --t-radius-choice:12px;
   --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%23cda23a' stroke-width='0.5' opacity='0.45'%3E%3Ccircle cx='30' cy='22' r='6'/%3E%3Cpath d='M27 28 L24 42 L36 42 L33 28'/%3E%3C/g%3E%3C/svg%3E");

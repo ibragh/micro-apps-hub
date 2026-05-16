@@ -10,8 +10,8 @@ body[data-theme='matchday-coach'] {
   --t-accent-soft:  #1e6033;
   --t-border:       #2a7340;
   --t-shadow:       0 8px 26px rgba(0, 0, 0, 0.3);
-  --t-font-display: 'Tajawal', 'Cairo', sans-serif;
-  --t-font-body:    'Tajawal', 'Cairo', sans-serif;
+  --t-font-display: 'Tajawal', 'Thmanyah Sans', sans-serif;
+  --t-font-body:    'Tajawal', 'Thmanyah Sans', sans-serif;
   --t-radius-card:  10px;
   --t-radius-choice:10px;
   --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='0.6' opacity='0.18'%3E%3Cline x1='0' y1='100' x2='200' y2='100'/%3E%3Ccircle cx='100' cy='100' r='20'/%3E%3Crect x='0' y='70' width='30' height='60'/%3E%3Crect x='170' y='70' width='30' height='60'/%3E%3C/g%3E%3C/svg%3E");

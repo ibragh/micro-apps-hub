@@ -10,8 +10,8 @@ body[data-theme='thinking-compass'] {
   --t-accent-soft:  #d6dceb;
   --t-border:       #b8c5da;
   --t-shadow:       0 6px 22px rgba(20, 36, 71, 0.08);
-  --t-font-display: 'Tajawal', 'Cairo', sans-serif;
-  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-display: 'Tajawal', 'Thmanyah Sans', sans-serif;
+  --t-font-body:    'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
   --t-radius-card:  14px;
   --t-radius-choice:14px;
   --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%232a4d8f' stroke-width='0.6' opacity='0.45'%3E%3Ccircle cx='50' cy='50' r='30'/%3E%3Cpath d='M50 20 L55 50 L50 80 L45 50 Z' fill='%23bf9a3a' opacity='0.5'/%3E%3Cpath d='M20 50 L50 45 L80 50 L50 55 Z' fill='%232a4d8f' opacity='0.4'/%3E%3C/g%3E%3C/svg%3E");
