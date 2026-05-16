@@ -1,0 +1,21 @@
+/* consultant-test — corporate teal, bar chart */
+body[data-theme='consultant-test'] {
+  --t-bg:           #f0f6f5;
+  --t-bg-soft:      #d4e8e5;
+  --t-surface:      #ffffff;
+  --t-text:         #0e2a26;
+  --t-text-muted:   #44615d;
+  --t-accent:       #0e7c66;
+  --t-accent-strong:#075a4a;
+  --t-accent-soft:  #ccecde;
+  --t-border:       #b3d6cc;
+  --t-shadow:       0 6px 20px rgba(20, 60, 50, 0.07);
+  --t-font-display: 'IBM Plex Sans Arabic', 'Cairo', sans-serif;
+  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-radius-card:  8px;
+  --t-radius-choice:8px;
+  --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cg fill='%230e7c66' opacity='0.35'%3E%3Crect x='12' y='40' width='10' height='20'/%3E%3Crect x='28' y='28' width='10' height='32'/%3E%3Crect x='44' y='18' width='10' height='42'/%3E%3Crect x='60' y='30' width='10' height='30'/%3E%3C/g%3E%3C/svg%3E");
+  --t-motif-opacity:0.10;
+  --t-motif-size:   80px;
+}
+body[data-theme='consultant-test'] .mf-hero { background: linear-gradient(135deg, #d4e8e5 0%, #f0f6f5 70%); border-color: #8fc1b4; border-block-start: 3px solid var(--t-accent); }

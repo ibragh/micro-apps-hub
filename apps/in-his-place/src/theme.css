@@ -1,0 +1,21 @@
+/* in-his-place — amber / parchment, scroll motif */
+body[data-theme='in-his-place'] {
+  --t-bg:           #f7eed4;
+  --t-bg-soft:      #ebd9a3;
+  --t-surface:      #fffcef;
+  --t-text:         #3a2510;
+  --t-text-muted:   #7b5e30;
+  --t-accent:       #b86b1e;
+  --t-accent-strong:#7e4514;
+  --t-accent-soft:  #f5dbb0;
+  --t-border:       #d5be7a;
+  --t-shadow:       0 6px 20px rgba(80, 50, 10, 0.10);
+  --t-font-display: 'Amiri', 'Noto Naskh Arabic', serif;
+  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-radius-card:  12px;
+  --t-radius-choice:10px;
+  --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%23b86b1e' stroke-width='0.5' opacity='0.45'%3E%3Cpath d='M10 15 L50 15 L50 45 L10 45 Z'/%3E%3Cline x1='15' y1='22' x2='45' y2='22'/%3E%3Cline x1='15' y1='30' x2='45' y2='30'/%3E%3Cline x1='15' y1='38' x2='38' y2='38'/%3E%3C/g%3E%3C/svg%3E");
+  --t-motif-opacity:0.14;
+  --t-motif-size:   80px;
+}
+body[data-theme='in-his-place'] .mf-hero { background: linear-gradient(135deg, #ebd9a3 0%, #f7eed4 70%); border-color: #b89a52; }

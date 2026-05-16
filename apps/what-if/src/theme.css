@@ -1,0 +1,21 @@
+/* what-if — violet / orange, branching */
+body[data-theme='what-if'] {
+  --t-bg:           #faf3ee;
+  --t-bg-soft:      #efd9ef;
+  --t-surface:      #ffffff;
+  --t-text:         #2c1f3a;
+  --t-text-muted:   #66547a;
+  --t-accent:       #7a3aa1;
+  --t-accent-strong:#552270;
+  --t-accent-soft:  #e9d8ef;
+  --t-border:       #d6c0db;
+  --t-shadow:       0 8px 22px rgba(80, 30, 110, 0.08);
+  --t-font-display: 'Reem Kufi', 'Cairo', sans-serif;
+  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-radius-card:  18px;
+  --t-radius-choice:14px;
+  --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%237a3aa1' stroke-width='0.6' opacity='0.45'%3E%3Cpath d='M40 70 L40 50 M40 50 L25 30 M40 50 L55 30 M25 30 L18 18 M25 30 L32 18 M55 30 L48 18 M55 30 L62 18'/%3E%3C/g%3E%3C/svg%3E");
+  --t-motif-opacity:0.15;
+  --t-motif-size:   120px;
+}
+body[data-theme='what-if'] .mf-hero { background: linear-gradient(135deg, #efd9ef 0%, #faf3ee 70%); border-color: #c89bd0; }

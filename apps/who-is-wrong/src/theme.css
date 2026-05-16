@@ -1,0 +1,21 @@
+/* who-is-wrong — dual red / blue, balance motif */
+body[data-theme='who-is-wrong'] {
+  --t-bg:           #f4f0ec;
+  --t-bg-soft:      #e2d8d0;
+  --t-surface:      #ffffff;
+  --t-text:         #1f1a14;
+  --t-text-muted:   #574e44;
+  --t-accent:       #a14a2a;
+  --t-accent-strong:#7a3318;
+  --t-accent-soft:  #f1ddd0;
+  --t-border:       #d4c8b8;
+  --t-shadow:       0 6px 20px rgba(80, 30, 20, 0.08);
+  --t-font-display: 'El Messiri', 'Cairo', serif;
+  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-radius-card:  12px;
+  --t-radius-choice:12px;
+  --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23a14a2a' stroke-width='0.6' opacity='0.45'%3E%3Cline x1='40' y1='20' x2='40' y2='62'/%3E%3Ccircle cx='40' cy='62' r='3'/%3E%3Cline x1='20' y1='30' x2='60' y2='30'/%3E%3Ccircle cx='20' cy='30' r='5' opacity='0.6'/%3E%3Ccircle cx='60' cy='30' r='5' opacity='0.6'/%3E%3C/g%3E%3C/svg%3E");
+  --t-motif-opacity:0.12;
+  --t-motif-size:   140px;
+}
+body[data-theme='who-is-wrong'] .mf-hero { background: linear-gradient(135deg, #e2d8d0 0%, #f4f0ec 70%); border-color: #c4b29c; }

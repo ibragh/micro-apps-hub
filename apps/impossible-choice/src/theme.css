@@ -1,0 +1,21 @@
+/* impossible-choice — crimson / navy, tipping scale */
+body[data-theme='impossible-choice'] {
+  --t-bg:           #f4ecec;
+  --t-bg-soft:      #e6cccc;
+  --t-surface:      #ffffff;
+  --t-text:         #2a0c10;
+  --t-text-muted:   #6a3a40;
+  --t-accent:       #b3261e;
+  --t-accent-strong:#7a1a14;
+  --t-accent-soft:  #f5d6d3;
+  --t-border:       #cca5a2;
+  --t-shadow:       0 8px 24px rgba(120, 20, 20, 0.10);
+  --t-font-display: 'Reem Kufi', 'Cairo', sans-serif;
+  --t-font-body:    'El Messiri', 'Cairo', serif;
+  --t-radius-card:  12px;
+  --t-radius-choice:12px;
+  --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23b3261e' stroke-width='0.6' opacity='0.45'%3E%3Cline x1='40' y1='15' x2='40' y2='60'/%3E%3Cline x1='15' y1='30' x2='65' y2='30' transform='rotate(-12 40 30)'/%3E%3Crect x='5' y='38' width='15' height='10'/%3E%3Crect x='60' y='25' width='15' height='10'/%3E%3C/g%3E%3C/svg%3E");
+  --t-motif-opacity:0.12;
+  --t-motif-size:   140px;
+}
+body[data-theme='impossible-choice'] .mf-hero { background: linear-gradient(135deg, #e6cccc 0%, #f4ecec 70%); border-color: #c08482; border-block-start: 3px solid var(--t-accent); }

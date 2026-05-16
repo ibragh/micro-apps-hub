@@ -1,0 +1,21 @@
+/* logic-judge — slate / cyan, proof tree */
+body[data-theme='logic-judge'] {
+  --t-bg:           #f0f4f7;
+  --t-bg-soft:      #d8e4ee;
+  --t-surface:      #ffffff;
+  --t-text:         #0f1a26;
+  --t-text-muted:   #4a5868;
+  --t-accent:       #0891b2;
+  --t-accent-strong:#075e74;
+  --t-accent-soft:  #cdebf2;
+  --t-border:       #c0d2e0;
+  --t-shadow:       0 6px 20px rgba(10, 50, 90, 0.08);
+  --t-font-display: 'El Messiri', 'Cairo', serif;
+  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-radius-card:  10px;
+  --t-radius-choice:10px;
+  --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%230891b2' stroke-width='0.5' opacity='0.45'%3E%3Ccircle cx='30' cy='10' r='2'/%3E%3Ccircle cx='15' cy='30' r='2'/%3E%3Ccircle cx='45' cy='30' r='2'/%3E%3Ccircle cx='10' cy='50' r='2'/%3E%3Ccircle cx='25' cy='50' r='2'/%3E%3Cline x1='30' y1='12' x2='16' y2='28'/%3E%3Cline x1='30' y1='12' x2='44' y2='28'/%3E%3Cline x1='15' y1='32' x2='11' y2='48'/%3E%3Cline x1='15' y1='32' x2='24' y2='48'/%3E%3C/g%3E%3C/svg%3E");
+  --t-motif-opacity:0.16;
+  --t-motif-size:   100px;
+}
+body[data-theme='logic-judge'] .mf-hero { background: linear-gradient(135deg, #d8e4ee 0%, #f0f4f7 70%); border-color: #94b4cc; }
