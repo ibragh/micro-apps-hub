@@ -1,0 +1,225 @@
+/*
+ * hub — neutral premium "gallery" theme.
+ * Background: deep cream with a faint dot-grid motif behind cards.
+ * Display: Cairo (modern Arabic editorial; Thamanya stand-in).
+ * Body:    Cairo for a unified branded feel.
+ */
+
+body[data-theme='hub'] {
+  --t-bg:           #f6f3ec;
+  --t-bg-soft:      #efe8d8;
+  --t-surface:      #ffffff;
+  --t-text:         #181613;
+  --t-text-muted:   #5e564a;
+  --t-accent:       #1e1b4b;
+  --t-accent-strong:#0f0c2e;
+  --t-accent-soft:  #e7e6f5;
+  --t-border:       #e7e0cf;
+  --t-shadow:       0 6px 24px rgba(20, 18, 14, 0.06);
+
+  --t-font-display: 'Cairo', 'Noto Naskh Arabic', 'Segoe UI', system-ui, sans-serif;
+  --t-font-body:    'Cairo', 'Noto Naskh Arabic', 'Segoe UI', system-ui, sans-serif;
+
+  --t-radius-card:   18px;
+  --t-radius-choice: 14px;
+
+  --t-motif-url:      url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='1.4' fill='%231e1b4b'/%3E%3Ccircle cx='0' cy='0' r='1.4' fill='%231e1b4b'/%3E%3Ccircle cx='80' cy='0' r='1.4' fill='%231e1b4b'/%3E%3Ccircle cx='0' cy='80' r='1.4' fill='%231e1b4b'/%3E%3Ccircle cx='80' cy='80' r='1.4' fill='%231e1b4b'/%3E%3C/svg%3E");
+  --t-motif-opacity:  0.10;
+  --t-motif-position: center center;
+  --t-motif-size:     80px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body[data-theme='hub'] {
+    --t-bg:           #14121a;
+    --t-bg-soft:      #1c1925;
+    --t-surface:      #1f1c29;
+    --t-text:         #f3eede;
+    --t-text-muted:   #b6ae9d;
+    --t-accent:       #a5a4ff;
+    --t-accent-strong:#cecdff;
+    --t-accent-soft:  #1f1d3d;
+    --t-border:       #2b2737;
+  }
+}
+
+/* Hub-specific hero treatment */
+body[data-theme='hub'] .hub-hero {
+  background: linear-gradient(135deg, var(--t-bg-soft) 0%, var(--t-bg) 60%);
+  border: 1px solid var(--t-border);
+  border-radius: 24px;
+  padding: 48px 32px;
+  margin-bottom: 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+body[data-theme='hub'] .hub-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 0%, var(--t-accent-soft) 0%, transparent 55%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+body[data-theme='hub'] .hub-hero h1 {
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 4.5vw, 44px);
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+  color: var(--t-text);
+}
+
+body[data-theme='hub'] .hub-hero p {
+  color: var(--t-text-muted);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+body[data-theme='hub'] .hub-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 12px;
+  background: var(--t-surface);
+  border: 1px solid var(--t-border);
+  border-radius: 16px;
+  box-shadow: var(--t-shadow);
+}
+
+body[data-theme='hub'] .hub-filter button {
+  font-family: var(--t-font-body);
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--t-text-muted);
+  transition: all 180ms ease;
+}
+
+body[data-theme='hub'] .hub-filter button:hover {
+  background: var(--t-accent-soft);
+  color: var(--t-accent-strong);
+}
+
+body[data-theme='hub'] .hub-filter button.mf-btn {
+  /* override default primary button look inside the filter row */
+  background: transparent;
+  color: var(--t-text-muted);
+  border-color: transparent;
+}
+
+body[data-theme='hub'] .hub-filter button.mf-btn:not(.mf-btn--ghost) {
+  background: var(--t-accent);
+  color: #fff;
+}
+
+body[data-theme='hub'] .hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+body[data-theme='hub'] .hub-card {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 4px 16px;
+  padding: 20px;
+  border-radius: var(--t-radius-card);
+  background: var(--t-surface);
+  border: 1px solid var(--t-border);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 200ms var(--t-motion-ease, ease), box-shadow 200ms ease, border-color 200ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+body[data-theme='hub'] .hub-card::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  inset-inline-end: 0;
+  width: 4px;
+  background: var(--t-card-accent, var(--t-accent));
+  opacity: 0.85;
+}
+
+body[data-theme='hub'] .hub-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(20, 18, 14, 0.08);
+  border-color: var(--t-card-accent, var(--t-accent));
+}
+
+body[data-theme='hub'] .hub-card__accent {
+  grid-row: span 2;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  font-size: 22px;
+  color: white;
+}
+
+body[data-theme='hub'] .hub-card__title {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+body[data-theme='hub'] .hub-card__name-ar {
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--t-text);
+}
+
+body[data-theme='hub'] .hub-card__name-en {
+  font-size: 0.75rem;
+  color: var(--t-text-muted);
+}
+
+body[data-theme='hub'] .hub-card__desc {
+  grid-column: 1 / -1;
+  margin: 8px 0 0;
+  color: var(--t-text-muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+body[data-theme='hub'] .hub-card__footer {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+body[data-theme='hub'] .hub-card__cta {
+  margin-inline-start: auto;
+  font-size: 0.8rem;
+  color: var(--t-accent-strong);
+  font-weight: 600;
+}
+
+body[data-theme='hub'] .hub-main {
+  padding: 24px 8px 48px;
+}

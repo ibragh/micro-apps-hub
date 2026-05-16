@@ -58,6 +58,7 @@ function AppCard({ app }: { app: HubApp }) {
       onClick={() => track('hub_app_click', { app: app.slug })}
       data-testid="hub-card"
       data-slug={app.slug}
+      style={{ ['--t-card-accent' as string]: app.accent }}
     >
       <div className="hub-card__accent" style={{ background: app.accent }} aria-hidden="true">
         {initial}

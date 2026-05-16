@@ -2,7 +2,13 @@
  * Mofeed Mini Apps — shared design tokens + base styles.
  * Arabic-first, RTL-friendly. Tokens are CSS variables so each app
  * can override accent colour for brand differentiation.
+ *
+ * Theme layer (per-app overrides via --t-* + topical motion) is loaded
+ * from ./themes/base.css and ./themes/motion.css automatically.
  */
+
+@import './themes/base.css';
+@import './themes/motion.css';
 
 :root {
   --mf-color-bg: #fbfaf6;

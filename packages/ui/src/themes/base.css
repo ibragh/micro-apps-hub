@@ -1,0 +1,73 @@
+/*
+ * Mofeed Mini Apps — theme token contract.
+ *
+ * Each app sets <body data-theme="<slug>" data-engine="<engine>"> and supplies
+ * its own theme.css overriding these `--t-*` variables.
+ *
+ * The shared shell in styles.css reads `var(--t-<name>, var(--mf-<name>))`
+ * so any app without a theme override still works.
+ */
+
+@import './fonts.css';
+
+:root {
+  /* Default theme tokens delegate to the original --mf-* tokens. */
+  --t-bg:           var(--mf-color-bg);
+  --t-bg-soft:      var(--mf-color-bg);
+  --t-surface:      var(--mf-color-surface);
+  --t-text:         var(--mf-color-text);
+  --t-text-muted:   var(--mf-color-text-muted);
+  --t-accent:       var(--mf-color-accent);
+  --t-accent-strong:var(--mf-color-accent-strong);
+  --t-accent-soft:  var(--mf-color-accent-soft);
+  --t-border:       var(--mf-color-border);
+  --t-shadow:       var(--mf-shadow-sm);
+
+  --t-font-display: var(--mf-font-base);
+  --t-font-body:    var(--mf-font-base);
+  --t-font-scale:   1;
+
+  --t-radius-card:   var(--mf-radius-md);
+  --t-radius-choice: var(--mf-radius-md);
+
+  --t-motion-duration: 220ms;
+  --t-motion-ease:     cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  --t-motif-url:      none;
+  --t-motif-opacity:  0.08;
+  --t-motif-position: top right;
+  --t-motif-size:     360px;
+}
+
+/* Themed background layer applied through the shell.
+   `repeat` means each app's motif tiles unless its theme overrides
+   --t-motif-position / --t-motif-size to position a single mark. */
+body[data-theme]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: var(--t-motif-url);
+  background-repeat: repeat;
+  background-position: var(--t-motif-position);
+  background-size: var(--t-motif-size);
+  opacity: var(--t-motif-opacity);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body[data-theme] > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Display family applied to h1/h2 + hero / brand surfaces */
+body[data-theme] :is(h1, h2, .mf-hero h1, .mf-hero h2, .mf-app-header__title) {
+  font-family: var(--t-font-display);
+}
+
+/* Body family applied to body text */
+body[data-theme] {
+  font-family: var(--t-font-body);
+  background: var(--t-bg);
+  color: var(--t-text);
+}
