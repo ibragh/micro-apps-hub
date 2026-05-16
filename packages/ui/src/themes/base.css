@@ -71,3 +71,10 @@ body[data-theme] {
   background: var(--t-bg);
   color: var(--t-text);
 }
+
+/* Some apps go full-bleed dark (knowledge-auction). The default html
+   element retains the cream --mf-color-bg, which can flash on page load
+   or peek through if body width is constrained. Inherit body bg up. */
+html:has(body[data-theme]) {
+  background: var(--t-bg);
+}

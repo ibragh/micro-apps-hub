@@ -1,0 +1,42 @@
+/* saudi-history-quiz — sand / emerald, Saudi institutional */
+body[data-theme='saudi-history-quiz'] {
+  --t-bg:           #f4ecd8;
+  --t-bg-soft:      #ead9b0;
+  --t-surface:      #fdf9ee;
+  --t-text:         #1b3a23;
+  --t-text-muted:   #5a6e52;
+  --t-accent:       #0a6f3a;
+  --t-accent-strong:#06532a;
+  --t-accent-soft:  #d7eedd;
+  --t-border:       #d6c895;
+  --t-shadow:       0 8px 24px rgba(10, 50, 30, 0.08);
+
+  --t-font-display: 'Saudi', 'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --t-font-body:    'Cairo', 'Noto Naskh Arabic', sans-serif;
+
+  --t-radius-card:   16px;
+  --t-radius-choice: 14px;
+
+  --t-motif-url:      url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%230a6f3a' stroke-width='0.7' opacity='0.5'%3E%3Cpath d='M40 14 L46 30 L62 30 L48 40 L52 56 L40 46 L28 56 L32 40 L18 30 L34 30 Z'/%3E%3C/g%3E%3C/svg%3E");
+  --t-motif-opacity:  0.09;
+  --t-motif-size:     80px;
+}
+
+body[data-theme='saudi-history-quiz'] .mf-hero {
+  background:
+    linear-gradient(135deg, #f4ecd8 0%, #d7eedd 100%);
+  border-color: #b2cf9c;
+}
+
+body[data-theme='saudi-history-quiz'] .mf-hero h1 {
+  letter-spacing: -0.005em;
+}
+
+body[data-theme='saudi-history-quiz'] .mf-app-header__title {
+  color: var(--t-accent-strong);
+}
+
+body[data-theme='saudi-history-quiz'] .mf-choice[aria-pressed='true'] {
+  background: var(--t-accent-soft);
+  border-color: var(--t-accent);
+}

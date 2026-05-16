@@ -1,0 +1,42 @@
+/* seerah-quiz — sage / parchment, classical Islamic register */
+body[data-theme='seerah-quiz'] {
+  --t-bg:           #f7f3e8;
+  --t-bg-soft:      #ede5d2;
+  --t-surface:      #fffdf6;
+  --t-text:         #2a2418;
+  --t-text-muted:   #6a5e44;
+  --t-accent:       #1b6b56;
+  --t-accent-strong:#0e4c3c;
+  --t-accent-soft:  #def0e8;
+  --t-border:       #e2d7bb;
+  --t-shadow:       0 6px 18px rgba(40, 30, 10, 0.06);
+
+  --t-font-display: 'Amiri', 'Noto Naskh Arabic', serif;
+  --t-font-body:    'Noto Naskh Arabic', 'Amiri', serif;
+
+  --t-radius-card:   16px;
+  --t-radius-choice: 14px;
+
+  --t-motif-url:      url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpath fill='none' stroke='%231b6b56' stroke-width='0.6' opacity='0.55' d='M30 5 L36 17 L50 17 L40 26 L44 40 L30 32 L16 40 L20 26 L10 17 L24 17 Z'/%3E%3C/svg%3E");
+  --t-motif-opacity:  0.10;
+  --t-motif-size:     60px;
+}
+
+body[data-theme='seerah-quiz'] .mf-hero {
+  background: linear-gradient(140deg, #f1e7cf 0%, #fdfaf0 70%);
+  border-color: #d6c79d;
+}
+
+body[data-theme='seerah-quiz'] .mf-app-header {
+  background: linear-gradient(180deg, #fffdf6 0%, #f7f3e8 100%);
+  border-bottom-color: #d6c79d;
+}
+
+body[data-theme='seerah-quiz'] .mf-choice {
+  border-color: #d8cca8;
+  background: #fffdf6;
+}
+body[data-theme='seerah-quiz'] .mf-choice:hover {
+  border-color: #1b6b56;
+  background: #def0e8;
+}
