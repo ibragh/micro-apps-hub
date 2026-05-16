@@ -110,7 +110,7 @@ export const apps = [
     nameEn: 'Knowledge Auction',
     descAr: 'لديك رصيد افتراضي تراهن منه على ثقتك في إجابة كل سؤال. ثقة أعلى → ربح أعلى وخطر أعلى.',
     descEn: 'A quiz where you bet a virtual stake on your confidence — higher confidence, higher swing.',
-    category: 'knowledge',
+    category: 'general-knowledge',
     engine: 'auction',
     accent: '#8a6a14',
     tier: 1,

@@ -45,9 +45,9 @@ export default defineConfig({
     },
   ],
   webServer: tier1.map((a) => ({
-    command: `pnpm --filter @mofeed/${a.slug} preview --port ${a.port} --strictPort`,
+    command: `pnpm --filter @mofeed/${a.slug} preview --port ${a.port} --strictPort --host 127.0.0.1`,
     url: `http://127.0.0.1:${a.port}/`,
-    timeout: 120_000,
+    timeout: 180_000,
     reuseExistingServer: !process.env.CI,
   })),
 });

@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes, ReactNode, HTMLAttributes } from 'react';
+import { isSafeUrl } from '@mofeed/security';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'ghost';
@@ -97,11 +98,16 @@ export function SourceLine({ name, url, bookReference, isFictional }: SourceLine
       </div>
     );
   }
+  // Defense in depth: even though all seed.json sourceUrls are https://,
+  // refuse to render a link if the URL is not http(s). React already strips
+  // javascript: URLs at runtime, but this stops data: and unrecognised schemes
+  // from rendering as clickable links sourced from content files.
+  const safeHref = url && isSafeUrl(url) ? url : null;
   return (
     <div className="mf-source" data-testid="source-line">
       <span>المصدر: </span>
-      {url ? (
-        <a href={url} target="_blank" rel="noopener noreferrer">
+      {safeHref ? (
+        <a href={safeHref} target="_blank" rel="noopener noreferrer">
           {name}
         </a>
       ) : (

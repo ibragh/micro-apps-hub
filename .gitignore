@@ -34,3 +34,6 @@ android/
 # scan outputs
 .scan-output/
 security-report.json
+
+# local audit working dir (kept untracked; reports promoted to docs/audits/)
+audit-*/
