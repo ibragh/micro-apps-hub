@@ -18,4 +18,3 @@ body[data-theme='crossroads'] {
   --t-motif-opacity:0.15;
   --t-motif-size:   100px;
 }
-body[data-theme='crossroads'] .mf-hero { background: linear-gradient(135deg, #cfd8de 0%, #ecf0f3 70%); border-color: #9aabb8; }

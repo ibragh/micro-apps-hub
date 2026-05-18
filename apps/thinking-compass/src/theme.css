@@ -18,4 +18,3 @@ body[data-theme='thinking-compass'] {
   --t-motif-opacity:0.16;
   --t-motif-size:   120px;
 }
-body[data-theme='thinking-compass'] .mf-hero { background: linear-gradient(135deg, #c8d6e8 0%, #ecf1f6 70%); border-color: #94a8c9; }

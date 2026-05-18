@@ -18,4 +18,3 @@ body[data-theme='impossible-choice'] {
   --t-motif-opacity:0.12;
   --t-motif-size:   140px;
 }
-body[data-theme='impossible-choice'] .mf-hero { background: linear-gradient(135deg, #e6cccc 0%, #f4ecec 70%); border-color: #c08482; border-block-start: 3px solid var(--t-accent); }

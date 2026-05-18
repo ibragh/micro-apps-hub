@@ -23,12 +23,6 @@ body[data-theme='today-history'] {
   --t-motif-position: right top;
 }
 
-body[data-theme='today-history'] .mf-hero {
-  background:
-    linear-gradient(180deg, #fdf6e6 0%, #f0e4c8 100%);
-  border-color: #c9b27a;
-}
-
 body[data-theme='today-history'] .mf-card {
   background: var(--t-surface);
   border-color: var(--t-border);

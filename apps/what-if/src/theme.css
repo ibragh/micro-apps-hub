@@ -18,4 +18,3 @@ body[data-theme='what-if'] {
   --t-motif-opacity:0.15;
   --t-motif-size:   120px;
 }
-body[data-theme='what-if'] .mf-hero { background: linear-gradient(135deg, #efd9ef 0%, #faf3ee 70%); border-color: #c89bd0; }

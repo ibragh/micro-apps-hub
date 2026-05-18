@@ -18,4 +18,3 @@ body[data-theme='last-minute-decision'] {
   --t-motif-opacity:0.18;
   --t-motif-size:   140px;
 }
-body[data-theme='last-minute-decision'] .mf-hero { background: linear-gradient(135deg, #ffdf95 0%, #fff7e6 70%); border-color: #ddb45a; }

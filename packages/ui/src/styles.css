@@ -272,6 +272,49 @@ img { max-width: 100%; height: auto; }
   display: grid;
   gap: 16px;
   margin-bottom: var(--mf-space-5);
+  min-height: 220px;
+}
+
+/* When a theme defines --t-hero-image, paint it edge-to-edge in any
+   present .mf-hero. */
+body[data-theme] .mf-hero {
+  background-image:
+    linear-gradient(
+      to left,
+      var(--t-bg-soft) 0%,
+      var(--t-bg-soft) 30%,
+      rgba(0,0,0,0) 75%
+    ),
+    var(--t-hero-image);
+  background-size: cover, cover;
+  background-position: center, center;
+  background-blend-mode: var(--t-hero-blend), normal;
+  background-repeat: no-repeat, no-repeat;
+}
+
+/* Always-on hero banner above the main content. Renders the per-app
+   /hero.png as a 220px tall picture at the top of every page, with a
+   short gradient from --t-bg-soft on the bottom for smooth handoff to
+   the engine surface. Themed apps only. */
+body[data-theme] .mf-app-main {
+  position: relative;
+}
+body[data-theme] .mf-app-main::before {
+  content: '';
+  display: block;
+  width: calc(100% + 48px);
+  margin-inline: -24px;
+  margin-block-start: -24px;
+  margin-block-end: 24px;
+  height: clamp(160px, 22vw, 260px);
+  background-image:
+    linear-gradient(180deg, rgba(0,0,0,0) 55%, var(--t-bg-soft) 100%),
+    var(--t-hero-image);
+  background-size: cover, cover;
+  background-position: center top, center top;
+  background-repeat: no-repeat, no-repeat;
+  border-radius: var(--t-radius-card, 12px);
+  box-shadow: var(--t-shadow, 0 6px 18px rgba(0,0,0,0.06));
 }
 .mf-hero__motif {
   position: absolute;

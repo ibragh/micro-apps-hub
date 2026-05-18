@@ -22,11 +22,6 @@ body[data-theme='seerah-quiz'] {
   --t-motif-size:     60px;
 }
 
-body[data-theme='seerah-quiz'] .mf-hero {
-  background: linear-gradient(140deg, #f1e7cf 0%, #fdfaf0 70%);
-  border-color: #d6c79d;
-}
-
 body[data-theme='seerah-quiz'] .mf-app-header {
   background: linear-gradient(180deg, #fffdf6 0%, #f7f3e8 100%);
   border-bottom-color: #d6c79d;

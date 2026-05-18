@@ -18,7 +18,6 @@ body[data-theme='history-secrets'] {
   --t-motif-opacity:0.40;
   --t-motif-size:   70px;
 }
-body[data-theme='history-secrets'] .mf-hero { background: radial-gradient(circle at 25% 0%, rgba(205,162,58,0.18) 0%, transparent 55%), linear-gradient(135deg, #2c2042 0%, #15102a 100%); border-color: #5d4e83; color: var(--t-text); }
 body[data-theme='history-secrets'] .mf-hero h1 { color: var(--t-accent-strong); }
 body[data-theme='history-secrets'] .mf-app-header { background: #15102a; border-bottom-color: #5d4e83; color: var(--t-text); }
 body[data-theme='history-secrets'] .mf-app-header__title { color: var(--t-accent); }

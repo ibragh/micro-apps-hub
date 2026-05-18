@@ -18,4 +18,3 @@ body[data-theme='in-his-place'] {
   --t-motif-opacity:0.14;
   --t-motif-size:   80px;
 }
-body[data-theme='in-his-place'] .mf-hero { background: linear-gradient(135deg, #ebd9a3 0%, #f7eed4 70%); border-color: #b89a52; }

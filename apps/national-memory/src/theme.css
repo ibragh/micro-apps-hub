@@ -22,9 +22,4 @@ body[data-theme='national-memory'] {
   --t-motif-size:     80px;
 }
 
-body[data-theme='national-memory'] .mf-hero {
-  background: linear-gradient(135deg, #e0d5a8 0%, #f1ebd6 70%);
-  border-color: #b9a86d;
-}
-
 body[data-theme='national-memory'] .mf-hero h1 { color: var(--t-accent-strong); }

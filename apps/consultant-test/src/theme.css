@@ -18,4 +18,3 @@ body[data-theme='consultant-test'] {
   --t-motif-opacity:0.10;
   --t-motif-size:   80px;
 }
-body[data-theme='consultant-test'] .mf-hero { background: linear-gradient(135deg, #d4e8e5 0%, #f0f6f5 70%); border-color: #8fc1b4; border-block-start: 3px solid var(--t-accent); }
