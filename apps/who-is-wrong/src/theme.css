@@ -18,4 +18,3 @@ body[data-theme='who-is-wrong'] {
   --t-motif-opacity:0.12;
   --t-motif-size:   140px;
 }
-body[data-theme='who-is-wrong'] .mf-hero { background: linear-gradient(135deg, #e2d8d0 0%, #f4f0ec 70%); border-color: #c4b29c; }

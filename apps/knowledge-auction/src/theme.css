@@ -22,13 +22,6 @@ body[data-theme='knowledge-auction'] {
   --t-motif-size:     60px;
 }
 
-body[data-theme='knowledge-auction'] .mf-hero {
-  background:
-    radial-gradient(circle at 15% 0%, rgba(212,160,50,0.18) 0%, transparent 50%),
-    linear-gradient(135deg, #2a1820 0%, #15080c 100%);
-  border-color: #5a3f1c;
-  color: var(--t-text);
-}
 body[data-theme='knowledge-auction'] .mf-hero h1 {
   color: var(--t-accent-strong);
   text-shadow: 0 1px 0 rgba(0,0,0,0.4);

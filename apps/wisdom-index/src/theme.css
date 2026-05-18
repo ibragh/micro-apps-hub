@@ -18,4 +18,3 @@ body[data-theme='wisdom-index'] {
   --t-motif-opacity:0.18;
   --t-motif-size:   120px;
 }
-body[data-theme='wisdom-index'] .mf-hero { background: linear-gradient(135deg, #cde0c4 0%, #eef3ea 70%); border-color: #94b58c; }

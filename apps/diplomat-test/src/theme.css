@@ -22,7 +22,3 @@ body[data-theme='diplomat-test'] {
   --t-motif-size:     80px;
 }
 
-body[data-theme='diplomat-test'] .mf-hero {
-  background: linear-gradient(135deg, #e0ddcc 0%, #f4f3ee 70%);
-  border-color: #b8a87a;
-}

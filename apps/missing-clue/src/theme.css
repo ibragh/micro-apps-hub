@@ -18,7 +18,6 @@ body[data-theme='missing-clue'] {
   --t-motif-opacity:0.45;
   --t-motif-size:   100px;
 }
-body[data-theme='missing-clue'] .mf-hero { background: radial-gradient(circle at 15% 0%, rgba(239,68,68,0.12) 0%, transparent 60%), linear-gradient(135deg, #1f2126 0%, #0e0f11 100%); border-color: #3c3e44; color: var(--t-text); }
 body[data-theme='missing-clue'] .mf-hero h1 { color: var(--t-accent); }
 body[data-theme='missing-clue'] .mf-app-header { background: #0e0f11; border-bottom-color: var(--t-accent); border-bottom-width: 2px; color: var(--t-text); }
 body[data-theme='missing-clue'] .mf-app-header__title { color: var(--t-text); }

@@ -22,9 +22,4 @@ body[data-theme='if-minister'] {
   --t-motif-size:     120px;
 }
 
-body[data-theme='if-minister'] .mf-hero {
-  background: linear-gradient(135deg, #d8d5c0 0%, #f0eee2 70%);
-  border-color: #afa985;
-}
-
 body[data-theme='if-minister'] .mf-hero h1 { color: var(--t-accent-strong); }

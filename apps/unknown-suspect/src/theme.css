@@ -18,7 +18,6 @@ body[data-theme='unknown-suspect'] {
   --t-motif-opacity:0.30;
   --t-motif-size:   120px;
 }
-body[data-theme='unknown-suspect'] .mf-hero { background: linear-gradient(135deg, #221f24 0%, #0f0e11 100%); border-color: #3a3733; color: var(--t-text); }
 body[data-theme='unknown-suspect'] .mf-hero h1 { color: var(--t-accent-strong); }
 body[data-theme='unknown-suspect'] .mf-app-header { background: #0f0e11; border-bottom-color: var(--t-border); color: var(--t-text); }
 body[data-theme='unknown-suspect'] .mf-app-header__title { color: var(--t-accent); }

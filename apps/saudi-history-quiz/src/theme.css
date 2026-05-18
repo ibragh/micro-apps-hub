@@ -22,12 +22,6 @@ body[data-theme='saudi-history-quiz'] {
   --t-motif-size:     80px;
 }
 
-body[data-theme='saudi-history-quiz'] .mf-hero {
-  background:
-    linear-gradient(135deg, #f4ecd8 0%, #d7eedd 100%);
-  border-color: #b2cf9c;
-}
-
 body[data-theme='saudi-history-quiz'] .mf-hero h1 {
   letter-spacing: -0.005em;
 }

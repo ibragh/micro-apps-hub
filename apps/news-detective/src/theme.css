@@ -22,12 +22,6 @@ body[data-theme='news-detective'] {
   --t-motif-size:     24px;
 }
 
-body[data-theme='news-detective'] .mf-hero {
-  background: #ffffff;
-  border: 3px double #161616;
-  border-radius: 4px;
-  padding: 24px;
-}
 body[data-theme='news-detective'] .mf-hero h1 {
   font-family: var(--t-font-display);
   font-weight: 700;

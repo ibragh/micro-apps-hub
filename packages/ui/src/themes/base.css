@@ -37,6 +37,12 @@
   --t-motif-opacity:  0.08;
   --t-motif-position: top right;
   --t-motif-size:     360px;
+
+  /* Generated hero image (see scripts/generate-hero-art.mjs). Each app
+     overrides this — apps without a theme.css just don't show one. */
+  --t-hero-image:     url('/hero.png');
+  --t-hero-overlay:   linear-gradient(135deg, var(--t-bg-soft) 0%, transparent 45%, transparent 55%, rgba(0,0,0,0.18) 100%);
+  --t-hero-blend:     normal;
 }
 
 /* Themed background layer applied through the shell.

@@ -22,7 +22,3 @@ body[data-theme='predict-the-decision'] {
   --t-motif-size:     120px;
 }
 
-body[data-theme='predict-the-decision'] .mf-hero {
-  background: linear-gradient(135deg, #dbe4c3 0%, #f1f5e8 70%);
-  border-color: #b8c898;
-}

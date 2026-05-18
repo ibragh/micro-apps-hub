@@ -23,7 +23,3 @@ body[data-theme='saudi-time-machine'] {
   --t-motif-position: top right;
 }
 
-body[data-theme='saudi-time-machine'] .mf-hero {
-  background: linear-gradient(135deg, #d4ebe2 0%, #ecf6f3 60%);
-  border-color: #b3d6cc;
-}

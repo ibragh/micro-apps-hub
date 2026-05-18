@@ -22,11 +22,4 @@ body[data-theme='decision-council'] {
   --t-motif-size:     60px;
 }
 
-body[data-theme='decision-council'] .mf-hero {
-  background: linear-gradient(135deg, #d6dceb 0%, #eef1f6 70%);
-  border-color: #8b9bb8;
-  border-block-start-width: 3px;
-  border-block-start-color: var(--t-accent);
-}
-
 body[data-theme='decision-council'] .mf-hero h1 { color: var(--t-accent-strong); }
