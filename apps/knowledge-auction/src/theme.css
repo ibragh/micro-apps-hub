@@ -1,67 +1,303 @@
-/* knowledge-auction — gold / wine, auction-house display */
+/*
+ * knowledge-auction — auction-house stage.
+ * Hero image (wood-paneled auction hall + spotlight) is the stage.
+ * Content is a brass-framed lot card with paddle buttons for bidding.
+ */
+
 body[data-theme='knowledge-auction'] {
-  --t-bg:           #1a0f14;
-  --t-bg-soft:      #2a1820;
-  --t-surface:      #25151c;
+  --t-bg:           #0c0408;
   --t-text:         #f6eedb;
-  --t-text-muted:   #c8b08a;
+  --t-text-muted:   #b59778;
   --t-accent:       #d4a032;
   --t-accent-strong:#f0c155;
   --t-accent-soft:  #3a2618;
-  --t-border:       #3a2a1f;
-  --t-shadow:       0 12px 36px rgba(0, 0, 0, 0.45);
-
-  --t-font-display: 'Reem Kufi', 'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
+  --t-border:       #5a3f1c;
+  --t-font-display: 'Reem Kufi', 'Cairo', 'Noto Naskh Arabic', sans-serif;
   --t-font-body:    'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
-
-  --t-radius-card:   10px;
-  --t-radius-choice: 10px;
-
-  --t-motif-url:      url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cg fill='%23d4a032' opacity='0.45'%3E%3Ccircle cx='30' cy='30' r='0.8'/%3E%3Ccircle cx='10' cy='10' r='0.5'/%3E%3Ccircle cx='50' cy='10' r='0.5'/%3E%3Ccircle cx='10' cy='50' r='0.5'/%3E%3Ccircle cx='50' cy='50' r='0.5'/%3E%3C/g%3E%3C/svg%3E");
-  --t-motif-opacity:  0.6;
-  --t-motif-size:     60px;
 }
 
-body[data-theme='knowledge-auction'] .mf-hero h1 {
+/* Stage = auction-hall photo, dimmed for theatrical contrast */
+body[data-theme='knowledge-auction'] {
+  background:
+    radial-gradient(70% 60% at 50% 35%, rgba(212, 160, 50, 0.18) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.75) 100%),
+    url('/hero.png') center 30% / cover no-repeat fixed;
+  min-height: 100vh;
+  color: var(--t-text);
+  font-family: var(--t-font-body);
+}
+body[data-theme='knowledge-auction']::before { display: none; }
+
+body[data-theme='knowledge-auction'] > .mf-app-shell:not(:has(.ka-stage)) { display: none; }
+body[data-theme='knowledge-auction'] .mf-app-shell .mf-app-header,
+body[data-theme='knowledge-auction'] .mf-app-shell .mf-app-footer { display: none; }
+
+.ka-stage {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+  padding: 32px clamp(16px, 4vw, 48px) 48px;
+  gap: 32px;
+}
+
+/* House masthead */
+.ka-house {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-block-end: 1px solid rgba(212, 160, 50, 0.3);
+  padding-block-end: 16px;
+}
+.ka-house__brand { display: flex; flex-direction: column; gap: 4px; }
+.ka-house__name {
+  display: flex; align-items: baseline; gap: 16px;
+  font-family: var(--t-font-display);
   color: var(--t-accent-strong);
-  text-shadow: 0 1px 0 rgba(0,0,0,0.4);
 }
-
-body[data-theme='knowledge-auction'] .mf-app-header {
-  background: #15080c;
-  border-bottom-color: #5a3f1c;
-  color: var(--t-text);
-}
-body[data-theme='knowledge-auction'] .mf-app-header__title { color: var(--t-accent); }
-body[data-theme='knowledge-auction'] .mf-app-header__title small { color: var(--t-text-muted); }
-
-body[data-theme='knowledge-auction'] .mf-card {
-  background: var(--t-surface);
-  border-color: var(--t-border);
-  color: var(--t-text);
-}
-
-body[data-theme='knowledge-auction'] .mf-choice {
-  background: rgba(255, 246, 220, 0.04);
-  border-color: var(--t-border);
-  color: var(--t-text);
-  font-family: 'Thmanyah Sans', sans-serif;
-}
-body[data-theme='knowledge-auction'] .mf-choice:hover {
-  border-color: var(--t-accent);
-  background: rgba(212, 160, 50, 0.1);
-}
-
-body[data-theme='knowledge-auction'] .mf-btn {
-  background: linear-gradient(180deg, #d4a032 0%, #a87a18 100%);
-  color: #1a0f14;
+.ka-house__name > span {
+  font-size: clamp(1.4rem, 2.4vw, 1.8rem);
   font-weight: 700;
-  border-color: #a87a18;
+  letter-spacing: -0.01em;
 }
-body[data-theme='knowledge-auction'] .mf-btn:hover { background: linear-gradient(180deg, #f0c155 0%, #d4a032 100%); }
-
-body[data-theme='knowledge-auction'] .mf-app-footer {
-  background: #15080c;
-  border-top-color: #5a3f1c;
+.ka-house__name small {
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
   color: var(--t-text-muted);
+}
+.ka-house__date {
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  color: var(--t-text-muted);
+}
+
+.ka-house__paddle {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 10px 18px;
+  background: linear-gradient(180deg, #d4a032 0%, #a87a18 100%);
+  color: #1a0e04;
+  border-radius: 4px;
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255, 230, 160, 0.5),
+    inset 0 -2px 0 rgba(0,0,0,0.18);
+  font-family: var(--t-font-display);
+  font-weight: 700;
+}
+.ka-house__paddle-num {
+  font-size: 1.8rem;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.ka-house__paddle-of { font-size: 0.85rem; opacity: 0.7; }
+
+/* The lot card */
+.ka-lot {
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(34, 18, 28, 0.95) 0%, rgba(20, 8, 14, 0.98) 100%);
+  border: 1px solid var(--t-border);
+  border-radius: 6px;
+  padding: clamp(24px, 4vw, 48px);
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.6),
+    inset 0 0 0 1px rgba(212, 160, 50, 0.18),
+    inset 0 0 80px rgba(212, 160, 50, 0.03);
+  position: relative;
+}
+.ka-lot::before, .ka-lot::after {
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--t-accent);
+}
+.ka-lot::before { top: 12px; left: 12px;  border-right: none;  border-bottom: none; }
+.ka-lot::after  { top: 12px; right: 12px; border-left: none;   border-bottom: none; }
+
+.ka-lot__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  font-family: var(--t-font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.28em;
+  color: var(--t-accent);
+  text-transform: uppercase;
+}
+.ka-lot__no {
+  padding: 4px 12px;
+  background: rgba(212, 160, 50, 0.1);
+  border: 1px solid rgba(212, 160, 50, 0.35);
+  border-radius: 2px;
+}
+.ka-lot__estimate { color: var(--t-text-muted); }
+
+.ka-lot__title {
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.45;
+  color: var(--t-accent-strong);
+  margin: 0 0 16px;
+  letter-spacing: -0.005em;
+}
+
+.ka-lot__rule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0 8px;
+}
+.ka-lot__rule span:not(.ka-lot__diamond) {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(212, 160, 50, 0.5), transparent);
+}
+.ka-lot__diamond {
+  width: 10px;
+  height: 10px;
+  background: var(--t-accent);
+  transform: rotate(45deg);
+}
+
+.ka-lot__caption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--t-text-muted);
+  margin: 0 0 28px;
+  font-style: italic;
+}
+
+.ka-paddles {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: grid;
+  gap: 12px;
+}
+.ka-paddle {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 18px 20px;
+  background: linear-gradient(180deg, rgba(212, 160, 50, 0.06) 0%, rgba(212, 160, 50, 0.02) 100%);
+  border: 1px solid var(--t-border);
+  border-radius: 4px;
+  font-family: var(--t-font-body);
+  font-size: 1.05rem;
+  color: var(--t-text);
+  text-align: start;
+  cursor: pointer;
+  position: relative;
+  transition: all 220ms ease;
+}
+.ka-paddle:hover {
+  border-color: var(--t-accent);
+  background: linear-gradient(180deg, rgba(212, 160, 50, 0.18) 0%, rgba(212, 160, 50, 0.06) 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(212, 160, 50, 0.15);
+}
+.ka-paddle__num {
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--t-accent);
+  background: rgba(212, 160, 50, 0.08);
+  border: 1px solid rgba(212, 160, 50, 0.3);
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+}
+.ka-paddle:hover .ka-paddle__num { background: var(--t-accent); color: #1a0e04; }
+.ka-paddle__text { line-height: 1.5; }
+.ka-paddle__bid {
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.24em;
+  padding: 6px 12px;
+  border: 1px solid rgba(212, 160, 50, 0.4);
+  border-radius: 999px;
+  color: var(--t-accent);
+  transition: all 220ms ease;
+}
+.ka-paddle:hover .ka-paddle__bid { background: var(--t-accent); color: #1a0e04; border-color: var(--t-accent); }
+
+.ka-lot__footer {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px dashed rgba(212, 160, 50, 0.3);
+  font-size: 0.85rem;
+  color: var(--t-text-muted);
+}
+.ka-lot__footer .mf-source { border: none; padding: 0; margin: 0; }
+.ka-lot__footer .mf-source a { color: var(--t-accent); }
+
+/* Result */
+.ka-stage--result { justify-items: center; }
+.ka-result {
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(34, 18, 28, 0.95) 0%, rgba(20, 8, 14, 0.98) 100%);
+  border: 1px solid var(--t-border);
+  border-radius: 6px;
+  padding: 48px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+.ka-result__stamp { width: 140px; height: 140px; margin: 0 auto 20px; color: var(--t-accent); }
+.ka-result__title {
+  font-family: var(--t-font-display);
+  font-size: 1.6rem;
+  color: var(--t-accent-strong);
+  margin-bottom: 8px;
+}
+.ka-result__sub { color: var(--t-text-muted); margin-bottom: 28px; }
+.ka-result__sub em { color: var(--t-accent); font-style: normal; font-weight: 700; font-size: 1.4em; }
+.ka-result__lots { display: grid; gap: 12px; margin-bottom: 28px; text-align: start; }
+.ka-result__lot {
+  padding: 14px 18px;
+  background: rgba(212, 160, 50, 0.04);
+  border-inline-start: 3px solid var(--t-accent);
+  border-radius: 2px;
+}
+.ka-result__lot[data-correct='0'] { border-inline-start-color: #b3261e; }
+.ka-result__lotnum {
+  display: inline-block;
+  font-family: var(--t-font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--t-accent);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.ka-result__lot strong { display: block; color: var(--t-text); font-size: 1rem; line-height: 1.5; margin-bottom: 4px; }
+.ka-result__answer { font-size: 0.85rem; color: var(--t-text-muted); }
+.ka-result__answer em { color: var(--t-accent-strong); font-style: normal; font-weight: 600; }
+.ka-stage--result .mf-btn {
+  background: linear-gradient(180deg, #d4a032 0%, #a87a18 100%);
+  color: #1a0e04;
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 720px) {
+  .ka-house { flex-direction: column; align-items: flex-start; }
+  .ka-paddle { grid-template-columns: 44px 1fr; }
+  .ka-paddle__bid { grid-column: 2; justify-self: end; }
 }

@@ -1,37 +1,329 @@
-/* seerah-quiz — sage / parchment, classical Islamic register */
+/*
+ * seerah-quiz — illuminated manuscript on a Madinah-at-dusk page.
+ * Bespoke layout: no AppShell. The hero image IS the page; the content
+ * is a parchment manuscript pinned over it with arabesque corners.
+ */
+
 body[data-theme='seerah-quiz'] {
-  --t-bg:           #f7f3e8;
-  --t-bg-soft:      #ede5d2;
-  --t-surface:      #fffdf6;
+  --t-bg:           #1c1306;
+  --t-bg-soft:      #f1e7cf;
+  --t-surface:      #fdf7e5;
   --t-text:         #2a2418;
   --t-text-muted:   #6a5e44;
   --t-accent:       #1b6b56;
   --t-accent-strong:#0e4c3c;
   --t-accent-soft:  #def0e8;
-  --t-border:       #e2d7bb;
-  --t-shadow:       0 6px 18px rgba(40, 30, 10, 0.06);
-
+  --t-border:       #d6c79d;
+  --t-shadow:       0 24px 60px rgba(0, 0, 0, 0.55);
   --t-font-display: 'Amiri', 'Noto Naskh Arabic', serif;
   --t-font-body:    'Noto Naskh Arabic', 'Amiri', serif;
-
-  --t-radius-card:   16px;
-  --t-radius-choice: 14px;
-
-  --t-motif-url:      url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpath fill='none' stroke='%231b6b56' stroke-width='0.6' opacity='0.55' d='M30 5 L36 17 L50 17 L40 26 L44 40 L30 32 L16 40 L20 26 L10 17 L24 17 Z'/%3E%3C/svg%3E");
-  --t-motif-opacity:  0.10;
-  --t-motif-size:     60px;
 }
 
-body[data-theme='seerah-quiz'] .mf-app-header {
-  background: linear-gradient(180deg, #fffdf6 0%, #f7f3e8 100%);
-  border-bottom-color: #d6c79d;
+/* The Madinah photo IS the page bg, fixed so the manuscript scrolls over it. */
+body[data-theme='seerah-quiz'] {
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.55) 100%),
+    url('/hero.png') center/cover no-repeat fixed;
+  min-height: 100vh;
+  color: var(--t-text);
+  font-family: var(--t-font-body);
+}
+body[data-theme='seerah-quiz']::before { display: none; }
+
+/* The bespoke shell renders its own structure; hide any stray AppShell DOM. */
+body[data-theme='seerah-quiz'] > .mf-app-shell:not(:has(.sq-page)) { display: none; }
+body[data-theme='seerah-quiz'] .mf-app-shell .mf-app-header,
+body[data-theme='seerah-quiz'] .mf-app-shell .mf-app-footer { display: none; }
+
+.sq-page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  padding: 24px 16px 32px;
+  gap: 24px;
+  position: relative;
 }
 
-body[data-theme='seerah-quiz'] .mf-choice {
-  border-color: #d8cca8;
-  background: #fffdf6;
+/* Masthead on top of the photo, gilded */
+.sq-masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: #f6e6b8;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
 }
-body[data-theme='seerah-quiz'] .mf-choice:hover {
-  border-color: #1b6b56;
-  background: #def0e8;
+.sq-masthead__title {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: var(--t-font-display);
+  font-weight: 700;
+}
+.sq-masthead__title > span {
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  letter-spacing: -0.01em;
+}
+.sq-masthead__title small {
+  font-size: 0.7rem;
+  color: rgba(246, 230, 184, 0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Progress chip pinned in the masthead with pip dots */
+.sq-progress {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: rgba(20, 14, 4, 0.55);
+  border: 1px solid rgba(246, 230, 184, 0.25);
+  border-radius: 999px;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: #f6e6b8;
+}
+.sq-progress__pip {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(246, 230, 184, 0.25);
+  transition: all 200ms ease;
+}
+.sq-progress__pip.is-done { background: #cda23a; }
+.sq-progress__pip.is-now  {
+  background: #f6e6b8;
+  transform: scale(1.4);
+  box-shadow: 0 0 12px rgba(246, 230, 184, 0.8);
+}
+.sq-progress__count {
+  margin-inline-start: 6px;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Manuscript surface — cream parchment with brass corners */
+.sq-main { display: flex; justify-content: center; align-items: flex-start; }
+.sq-manuscript {
+  position: relative;
+  max-width: 680px;
+  width: 100%;
+  background:
+    radial-gradient(60% 80% at 50% 0%, rgba(214, 199, 157, 0.4) 0%, transparent 70%),
+    linear-gradient(180deg, #fdf7e5 0%, #f1e7cf 100%);
+  border: 1px solid #c9b27a;
+  border-radius: 4px;
+  padding: 56px 48px 40px;
+  box-shadow:
+    var(--t-shadow),
+    inset 0 0 80px rgba(180, 130, 40, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  color: var(--t-text);
+}
+
+/* The four arabesque corners */
+.sq-corner {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  color: #1b6b56;
+}
+.sq-corner--tl { top: 8px;    left: 8px;   }
+.sq-corner--tr { top: 8px;    right: 8px;  transform: scaleX(-1); }
+.sq-corner--bl { bottom: 8px; left: 8px;   transform: scaleY(-1); }
+.sq-corner--br { bottom: 8px; right: 8px;  transform: scale(-1, -1); }
+
+/* Horizontal rules with a centre diamond ornament */
+.sq-rule {
+  display: block;
+  width: 220px;
+  height: 18px;
+  margin: 0 auto 18px;
+  color: #1b6b56;
+  opacity: 0.7;
+}
+
+/* "Chapter" badge at the top of the manuscript */
+.sq-folio {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 4px 14px;
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--t-accent-strong);
+  background: rgba(27, 107, 86, 0.08);
+  border: 1px solid rgba(27, 107, 86, 0.3);
+  border-radius: 2px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  max-width: 120px;
+}
+
+/* Question — large illuminated headline */
+.sq-question {
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  line-height: 1.5;
+  color: #1a1a1a;
+  text-align: center;
+  margin: 0 0 24px;
+  letter-spacing: -0.005em;
+}
+
+/* Choice list — gilded inscribed buttons */
+.sq-choices {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: grid;
+  gap: 12px;
+}
+.sq-choice {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 14px 18px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 100%),
+    #fdf7e5;
+  border: 1px solid #d6c79d;
+  border-radius: 4px;
+  font-family: var(--t-font-body);
+  font-size: 1.05rem;
+  color: var(--t-text);
+  text-align: start;
+  cursor: pointer;
+  transition: all 200ms ease;
+  position: relative;
+}
+.sq-choice::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(180, 130, 40, 0.15);
+  border-radius: 3px;
+  pointer-events: none;
+}
+.sq-choice:hover {
+  border-color: var(--t-accent);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(222, 240, 232, 0.7) 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(27, 107, 86, 0.12);
+}
+.sq-choice__letter {
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--t-accent);
+  background: rgba(27, 107, 86, 0.08);
+  border: 1px solid rgba(27, 107, 86, 0.25);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.sq-choice:hover .sq-choice__letter {
+  background: var(--t-accent);
+  color: #fdf7e5;
+}
+.sq-choice__text { line-height: 1.5; }
+
+/* Source line at the bottom of the manuscript */
+.sq-source {
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px dashed rgba(27, 107, 86, 0.3);
+  font-size: 0.85rem;
+  color: var(--t-text-muted);
+  text-align: center;
+}
+.sq-source .mf-source { border: none; padding: 0; margin: 0; }
+
+/* Footer */
+.sq-foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 0 12px;
+  color: rgba(246, 230, 184, 0.7);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+  font-size: 0.8rem;
+}
+
+/* Result screen — gilded score */
+.sq-manuscript--result { padding-top: 48px; }
+.sq-result__eyebrow {
+  text-align: center;
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--t-accent-strong);
+  margin: 0 0 8px;
+}
+.sq-result__score {
+  text-align: center;
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  font-size: clamp(4rem, 10vw, 6rem);
+  color: var(--t-accent-strong);
+  line-height: 1;
+  margin: 0 0 4px;
+}
+.sq-result__score span {
+  font-size: 0.4em;
+  color: var(--t-text-muted);
+  margin-inline-start: 4px;
+}
+.sq-result__line {
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--t-text);
+  margin: 0 0 20px;
+}
+.sq-result__items {
+  display: grid;
+  gap: 18px;
+  margin: 8px 0 28px;
+}
+.sq-result__item {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 14px;
+  padding: 14px 16px;
+  border-inline-start: 3px solid rgba(27, 107, 86, 0.3);
+  background: rgba(253, 247, 229, 0.6);
+  border-radius: 4px;
+}
+.sq-result__item[data-correct='1'] { border-inline-start-color: var(--t-accent); }
+.sq-result__item[data-correct='0'] { border-inline-start-color: #b3261e; }
+.sq-result__num {
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--t-accent);
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.sq-result__answer { font-size: 0.9rem; color: var(--t-text-muted); margin-top: 4px; }
+.sq-result__answer em { color: var(--t-accent-strong); font-style: normal; font-weight: 600; }
+.sq-result__item p { font-size: 0.85rem; color: var(--t-text-muted); margin: 6px 0 0; }
+
+@media (max-width: 640px) {
+  .sq-page { padding: 16px 8px 24px; }
+  .sq-manuscript { padding: 36px 20px 28px; border-radius: 2px; }
+  .sq-corner { width: 36px; height: 36px; }
 }

@@ -1,27 +1,401 @@
-/* matchday-coach — pitch green / white, tactics board */
+/*
+ * matchday-coach — tactical board overlaid on a pitch.
+ * Hero image (tactics board) fills the pitch area; an overlay scoreboard
+ * + bench-coach board layer on top. The whole experience is "broadcast".
+ */
+
 body[data-theme='matchday-coach'] {
-  --t-bg:           #144a25;
-  --t-bg-soft:      #1e6033;
-  --t-surface:      #ffffff;
+  --t-pitch:        #0e3a1c;
+  --t-pitch-line:   #ffffff;
+  --t-chalk:        #f3f5e0;
   --t-text:         #ffffff;
   --t-text-muted:   #b3d3bd;
-  --t-accent:       #ffffff;
-  --t-accent-strong:#f1f5e8;
-  --t-accent-soft:  #1e6033;
-  --t-border:       #2a7340;
-  --t-shadow:       0 8px 26px rgba(0, 0, 0, 0.3);
-  --t-font-display: 'Tajawal', 'Thmanyah Sans', sans-serif;
-  --t-font-body:    'Tajawal', 'Thmanyah Sans', sans-serif;
-  --t-radius-card:  10px;
-  --t-radius-choice:10px;
-  --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='0.6' opacity='0.18'%3E%3Cline x1='0' y1='100' x2='200' y2='100'/%3E%3Ccircle cx='100' cy='100' r='20'/%3E%3Crect x='0' y='70' width='30' height='60'/%3E%3Crect x='170' y='70' width='30' height='60'/%3E%3C/g%3E%3C/svg%3E");
-  --t-motif-opacity:1;
-  --t-motif-size:   400px;
+  --t-accent:       #ffd54a;
+  --t-board:        #0a1e10;
+  --t-font-display: 'Tajawal', 'Cairo', sans-serif;
+  --t-font-body:    'Tajawal', 'Cairo', sans-serif;
 }
-body[data-theme='matchday-coach'] .mf-hero h1 { color: var(--t-text); }
-body[data-theme='matchday-coach'] .mf-app-header { background: #0e3a1c; border-bottom-color: var(--t-border); color: var(--t-text); }
-body[data-theme='matchday-coach'] .mf-app-header__title { color: var(--t-text); }
-body[data-theme='matchday-coach'] .mf-card { background: rgba(255,255,255,0.06); border-color: var(--t-border); color: var(--t-text); }
-body[data-theme='matchday-coach'] .mf-choice { background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.25); color: var(--t-text); font-weight: 500; }
-body[data-theme='matchday-coach'] .mf-choice:hover { background: rgba(255,255,255,0.20); border-color: rgba(255,255,255,0.5); }
-body[data-theme='matchday-coach'] .mf-app-footer { background: #0e3a1c; border-top-color: var(--t-border); color: var(--t-text-muted); }
+
+body[data-theme='matchday-coach'] {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(15, 60, 28, 0.55) 0px,
+      rgba(11, 50, 22, 0.55) 80px,
+      rgba(15, 60, 28, 0.55) 160px
+    ),
+    radial-gradient(70% 50% at 50% 40%, rgba(255, 213, 74, 0.06) 0%, transparent 60%),
+    linear-gradient(180deg, #0a2014 0%, #061509 100%),
+    url('/hero.png') center / cover no-repeat fixed;
+  min-height: 100vh;
+  color: var(--t-text);
+  font-family: var(--t-font-body);
+}
+body[data-theme='matchday-coach']::before { display: none; }
+
+body[data-theme='matchday-coach'] > .mf-app-shell:not(:has(.mc-stadium)) { display: none; }
+body[data-theme='matchday-coach'] .mf-app-shell .mf-app-header,
+body[data-theme='matchday-coach'] .mf-app-shell .mf-app-footer { display: none; }
+
+.mc-stadium {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+  padding: 0;
+  gap: 0;
+}
+
+/* Scoreboard — broadcast-style header strip */
+.mc-scoreboard {
+  background: rgba(8, 18, 12, 0.92);
+  border-block-end: 2px solid var(--t-accent);
+  padding: 12px clamp(16px, 4vw, 32px);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.mc-scoreboard__teams {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+}
+.mc-scoreboard__team {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--t-font-display);
+  font-weight: 700;
+}
+.mc-scoreboard__team--home { justify-content: flex-end; }
+.mc-scoreboard__team--away { justify-content: flex-start; flex-direction: row-reverse; }
+.mc-scoreboard__crest {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: var(--t-accent);
+  background: rgba(255, 213, 74, 0.12);
+  border: 1px solid rgba(255, 213, 74, 0.3);
+  border-radius: 50%;
+}
+.mc-scoreboard__name {
+  font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+  letter-spacing: -0.005em;
+  color: var(--t-text);
+}
+.mc-scoreboard__score {
+  font-family: var(--t-font-display);
+  font-weight: 800;
+  font-size: 2rem;
+  color: var(--t-accent);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.mc-scoreboard__clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 16px;
+  background: var(--t-accent);
+  color: #0a1e10;
+  border-radius: 4px;
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 14px rgba(255, 213, 74, 0.35);
+}
+.mc-scoreboard__minute {
+  font-size: 1.4rem;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.mc-scoreboard__half {
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.mc-scoreboard__rounds {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 8px;
+}
+.mc-scoreboard__pip {
+  width: 22px;
+  height: 4px;
+  background: rgba(255, 213, 74, 0.2);
+  border-radius: 2px;
+}
+.mc-scoreboard__pip.is-done { background: var(--t-accent); }
+.mc-scoreboard__pip.is-now {
+  background: #fff;
+  box-shadow: 0 0 12px rgba(255, 213, 74, 0.8);
+}
+
+/* The pitch — a chalkboard with overlaid tactics card */
+.mc-pitch {
+  position: relative;
+  padding: 32px clamp(16px, 4vw, 32px) 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 100px);
+}
+.mc-pitch__chalk {
+  position: absolute;
+  inset: 24px;
+  pointer-events: none;
+}
+.mc-pitch__chalk svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 4px rgba(255,255,255,0.12));
+  opacity: 0.7;
+}
+
+/* The board — coach's tactical board surface */
+.mc-board {
+  position: relative;
+  max-width: 720px;
+  width: 100%;
+  background: linear-gradient(180deg, #0e2415 0%, #061309 100%);
+  border: 1px solid rgba(255, 213, 74, 0.35);
+  border-radius: 8px;
+  padding: clamp(20px, 3vw, 32px);
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.5),
+    inset 0 0 0 1px rgba(255,255,255,0.04);
+}
+.mc-board::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, transparent 0%, rgba(255,213,74,0.4) 50%, transparent 100%);
+  z-index: -1;
+}
+.mc-board__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  font-family: var(--t-font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+.mc-board__tag {
+  color: var(--t-accent);
+  background: rgba(255, 213, 74, 0.12);
+  border: 1px solid rgba(255, 213, 74, 0.3);
+  padding: 4px 12px;
+  border-radius: 2px;
+}
+.mc-board__minute {
+  color: var(--t-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+.mc-board__prompt {
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  line-height: 1.4;
+  margin: 0 0 20px;
+  letter-spacing: -0.005em;
+}
+.mc-board__formation {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: rgba(255, 213, 74, 0.08);
+  border: 1px dashed rgba(255, 213, 74, 0.35);
+  border-radius: 4px;
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--t-accent);
+  margin-bottom: 20px;
+}
+.mc-board__formation .dot {
+  width: 4px;
+  height: 4px;
+  background: var(--t-accent);
+  border-radius: 50%;
+}
+.mc-board__label {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--t-text-muted);
+  margin-inline-start: 8px;
+}
+
+/* Decision options — moves on the board */
+.mc-options {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: grid;
+  gap: 10px;
+}
+.mc-option {
+  display: grid;
+  grid-template-columns: 44px 1fr 24px;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 213, 74, 0.2);
+  border-radius: 4px;
+  font-family: var(--t-font-body);
+  font-size: 1.02rem;
+  color: var(--t-text);
+  text-align: start;
+  cursor: pointer;
+  transition: all 200ms ease;
+  position: relative;
+  overflow: hidden;
+}
+.mc-option::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 4px;
+  background: var(--t-accent);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 200ms ease;
+}
+.mc-option:hover {
+  background: rgba(255, 213, 74, 0.1);
+  border-color: var(--t-accent);
+  transform: translateX(-2px);
+}
+.mc-option:hover::before { transform: scaleY(1); }
+.mc-option__nub {
+  font-family: var(--t-font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--t-accent);
+  background: rgba(255, 213, 74, 0.12);
+  border: 1px solid rgba(255, 213, 74, 0.4);
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-variant-numeric: tabular-nums;
+}
+.mc-option:hover .mc-option__nub {
+  background: var(--t-accent);
+  color: #0a1e10;
+}
+.mc-option__label { line-height: 1.5; }
+.mc-option__arrow {
+  color: var(--t-accent);
+  font-size: 1.1rem;
+  opacity: 0.5;
+  transition: opacity 200ms ease;
+}
+.mc-option:hover .mc-option__arrow { opacity: 1; }
+
+.mc-source {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(255, 213, 74, 0.25);
+  font-size: 0.85rem;
+  color: var(--t-text-muted);
+}
+.mc-source .mf-source { border: none; padding: 0; margin: 0; }
+.mc-source .mf-source a { color: var(--t-accent); }
+
+/* Full-time result */
+.mc-stadium--result { display: flex; align-items: center; justify-content: center; padding: 48px 16px; }
+.mc-fulltime {
+  max-width: 720px;
+  width: 100%;
+  background: linear-gradient(180deg, #0e2415 0%, #061309 100%);
+  border: 1px solid rgba(255, 213, 74, 0.4);
+  border-radius: 12px;
+  padding: 48px clamp(20px, 4vw, 48px);
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+.mc-fulltime__whistle {
+  display: inline-block;
+  font-family: var(--t-font-display);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.32em;
+  color: var(--t-accent);
+  padding: 6px 18px;
+  background: rgba(255, 213, 74, 0.12);
+  border: 1px solid var(--t-accent);
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+.mc-fulltime__score {
+  font-family: var(--t-font-display);
+  font-weight: 800;
+  font-size: 6rem;
+  color: var(--t-accent);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.mc-fulltime__score span { font-size: 0.4em; color: var(--t-text-muted); }
+.mc-fulltime__sub {
+  color: var(--t-text-muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.mc-fulltime__style {
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: var(--t-text);
+  margin-bottom: 32px;
+}
+.mc-fulltime__plays { text-align: start; display: grid; gap: 14px; margin-bottom: 28px; }
+.mc-play {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 12px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border-inline-start: 3px solid var(--t-accent);
+}
+.mc-play__minute {
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--t-accent);
+  font-variant-numeric: tabular-nums;
+}
+.mc-play__body strong { display: block; color: var(--t-text); font-size: 0.95rem; margin-bottom: 4px; }
+.mc-play__decision { color: var(--t-text); font-size: 0.9rem; }
+.mc-play__consequence { color: var(--t-text-muted); font-size: 0.85rem; margin-top: 4px; font-style: italic; }
+.mc-stadium--result .mf-btn {
+  background: var(--t-accent);
+  color: #0a1e10;
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 720px) {
+  .mc-scoreboard__teams { grid-template-columns: 1fr; gap: 8px; }
+  .mc-scoreboard__team { justify-content: flex-start; }
+  .mc-scoreboard__team--away { flex-direction: row; }
+  .mc-pitch__chalk { inset: 8px; }
+}

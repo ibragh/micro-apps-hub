@@ -1,28 +1,369 @@
-/* time-traveler — violet / dusk, clock-hands */
+/*
+ * time-traveler — cosmic portal immersive.
+ * Hero image (hourglass on violet velvet) is the dimensional gateway.
+ * Stars drift across the bg; the "arrival" surface has a glowing rim
+ * and choices appear as floating timeline nodes.
+ */
+
 body[data-theme='time-traveler'] {
-  --t-bg:           #1a162e;
-  --t-bg-soft:      #2a2243;
-  --t-surface:      #221e3a;
   --t-text:         #ece8f8;
   --t-text-muted:   #b6acd1;
-  --t-accent:       #b794f6;
-  --t-accent-strong:#d9c4ff;
-  --t-accent-soft:  #3a3360;
-  --t-border:       #3a3258;
-  --t-shadow:       0 10px 36px rgba(0, 0, 0, 0.45);
-  --t-font-display: 'El Messiri', 'Thmanyah Sans', serif;
-  --t-font-body:    'Thmanyah Sans', 'Noto Naskh Arabic', sans-serif;
-  --t-radius-card:  16px;
-  --t-radius-choice:14px;
-  --t-motif-url:    url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cg fill='%23b794f6' opacity='0.45'%3E%3Ccircle cx='10' cy='10' r='0.6'/%3E%3Ccircle cx='30' cy='20' r='0.6'/%3E%3Ccircle cx='50' cy='15' r='0.4'/%3E%3Ccircle cx='15' cy='40' r='0.5'/%3E%3Ccircle cx='45' cy='45' r='0.6'/%3E%3C/g%3E%3C/svg%3E");
-  --t-motif-opacity:0.5;
-  --t-motif-size:   60px;
+  --t-accent:       #d9c4ff;
+  --t-accent-strong:#ffffff;
+  --t-glow:         #b794f6;
+  --t-rim:          rgba(183, 148, 246, 0.6);
+  --t-font-display: 'El Messiri', 'Thmanyah Serif', serif;
+  --t-font-body:    'Thmanyah Sans', 'Cairo', 'Noto Naskh Arabic', sans-serif;
 }
-body[data-theme='time-traveler'] .mf-hero h1 { color: var(--t-accent-strong); }
-body[data-theme='time-traveler'] .mf-app-header { background: #14101e; border-bottom-color: #4a3f6f; color: var(--t-text); }
-body[data-theme='time-traveler'] .mf-app-header__title { color: var(--t-accent); }
-body[data-theme='time-traveler'] .mf-app-header__title small { color: var(--t-text-muted); }
-body[data-theme='time-traveler'] .mf-card { background: var(--t-surface); border-color: var(--t-border); color: var(--t-text); }
-body[data-theme='time-traveler'] .mf-choice { background: rgba(255,255,255,0.04); border-color: var(--t-border); color: var(--t-text); }
-body[data-theme='time-traveler'] .mf-choice:hover { border-color: var(--t-accent); background: rgba(183,148,246,0.08); }
-body[data-theme='time-traveler'] .mf-app-footer { background: #14101e; border-top-color: #4a3f6f; color: var(--t-text-muted); }
+
+body[data-theme='time-traveler'] {
+  background:
+    radial-gradient(60% 50% at 50% 35%, rgba(183, 148, 246, 0.35) 0%, transparent 70%),
+    radial-gradient(80% 60% at 50% 100%, rgba(60, 30, 110, 0.7) 0%, transparent 70%),
+    linear-gradient(180deg, #150f24 0%, #0a0613 100%),
+    url('/hero.png') center / cover no-repeat fixed;
+  background-blend-mode: normal, normal, normal, soft-light;
+  min-height: 100vh;
+  color: var(--t-text);
+  font-family: var(--t-font-body);
+  position: relative;
+  overflow-x: hidden;
+}
+body[data-theme='time-traveler']::before { display: none; }
+
+body[data-theme='time-traveler'] > .mf-app-shell:not(:has(.tt-cosmos)) { display: none; }
+body[data-theme='time-traveler'] .mf-app-shell .mf-app-header,
+body[data-theme='time-traveler'] .mf-app-shell .mf-app-footer { display: none; }
+
+/* Drifting stars layer */
+.tt-stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.tt-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 6px rgba(255,255,255,0.8);
+  animation: tt-twinkle 3.6s ease-in-out infinite;
+}
+@keyframes tt-twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.7); }
+  50%      { opacity: 1;   transform: scale(1.2); }
+}
+
+.tt-cosmos {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+  padding: 24px clamp(16px, 4vw, 32px) 48px;
+  gap: 32px;
+}
+
+/* HUD (top status bar) */
+.tt-hud {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  background: rgba(20, 14, 36, 0.65);
+  border: 1px solid var(--t-rim);
+  border-radius: 999px;
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  color: var(--t-text);
+  box-shadow:
+    0 0 60px rgba(183, 148, 246, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+.tt-hud__brand { display: flex; align-items: center; gap: 12px; }
+.tt-hud__sigil {
+  font-size: 1.6rem;
+  color: var(--t-glow);
+  text-shadow: 0 0 12px rgba(183, 148, 246, 0.9);
+  animation: tt-spin 18s linear infinite;
+}
+@keyframes tt-spin { to { transform: rotate(360deg); } }
+.tt-hud__title { display: flex; flex-direction: column; gap: 2px; font-family: var(--t-font-display); }
+.tt-hud__title span { font-weight: 700; font-size: 1.05rem; }
+.tt-hud__title small {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--t-text-muted);
+}
+
+.tt-hud__chronometer {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(183, 148, 246, 0.18);
+  border: 1px solid var(--t-rim);
+  border-radius: 999px;
+  font-family: var(--t-font-display);
+  font-weight: 700;
+}
+.tt-hud__label {
+  font-size: 0.65rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--t-text-muted);
+}
+.tt-hud__year {
+  font-size: 1.4rem;
+  color: var(--t-accent-strong);
+  text-shadow: 0 0 10px rgba(183, 148, 246, 0.6);
+  font-variant-numeric: tabular-nums;
+}
+.tt-hud__suffix { color: var(--t-text-muted); font-size: 0.9rem; }
+
+.tt-hud__progress {
+  text-align: end;
+  font-family: var(--t-font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--t-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* The "arrival" surface — where the traveler lands */
+.tt-arrival {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+}
+.tt-arrival__rim {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: clamp(360px, 80vw, 760px);
+  height: clamp(360px, 80vw, 760px);
+  border-radius: 50%;
+  border: 1px solid var(--t-rim);
+  box-shadow:
+    inset 0 0 80px rgba(183, 148, 246, 0.2),
+    0 0 80px rgba(183, 148, 246, 0.15);
+  pointer-events: none;
+  animation: tt-pulse 6s ease-in-out infinite;
+}
+@keyframes tt-pulse {
+  0%, 100% { transform: scale(1);    box-shadow: inset 0 0 80px rgba(183,148,246,0.2),  0 0 80px rgba(183,148,246,0.15); }
+  50%      { transform: scale(1.03); box-shadow: inset 0 0 120px rgba(183,148,246,0.3), 0 0 120px rgba(183,148,246,0.25); }
+}
+
+.tt-arrival__inner {
+  position: relative;
+  max-width: 640px;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(30, 20, 50, 0.65) 0%, rgba(15, 10, 30, 0.75) 100%);
+  border: 1px solid var(--t-rim);
+  border-radius: 24px;
+  padding: clamp(28px, 4vw, 44px);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 0 60px rgba(183, 148, 246, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.tt-arrival__era {
+  display: inline-block;
+  font-family: var(--t-font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  background: rgba(183, 148, 246, 0.15);
+  border: 1px solid var(--t-rim);
+  border-radius: 999px;
+  color: var(--t-glow);
+  margin-bottom: 16px;
+}
+
+.tt-arrival__prompt {
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.5;
+  margin: 0 0 28px;
+  color: var(--t-text);
+  text-shadow: 0 0 30px rgba(183, 148, 246, 0.4);
+}
+
+/* Choice nodes — like timeline points along a vertical thread */
+.tt-options {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: grid;
+  gap: 12px;
+  position: relative;
+}
+.tt-options::before {
+  content: '';
+  position: absolute;
+  inset-block: 18px;
+  inset-inline-start: 22px;
+  width: 1px;
+  background: linear-gradient(180deg, transparent 0%, var(--t-rim) 20%, var(--t-rim) 80%, transparent 100%);
+}
+.tt-options li {
+  animation: tt-emerge 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes tt-emerge {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.tt-option {
+  display: grid;
+  grid-template-columns: 44px 1fr 24px;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 14px 16px 14px 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(183, 148, 246, 0.25);
+  border-radius: 14px;
+  font-family: var(--t-font-body);
+  font-size: 1.02rem;
+  color: var(--t-text);
+  text-align: start;
+  cursor: pointer;
+  position: relative;
+  transition: all 240ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.tt-option:hover {
+  background: rgba(183, 148, 246, 0.12);
+  border-color: var(--t-glow);
+  transform: translateX(-3px);
+  box-shadow: 0 10px 32px rgba(183, 148, 246, 0.3);
+}
+.tt-option__node {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-inline-start: 16px;
+  border-radius: 50%;
+  background: var(--t-glow);
+  box-shadow: 0 0 12px var(--t-glow);
+  position: relative;
+}
+.tt-option__node::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border: 1px solid var(--t-rim);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+.tt-option:hover .tt-option__node { background: #fff; box-shadow: 0 0 18px #fff; }
+.tt-option__label { line-height: 1.5; }
+.tt-option__chev {
+  color: var(--t-glow);
+  font-size: 1.6rem;
+  opacity: 0.4;
+  font-weight: 300;
+  transition: all 200ms ease;
+}
+.tt-option:hover .tt-option__chev {
+  opacity: 1;
+  transform: translateX(-4px);
+}
+
+.tt-source {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(183, 148, 246, 0.25);
+  font-size: 0.85rem;
+  color: var(--t-text-muted);
+}
+.tt-source .mf-source { border: none; padding: 0; margin: 0; }
+.tt-source .mf-source a { color: var(--t-glow); }
+
+/* Return — result */
+.tt-cosmos--result { display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 48px 16px; }
+.tt-portal {
+  position: relative;
+  max-width: 720px;
+  width: 100%;
+  text-align: center;
+  padding: 48px 32px;
+}
+.tt-portal__halo {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: clamp(260px, 60vw, 360px);
+  height: clamp(260px, 60vw, 360px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(183, 148, 246, 0.35) 0%, transparent 70%);
+  filter: blur(20px);
+  z-index: -1;
+}
+.tt-portal__eyebrow {
+  font-family: var(--t-font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--t-glow);
+  margin-bottom: 8px;
+}
+.tt-portal__style {
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  font-size: clamp(3rem, 8vw, 4.5rem);
+  color: var(--t-accent-strong);
+  margin-bottom: 12px;
+  text-shadow: 0 0 30px rgba(183, 148, 246, 0.7);
+  line-height: 1;
+}
+.tt-portal__sub { color: var(--t-text-muted); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+.tt-log { max-width: 720px; width: 100%; display: grid; gap: 14px; }
+.tt-log__entry {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 16px;
+  padding: 16px 18px;
+  background: rgba(20, 14, 36, 0.6);
+  border: 1px solid var(--t-rim);
+  border-radius: 14px;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+.tt-log__year {
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--t-glow);
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 10px rgba(183, 148, 246, 0.5);
+}
+.tt-log__body strong { display: block; color: var(--t-text); font-size: 0.95rem; margin-bottom: 4px; line-height: 1.5; }
+.tt-log__decision { color: var(--t-text); font-size: 0.9rem; }
+.tt-log__consequence { color: var(--t-text-muted); font-size: 0.85rem; margin-top: 4px; font-style: italic; }
+
+.tt-cosmos--result .mf-btn {
+  background: linear-gradient(135deg, #b794f6 0%, #7a3aa1 100%);
+  color: #fff;
+  font-family: var(--t-font-display);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border: none;
+  box-shadow: 0 8px 24px rgba(183, 148, 246, 0.4);
+}
+
+@media (max-width: 720px) {
+  .tt-hud { grid-template-columns: 1fr; text-align: center; gap: 8px; }
+  .tt-arrival__rim { width: 100%; height: 100%; border-radius: 24px; }
+}
